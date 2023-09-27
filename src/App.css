@@ -1,4 +1,13 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: "Poppins";
 }
+
+/*  
+
+font-family: "Roboto"; 
+
+import "@fontsource/roboto"; // Defaults to weight 400
+
+*/

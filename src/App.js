@@ -4,6 +4,7 @@ import Header from "./componentes/header/header";
 import Footer from "./componentes/footer/footer";
 import Inicio from "./componentes/inicio/inicio";
 import "./App.css";
+import "@fontsource/poppins"; // Defaults to weight 400
 
 function App() {
   return (
