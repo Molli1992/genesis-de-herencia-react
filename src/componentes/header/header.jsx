@@ -1,9 +1,117 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./header.css";
 import "@fontsource/roboto"; // Defaults to weight 400
 
 function Heaeder() {
+  const [stateResponsive, setStateResponsive] = useState(false);
+  const [stateResponsiveNosotros, setStateResponsiveNosotros] = useState(false);
+  const [stateResponsiveVinos, setStateResponsiveVinos] = useState(false);
+  const [stateVinos1, setStateVinos1] = useState(false);
+  const [stateVinos2, setStateVinos2] = useState(false);
+  const location = useLocation();
+
+  const onClickMenuResponsive = () => {
+    if (stateResponsive === false) {
+      setStateResponsive(true);
+    } else {
+      setStateResponsive(false);
+      setStateResponsiveNosotros(false);
+      setStateResponsiveVinos(false);
+      setStateVinos1(false);
+      setStateVinos2(false);
+    }
+  };
+
+  const onClickMenuResponsiveNosotros = () => {
+    if (stateResponsiveNosotros === false) {
+      setStateResponsiveNosotros(true);
+      setStateResponsiveVinos(false);
+      setStateVinos1(false);
+      setStateVinos2(false);
+    } else {
+      setStateResponsiveNosotros(false);
+    }
+  };
+
+  const onClickMenuResponsiveVinos = () => {
+    if (stateResponsiveVinos === false) {
+      setStateResponsiveVinos(true);
+      setStateResponsiveNosotros(false);
+    } else {
+      setStateResponsiveVinos(false);
+      setStateVinos1(false);
+      setStateVinos2(false);
+    }
+  };
+
+  const onClickLineaReserva = () => {
+    if (stateVinos1 === false) {
+      setStateVinos1(true);
+    } else {
+      setStateVinos1(false);
+    }
+  };
+
+  const onClickLineaGranReserva = () => {
+    if (stateVinos2 === false) {
+      setStateVinos2(true);
+    } else {
+      setStateVinos2(false);
+    }
+  };
+
+  const onClickFacebook = () => {
+    window.open("https://www.facebook.com", "_blank");
+  };
+
+  const onClickInstagram = () => {
+    window.open("https://www.facebook.com", "_blank");
+  };
+
+  const onClickLink = () => {
+    window.open("/link", "_blank");
+  };
+
+  var linkHome = document.getElementById("link-home");
+  var linkNosotros = document.getElementById("link-nosotros");
+  var linkVinos = document.getElementById("link-vinos");
+  var linkContactanos = document.getElementById("link-contactanos");
+
+  if (location.pathname === "/" && linkHome !== null) {
+    linkHome.classList.add("link-header-2-active");
+    linkNosotros.classList.remove("link-header-2-active");
+    linkVinos.classList.remove("link-header-2-active");
+    linkContactanos.classList.remove("link-header-2-active");
+  }
+
+  if (
+    location.pathname === "/conocenos" ||
+    (location.pathname === "/nuestros-vi%C3%B1edos" && linkNosotros !== null)
+  ) {
+    linkHome.classList.remove("link-header-2-active");
+    linkNosotros.classList.add("link-header-2-active");
+    linkVinos.classList.remove("link-header-2-active");
+    linkContactanos.classList.remove("link-header-2-active");
+  }
+
+  if (
+    location.pathname === "/reserva" ||
+    (location.pathname === "/gran-reserva" && linkVinos !== null)
+  ) {
+    linkHome.classList.remove("link-header-2-active");
+    linkNosotros.classList.remove("link-header-2-active");
+    linkVinos.classList.add("link-header-2-active");
+    linkContactanos.classList.remove("link-header-2-active");
+  }
+
+  if (location.pathname === "/contactanos" && linkContactanos !== null) {
+    linkHome.classList.remove("link-header-2-active");
+    linkNosotros.classList.remove("link-header-2-active");
+    linkVinos.classList.remove("link-header-2-active");
+    linkContactanos.classList.add("link-header-2-active");
+  }
+
   return (
     <div className="body-header">
       <div className="container-header-1">
@@ -49,7 +157,7 @@ function Heaeder() {
         </div>
 
         <div className="container-header-1-right">
-          <div className="header-icon-facebook">
+          <div className="header-icon-facebook" onClick={onClickFacebook}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="12"
@@ -62,7 +170,7 @@ function Heaeder() {
             </svg>
           </div>
 
-          <div className="header-icon-instagram">
+          <div className="header-icon-instagram" onClick={onClickInstagram}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="12"
@@ -75,7 +183,7 @@ function Heaeder() {
             </svg>
           </div>
 
-          <div className="header-icon-link">
+          <div className="header-icon-link" onClick={onClickLink}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="17"
@@ -98,52 +206,435 @@ function Heaeder() {
         />
 
         <div className="container-links-header-2">
-          <Link className="link-header-2">Inicio</Link>
+          <Link id="link-home" to={"/"} className="link-header-2">
+            Home
+          </Link>
 
-          <text className="link-header-2">Nosotros</text>
+          <div>
+            <text id="link-nosotros" className="link-header-2">
+              Nosotros
+            </text>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="12"
+              fill="#838383"
+              class="bi bi-caret-down-fill"
+              viewBox="0 0 16 16"
+            >
+              <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+            </svg>
+
+            <div
+              id="menu-1"
+              className="div-menu-header"
+              style={{ left: "20%" }}
+            >
+              <div className="menu-header">
+                <Link to={"/conocenos"} className="text-menu">
+                  Conocenos
+                </Link>
+                <div className="line-menu" />
+                <Link to={"/nuestros-viñedos"} className="text-menu">
+                  Nuestros Viñedos
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <text id="link-vinos" className="link-header-2">
+              Nuestros Vinos
+            </text>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="12"
+              fill="#838383"
+              class="bi bi-caret-down-fill"
+              viewBox="0 0 16 16"
+            >
+              <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+            </svg>
+
+            <div className="div-menu-header" style={{ left: "42%" }}>
+              <div className="menu-header" style={{ height: "90px" }}>
+                <div className="container-text-menu">
+                  <text className="text-menu">Linea Reserva</text>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    fill="gray"
+                    class="bi bi-caret-right-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                  </svg>
+                </div>
+
+                <div className="line-menu" />
+
+                <div className="container-text-menu-2">
+                  <text className="text-menu">Linea Gran Reserva</text>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    fill="gray"
+                    class="bi bi-caret-right-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                  </svg>
+                </div>
+
+                <div className="menu-header-2">
+                  <Link to={"/reserva"} className="text-menu">
+                    Malbec
+                  </Link>
+                  <div className="line-menu" />
+
+                  <Link to={"/reserva"} className="text-menu">
+                    Chardonnay
+                  </Link>
+                  <div className="line-menu" />
+
+                  <Link to={"/reserva"} className="text-menu">
+                    Cabernet Franc
+                  </Link>
+                  <div className="line-menu" />
+
+                  <Link to={"/reserva"} className="text-menu">
+                    Cabernet Sauvignon
+                  </Link>
+                  <div className="line-menu" />
+
+                  <Link to={"/reserva"} className="text-menu">
+                    Malbec Cabernet Sauvignon
+                  </Link>
+                  <div className="line-menu" />
+
+                  <Link to={"/reserva"} className="text-menu">
+                    Pinot Noir
+                  </Link>
+                </div>
+
+                <div className="menu-header-3">
+                  <Link to={"/gran-reserva"} className="text-menu">
+                    Malbec
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <Link
+            id="link-contactanos"
+            to={"/contactanos"}
+            className="link-header-2"
+          >
+            Contactanos
+          </Link>
+        </div>
+      </div>
+
+      <div className="container-header-3">
+        {stateResponsive === false ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="12"
-            height="12"
+            width="30"
+            height="30"
             fill="#838383"
-            class="bi bi-caret-down-fill"
+            class="bi bi-list"
             viewBox="0 0 16 16"
+            onClick={onClickMenuResponsive}
           >
-            <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+            />
           </svg>
-
-          <text className="link-header-2">Nuestros Vinos</text>
+        ) : (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="12"
-            height="12"
+            width="25"
+            height="25"
             fill="#838383"
-            class="bi bi-caret-down-fill"
+            class="bi bi-x-lg"
             viewBox="0 0 16 16"
+            onClick={onClickMenuResponsive}
           >
-            <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
           </svg>
+        )}
 
-          <Link className="link-header-2">Contactanos</Link>
-        </div>
+        <img
+          src="https://surdelosandes.com/wp-content/uploads/2023/05/logo-sur-de-los-andes-1024x446.png"
+          alt="logo-empresa"
+        />
 
-        <div className="container-menu-header-2">
-          <text>Conocenos</text>
-          <div className="line-header-2" />
-          <text>Nuestros Viñedos</text>
-        </div>
+        {stateResponsive === true ? (
+          <div className="container-links-responsive-header">
+            <div className="container-links-nuevos-header">
+              <Link
+                to={"/"}
+                className="links-responsive-header"
+                onClick={onClickMenuResponsive}
+              >
+                Home
+              </Link>
+            </div>
+            <div className="line-responsive-header"></div>
 
-        <div className="container-menu2-header-2">
-          <text>Linea Reserva</text>
-          <div className="line-header-2" />
-          <text>Linea Gran Reserva</text>
-        </div>
+            <div className="container-text-responsive-header">
+              <div className="container-links-nuevos-header">
+                <text
+                  className="links-responsive-header"
+                  onClick={onClickMenuResponsiveNosotros}
+                >
+                  Nosotros
+                </text>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  fill="#838383"
+                  class="bi bi-caret-down-fill"
+                  viewBox="0 0 16 16"
+                  onClick={onClickMenuResponsiveNosotros}
+                >
+                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                </svg>
+              </div>
+              {stateResponsiveNosotros === true ? (
+                <div className="backColor-responsive-header">
+                  <div className="container-nosotros-responsive-header">
+                    <div className="container-links-nuevos-header">
+                      <Link
+                        to={"/conocenos"}
+                        className="links-responsive-header"
+                        onClick={onClickMenuResponsive}
+                      >
+                        Conocenos
+                      </Link>
+                    </div>
 
-        <div className="container-menu2-header-3">
-          <text>Linea Reserva</text>
-          <div className="line-header-2" />
-          <text>Linea Gran Reserva</text>
-        </div>
+                    <div
+                      style={{ width: "85%" }}
+                      className="line-responsive-header"
+                    ></div>
+
+                    <div className="container-links-nuevos-header">
+                      <Link
+                        to={"/nuestros-viñedos"}
+                        className="links-responsive-header"
+                        onClick={onClickMenuResponsive}
+                      >
+                        Nuestros Viñedos
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ) : null}
+            </div>
+            <div className="line-responsive-header"></div>
+
+            <div className="container-text-responsive-header">
+              <div className="container-links-nuevos-header">
+                <text
+                  className="links-responsive-header"
+                  onClick={onClickMenuResponsiveVinos}
+                >
+                  Nuestros Vinos
+                </text>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  fill="#838383"
+                  class="bi bi-caret-down-fill"
+                  viewBox="0 0 16 16"
+                  onClick={onClickMenuResponsiveVinos}
+                >
+                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                </svg>
+              </div>
+
+              <div className="backColor-responsive-header">
+                {stateResponsiveVinos === true ? (
+                  <div className="container-nosotros-responsive-header">
+                    <div className="container-links-nuevos-header">
+                      <div className="flex-display-responsive">
+                        <text
+                          className="links-responsive-header"
+                          onClick={onClickLineaReserva}
+                        >
+                          Linea Reserva
+                        </text>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          fill="#838383"
+                          class="bi bi-caret-down-fill"
+                          viewBox="0 0 16 16"
+                          onClick={onClickLineaReserva}
+                        >
+                          <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div
+                      style={{ width: "85%" }}
+                      className="line-responsive-header"
+                    ></div>
+
+                    {stateVinos1 === true ? (
+                      <div className="container-menu-responsive-vinos">
+                        <div className="margin-responsive-header">
+                          <Link
+                            to={"/reserva"}
+                            className="links-responsive-header"
+                            onClick={onClickMenuResponsive}
+                          >
+                            Malbec
+                          </Link>
+                          <div
+                            style={{ width: "85%" }}
+                            className="line-responsive-header"
+                          ></div>
+                        </div>
+
+                        <div className="margin-responsive-header">
+                          <Link
+                            to={"/reserva"}
+                            className="links-responsive-header"
+                            onClick={onClickMenuResponsive}
+                          >
+                            Chardonnay
+                          </Link>
+                          <div
+                            style={{ width: "85%" }}
+                            className="line-responsive-header"
+                          ></div>
+                        </div>
+
+                        <div className="margin-responsive-header">
+                          <Link
+                            to={"/reserva"}
+                            className="links-responsive-header"
+                            onClick={onClickMenuResponsive}
+                          >
+                            Cabernet Franc
+                          </Link>
+                          <div
+                            style={{ width: "85%" }}
+                            className="line-responsive-header"
+                          ></div>
+                        </div>
+
+                        <div className="margin-responsive-header">
+                          <Link
+                            to={"/reserva"}
+                            className="links-responsive-header"
+                            onClick={onClickMenuResponsive}
+                          >
+                            Cabernet Sauvignon
+                          </Link>
+                          <div
+                            style={{ width: "85%" }}
+                            className="line-responsive-header"
+                          ></div>
+                        </div>
+
+                        <div className="margin-responsive-header">
+                          <Link
+                            to={"/reserva"}
+                            className="links-responsive-header"
+                            onClick={onClickMenuResponsive}
+                          >
+                            Malbec Cabernet Sauvignon
+                          </Link>
+                          <div
+                            style={{ width: "85%" }}
+                            className="line-responsive-header"
+                          ></div>
+                        </div>
+
+                        <div className="margin-responsive-header">
+                          <Link
+                            to={"/reserva"}
+                            className="links-responsive-header"
+                            onClick={onClickMenuResponsive}
+                          >
+                            Pinot Noir
+                          </Link>
+                          <div
+                            style={{ width: "85%" }}
+                            className="line-responsive-header"
+                          ></div>
+                        </div>
+                      </div>
+                    ) : null}
+
+                    <div className="flex-display-responsive">
+                      <div className="container-links-nuevos-header">
+                        <text
+                          className="links-responsive-header"
+                          onClick={onClickLineaGranReserva}
+                        >
+                          Linea Gran Reserva
+                        </text>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          fill="#838383"
+                          class="bi bi-caret-down-fill"
+                          viewBox="0 0 16 16"
+                          onClick={onClickLineaGranReserva}
+                        >
+                          <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                        </svg>
+                      </div>
+                    </div>
+
+                    {stateVinos2 === true ? (
+                      <div className="container-menu-responsive-vinos">
+                        <div className="margin-responsive-header">
+                          <Link
+                            to={"/gran-reserva"}
+                            className="links-responsive-header"
+                            onClick={onClickMenuResponsive}
+                          >
+                            Malbec
+                          </Link>
+                          <div
+                            style={{ width: "85%" }}
+                            className="line-responsive-header"
+                          ></div>
+                        </div>
+                      </div>
+                    ) : null}
+                  </div>
+                ) : null}
+              </div>
+            </div>
+            <div className="line-responsive-header"></div>
+
+            <div className="container-links-nuevos-header">
+              <Link
+                to={"/contactanos"}
+                className="links-responsive-header"
+                onClick={onClickMenuResponsive}
+              >
+                Contactanos
+              </Link>
+            </div>
+          </div>
+        ) : null}
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./componentes/header/header";
 import Footer from "./componentes/footer/footer";
 import Inicio from "./componentes/inicio/inicio";
+import Contacto from "./componentes/contacto/contacto";
 import "./App.css";
 import "@fontsource/poppins"; // Defaults to weight 400
 
@@ -14,6 +15,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Inicio />} />
+          <Route path="/contactanos" element={<Contacto />} />
         </Routes>
 
         <Footer />

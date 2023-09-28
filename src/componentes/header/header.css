@@ -1,183 +1,335 @@
-.body-header{
-    display: block;
-    width: 100%;
+.body-header {
+  display: block;
+  width: 100%;
 }
 
-.container-header-1{
-    width: 100%;
-    min-height: 45px;
-    background-color: #1A1A1A;
-    position: relative;
+.container-header-1 {
+  width: 100%;
+  min-height: 45px;
+  background-color: #1A1A1A;
+  position: relative;
 }
 
-.container-header-1-left{
-    position: absolute;
-    height: 100%;
-    left: 10px;
-    display: flex;
-    align-items: center;
+.container-header-1-left {
+  position: absolute;
+  height: 100%;
+  left: 10px;
+  display: flex;
+  align-items: center;
 }
 
-.container-header-1-left text{
-   font-size: 16px;
-   color: #858585;
-   margin-left: 5px;
-   margin-right: 45px;
-   font-family: "Roboto"; 
+.container-header-1-left text {
+  font-size: 16px;
+  color: #858585;
+  margin-left: 5px;
+  margin-right: 45px;
+  font-family: "Roboto";
 }
 
-.container-header-1-right{
-    position: absolute;
-    height: 100%;
-    right: 10px;
-    display: flex;
-    align-items: center;
+.container-header-1-right {
+  position: absolute;
+  height: 100%;
+  right: 10px;
+  display: flex;
+  align-items: center;
 }
 
-.header-icon-facebook{
-    width: 24px;
-    height: 24px;
-    background-color: #3b5998;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0px 10px;
+.header-icon-facebook {
+  width: 24px;
+  height: 24px;
+  background-color: #3b5998;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 10px;
 }
 
-.header-icon-instagram{
-    width: 24px;
-    height: 24px;
-    background-color: #333333;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0px 10px;
+.header-icon-instagram {
+  width: 24px;
+  height: 24px;
+  background-color: #333333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 10px;
 }
 
-.header-icon-link{
-    width: 24px;
-    height: 24px;
-    background-color: #818A91;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0px 10px;
+.header-icon-link {
+  width: 24px;
+  height: 24px;
+  background-color: #818A91;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 10px;
 }
 
-.container-header-1-right svg{
-    cursor: pointer;
+.container-header-1-right svg {
+  cursor: pointer;
 }
 
 /*-------------------------------------- Header 2 ------------------------------------- */
 
-.container-header-2{
-    width: 100%;
-    height: 108px;
-    background-color: #1A1A1A;
-    border-top: 3px solid black;
-    position: relative;
-    display: flex;
-    align-items: center;
+.container-header-2 {
+  width: 100%;
+  height: 108px;
+  background-color: #1A1A1A;
+  border-top: 3px solid black;
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 999;
 }
 
-.container-header-2 img{
-    position: absolute;
-    left: 65px;
-    width: 155px;
-    height: 65px;
+.container-header-2 img {
+  position: absolute;
+  left: 65px;
+  width: 155px;
+  height: 65px;
 }
 
-.container-links-header-2{
-    position: absolute;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    left: 36.5%;
+.container-links-header-2 {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  left: 36.5%;
 }
 
-.link-header-2{
-    text-decoration: none; 
-    color: #838383;
-    cursor: pointer;
-    font-size: 16px;
-    margin-left: 50px;
-    margin-right: 5px;
-    font-weight: 600;
+.link-header-2 {
+  text-decoration: none;
+  color: #838383;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 50px;
+  margin-right: 5px;
+  font-weight: 600;
 }
 
-.link-header-2:hover{
-    color: red;
+.link-header-2:hover {
+  color: #AE132E;
 }
 
-.link-header-2Active{
-    color: #FFFFFF;
+.link-header-2-active {
+  color: #FFFFFF;
 }
 
-.container-header-2 svg{
-    cursor: pointer;
+.container-header-2 svg {
+  cursor: pointer;
 }
 
-.container-menu-header-2{
-    position: absolute;
-    top: 70px;
-    left: 47%;
-    width: 220px;
-    height: 100px;
-    background-color: #FFFFFF;
+.div-menu-header {
+  position: absolute;
+  top: 66px;
+  display: none;
+}
+
+.div-menu-header:hover {
+  display: flex;
+}
+
+.menu-header {
+  width: 200px;
+  background-color: #FFFFFF;
+  display: grid;
+  position: relative;
+}
+
+.container-text-menu {
+  position: relative;
+  width: 100%;
+  height: 35px;
+  display: grid;
+  align-items: center;
+}
+
+.container-text-menu svg {
+  position: absolute;
+  right: 5px;
+}
+
+.text-menu {
+  text-decoration: none;
+  color: #838383;
+  margin-left: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.text-menu:hover {
+  color: #AE132E;
+}
+
+.line-menu {
+  width: 100%;
+  height: 0.5px;
+  background-color: #838383;
+  opacity: 0.6;
+}
+
+.container-text-menu-2 svg {
+  position: absolute;
+  right: 5px;
+}
+
+.menu-header-2 {
+  width: 200px;
+  background-color: #FFFFFF;
+  display: none;
+  position: absolute;
+  left: 100%;
+}
+
+.menu-header-2:hover {
+  display: grid;
+}
+
+/*-------------------------------------- Header 3 ------------------------------------- */
+
+.menu-header-3 {
+  width: 200px;
+  background-color: #FFFFFF;
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 45px;
+  height: 45px;
+}
+
+.menu-header-3:hover {
+  display: grid;
+}
+
+.container-links-header-2 text:hover~svg {
+  fill: #AE132E;
+}
+
+.container-links-header-2 text:hover~div {
+  display: flex;
+}
+
+.div-menu-header .menu-header .container-text-menu:hover~.menu-header-2 {
+  display: grid;
+}
+
+.div-menu-header .menu-header .container-text-menu-2:hover~.menu-header-3 {
+  display: grid;
+}
+
+.container-header-3 {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 90px;
+  background-color: #1A1A1A;
+}
+
+.container-header-3 svg {
+  position: absolute;
+  left: 20px;
+  cursor: pointer;
+}
+
+.container-header-3 img {
+  position: absolute;
+  width: 106px;
+  height: 47px;
+  right: 50px;
+}
+
+.container-links-responsive-header {
+  position: absolute;
+  top: 75%;
+  width: 97%;
+  min-height: 188px;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: grid;
+  align-items: center;
+}
+
+.links-responsive-header {
+  text-decoration: none;
+  color: #838383;
+  margin-left: 15px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.links-responsive-header:hover {
+  color: #AE132E;
+}
+
+.line-responsive-header {
+  width: 100%;
+  height: 1px;
+  background-color: #FFFFFF;
+}
+
+.container-text-responsive-header {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.container-text-responsive-header svg {
+  position: absolute;
+  left: 95%;
+}
+
+.container-nosotros-responsive-header {
+  margin-left: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  display: grid;
+}
+
+.flex-display-responsive {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.margin-responsive-header {
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-bottom: 10px;
+}
+
+.backColor-responsive-header {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.container-text-responsive-header .links-responsive-header:hover~svg {
+  fill: #AE132E;
+}
+
+.container-links-nuevos-header {
+  display: flex;
+  align-items: center;
+  height: 46px;
+  width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .container-header-1 {
     display: none;
-    border: 1px solid black;
-}
+  }
 
-.container-menu-header-2 text{
-    color: #838383;
-    margin-left: 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-weight: 600;
-    cursor: pointer;
-}
+  .container-header-2 {
+    display: none;
+  }
 
-.container-menu-header-2 text:hover{
-    color: red;
-}
-
-.line-header-2{
-    width: 100%;
-    height: 0.5px;
-    background-color: #838383;
-    opacity: 0.6;
-}
-
-.container-menu2-header-2{
-    position: absolute;
-    top: 70px;
-    left: 56%;
-    width: 220px;
-    height: 100px;
-    background-color: #FFFFFF;
-    display: grid;
-    border: 1px solid black;
-}
-
-.container-menu2-header-2 text{
-    color: #838383;
-    margin-left: 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.container-menu2-header-2 text:hover{
-    color: red;
-}
-
-.line-header-2{
-    width: 100%;
-    height: 0.5px;
-    background-color: #838383;
-    opacity: 0.6;
+  .container-header-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
 }
