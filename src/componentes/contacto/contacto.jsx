@@ -7,7 +7,7 @@ function Contacto() {
   };
 
   const onClickInstagram = () => {
-    window.open("https://www.facebook.com", "_blank");
+    window.open("https://www.instagram.com", "_blank");
   };
 
   const onClickWhatsapp = () => {
