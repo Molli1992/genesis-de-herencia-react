@@ -21,7 +21,7 @@ function Contacto() {
   return (
     <div className="body-contacto">
       <div className="container-contacto-1">
-        <h1>Contacto</h1>
+        <h1>CONTACTO</h1>
       </div>
 
       <div className="container-contacto-2">

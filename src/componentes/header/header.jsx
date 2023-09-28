@@ -77,6 +77,7 @@ function Heaeder() {
   var linkNosotros = document.getElementById("link-nosotros");
   var linkVinos = document.getElementById("link-vinos");
   var linkContactanos = document.getElementById("link-contactanos");
+  /*
 
   if (location.pathname === "/" && linkHome !== null) {
     linkHome.classList.add("link-header-2-active");
@@ -111,6 +112,7 @@ function Heaeder() {
     linkVinos.classList.remove("link-header-2-active");
     linkContactanos.classList.add("link-header-2-active");
   }
+  */
 
   return (
     <div className="body-header">

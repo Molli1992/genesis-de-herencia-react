@@ -8,6 +8,7 @@
     height: 400px;
     background-image: url("http://surdelosandes.com/wp-content/uploads/2023/09/Copia-de-Dibujo-2-bodega.jpg");
     background-size: cover;
+    background-position: bottom;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,7 +16,7 @@
 
 .container-contacto-1 h1 {
     color: #FFFFFF;
-    font-size: 63px;
+    font-size: 62px;
 }
 
 .container-contacto-2 {
@@ -229,6 +230,10 @@
 }
 
 @media screen and (max-width: 520px) {
+
+    .container-contacto-1 h1 {
+        font-size: 55px;
+    }
 
     .container-contacto-2 {
         display: block;
