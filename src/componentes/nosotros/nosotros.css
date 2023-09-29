@@ -85,9 +85,8 @@
 
 .container-nosotros-3 {
     display: block;
-    position: relative;
     width: 100%;
-    min-height: 700px;
+    padding: 50px 0px;
 }
 
 .flex-nostros {
@@ -151,8 +150,6 @@
 }
 
 .img-nostros-animation {
-    position: absolute;
-    left: 20%;
     animation: moveInDown 2s ease-out;
     animation-iteration-count: 1;
 }

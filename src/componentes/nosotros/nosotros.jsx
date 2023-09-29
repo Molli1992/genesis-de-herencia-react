@@ -103,11 +103,20 @@ function Nosotros() {
           </div>
         </div>
 
-        <img
-          className="img-nostros"
-          src="https://surdelosandes.com/wp-content/uploads/2023/06/bodega-montana-1024x370.png"
-          alt="viñedo"
-        />
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <img
+            className="img-nostros"
+            src="https://surdelosandes.com/wp-content/uploads/2023/06/bodega-montana-1024x370.png"
+            alt="viñedo"
+          />
+        </div>
       </div>
     </div>
   );
