@@ -68,7 +68,7 @@
 
 .animacion-activa {
     animation: moveInRight 1s ease-out;
-    animation-iteration-count: 1;
+    animation-iteration-count: 1s;
 }
 
 @keyframes moveInRight {
