@@ -88,7 +88,6 @@
     position: relative;
     width: 100%;
     min-height: 700px;
-    margin-top: 0px;
 }
 
 .flex-nostros {
@@ -206,10 +205,6 @@
     .container-nosotros-2-container-img {
         width: 100%;
         margin-bottom: 50px;
-    }
-
-    .container-nosotros-3 {
-        min-height: 130vh;
     }
 
     .container-nosotros-3-container-text {
