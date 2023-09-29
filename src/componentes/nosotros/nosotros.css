@@ -63,7 +63,12 @@
     width: 40%;
     align-items: center;
     justify-content: center;
-    animation: moveInRight 1.5s ease-out;
+    opacity: 0;
+}
+
+.animacion-activa {
+    animation: moveInRight 2s ease-out;
+    animation-iteration-count: 1;
 }
 
 @keyframes moveInRight {
@@ -91,6 +96,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+}
+
+.flex-nostros-animation {
+    animation: moveInTop 1.5s ease-out;
+    animation-iteration-count: 1;
+}
+
+@keyframes moveInTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-300px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
 }
 
 .container-nosotros-3 h1 {
@@ -123,11 +146,32 @@
 }
 
 .img-nostros {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     width: 800px;
     height: 290;
+    opacity: 0;
+}
+
+.img-nostros-animation {
+    position: absolute;
+    left: 20%;
+    animation: moveInDown 2s ease-out;
+    animation-iteration-count: 1;
+}
+
+@keyframes moveInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.opacity-nosotros {
+    opacity: 1;
 }
 
 @media screen and (max-width: 1100px) {
@@ -138,6 +182,14 @@
 
     .container-nosotros-2-container-img {
         width: 50%;
+    }
+
+    .img-nostros-animation {
+        left: 15%;
+    }
+
+    .img-nostros {
+        width: 75%;
     }
 }
 

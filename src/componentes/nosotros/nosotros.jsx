@@ -2,6 +2,44 @@ import React from "react";
 import "./nosotros.css";
 
 function Nosotros() {
+  window.addEventListener("scroll", function () {
+    let elemento = document.querySelector(
+      ".container-nosotros-2-container-img"
+    );
+
+    if (elemento) {
+      let posicion = elemento.getBoundingClientRect();
+      if (posicion.top < 450 && posicion.top > -350) {
+        elemento.classList.add("animacion-activa");
+        elemento.classList.add("opacity-nosotros");
+      }
+    }
+  });
+
+  window.addEventListener("scroll", function () {
+    let elemento = document.querySelector(".flex-nostros");
+
+    if (elemento) {
+      let posicion = elemento.getBoundingClientRect();
+      if (posicion.top < 545 && posicion.top > -50) {
+        elemento.classList.add("flex-nostros-animation");
+        elemento.classList.add("opacity-nosotros");
+      }
+    }
+  });
+
+  window.addEventListener("scroll", function () {
+    let elemento = document.querySelector(".img-nostros");
+
+    if (elemento) {
+      let posicion = elemento.getBoundingClientRect();
+      if (posicion.top < 525 && posicion.top > 100) {
+        elemento.classList.add("img-nostros-animation");
+        elemento.classList.add("opacity-nosotros");
+      }
+    }
+  });
+
   return (
     <div className="body-nosotros">
       <div className="container-nosotros-1">

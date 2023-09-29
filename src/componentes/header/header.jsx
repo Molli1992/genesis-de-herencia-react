@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./header.css";
-import "@fontsource/roboto"; // Defaults to weight 400
+import "@fontsource/roboto";
 
 function Heaeder() {
   const [stateResponsive, setStateResponsive] = useState(false);
@@ -77,42 +77,47 @@ function Heaeder() {
   var linkNosotros = document.getElementById("link-nosotros");
   var linkVinos = document.getElementById("link-vinos");
   var linkContactanos = document.getElementById("link-contactanos");
-  /*
-
-  if (location.pathname === "/" && linkHome !== null) {
-    linkHome.classList.add("link-header-2-active");
-    linkNosotros.classList.remove("link-header-2-active");
-    linkVinos.classList.remove("link-header-2-active");
-    linkContactanos.classList.remove("link-header-2-active");
-  }
 
   if (
-    location.pathname === "/conocenos" ||
-    (location.pathname === "/nuestros-vi%C3%B1edos" && linkNosotros !== null)
+    linkHome !== null &&
+    linkNosotros !== null &&
+    linkVinos !== null &&
+    linkContactanos !== null
   ) {
-    linkHome.classList.remove("link-header-2-active");
-    linkNosotros.classList.add("link-header-2-active");
-    linkVinos.classList.remove("link-header-2-active");
-    linkContactanos.classList.remove("link-header-2-active");
-  }
+    if (location.pathname === "/") {
+      linkHome.classList.add("link-header-2-active");
+      linkNosotros.classList.remove("link-header-2-active");
+      linkVinos.classList.remove("link-header-2-active");
+      linkContactanos.classList.remove("link-header-2-active");
+    }
 
-  if (
-    location.pathname === "/reserva" ||
-    (location.pathname === "/gran-reserva" && linkVinos !== null)
-  ) {
-    linkHome.classList.remove("link-header-2-active");
-    linkNosotros.classList.remove("link-header-2-active");
-    linkVinos.classList.add("link-header-2-active");
-    linkContactanos.classList.remove("link-header-2-active");
-  }
+    if (
+      location.pathname === "/conocenos" ||
+      location.pathname === "/nuestros-vi%C3%B1edos"
+    ) {
+      linkHome.classList.remove("link-header-2-active");
+      linkNosotros.classList.add("link-header-2-active");
+      linkVinos.classList.remove("link-header-2-active");
+      linkContactanos.classList.remove("link-header-2-active");
+    }
 
-  if (location.pathname === "/contactanos" && linkContactanos !== null) {
-    linkHome.classList.remove("link-header-2-active");
-    linkNosotros.classList.remove("link-header-2-active");
-    linkVinos.classList.remove("link-header-2-active");
-    linkContactanos.classList.add("link-header-2-active");
+    if (
+      location.pathname === "/reserva" ||
+      location.pathname === "/gran-reserva"
+    ) {
+      linkHome.classList.remove("link-header-2-active");
+      linkNosotros.classList.remove("link-header-2-active");
+      linkVinos.classList.add("link-header-2-active");
+      linkContactanos.classList.remove("link-header-2-active");
+    }
+
+    if (location.pathname === "/contactanos") {
+      linkHome.classList.remove("link-header-2-active");
+      linkNosotros.classList.remove("link-header-2-active");
+      linkVinos.classList.remove("link-header-2-active");
+      linkContactanos.classList.add("link-header-2-active");
+    }
   }
-  */
 
   return (
     <div className="body-header">
