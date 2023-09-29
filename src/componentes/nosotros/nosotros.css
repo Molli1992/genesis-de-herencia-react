@@ -67,7 +67,7 @@
 }
 
 .animacion-activa {
-    animation: moveInRight 2s ease-out;
+    animation: moveInRight 1s ease-out;
     animation-iteration-count: 1;
 }
 
@@ -98,7 +98,7 @@
 }
 
 .flex-nostros-animation {
-    animation: moveInTop 1.5s ease-out;
+    animation: moveInTop 1s ease-out;
     animation-iteration-count: 1;
 }
 
@@ -150,7 +150,7 @@
 }
 
 .img-nostros-animation {
-    animation: moveInDown 2s ease-out;
+    animation: moveInDown 1s ease-out;
     animation-iteration-count: 1;
 }
 
@@ -225,6 +225,14 @@
     }
 }
 
+@media screen and (max-width: 550px) {
+
+
+    .container-nosotros-3 {
+        min-height: 130vh;
+    }
+}
+
 @media screen and (max-width: 450px) {
 
     .container-nosotros-1 h1 {
@@ -240,4 +248,5 @@
         width: 80%;
         height: 180px;
     }
+
 }

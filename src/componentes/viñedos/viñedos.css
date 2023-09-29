@@ -194,6 +194,7 @@
     width: 40%;
     display: flex;
     align-items: center;
+    opacity: 0;
 }
 
 .container-viñedos-5-left img {
@@ -263,7 +264,7 @@
 /*------------------------------------------ Animacion ---------------------------------------------------*/
 
 .animation-rigth-viñedos {
-    animation: moveInRight 1.7s ease-out;
+    animation: moveInRight 1s ease-out;
     animation-iteration-count: 1;
 }
 
@@ -280,7 +281,7 @@
 }
 
 .animation-left-viñedos {
-    animation: moveInLeft 1.7s ease-out;
+    animation: moveInLeft 1s ease-out;
     animation-iteration-count: 1;
 }
 
@@ -297,7 +298,7 @@
 }
 
 .animation-top-viñedos {
-    animation: moveInTop 1.5s ease-out;
+    animation: moveInTop 1s ease-out;
     animation-iteration-count: 1;
 }
 
@@ -483,6 +484,10 @@
     .container-viñedos-1 h1 {
         font-size: 35px;
         color: #FFFFFF;
+    }
+
+    .container-viñedos-6 {
+        min-height: 110vh;
     }
 }
 
