@@ -8,7 +8,6 @@ function Heaeder() {
   const [stateResponsiveNosotros, setStateResponsiveNosotros] = useState(false);
   const [stateResponsiveVinos, setStateResponsiveVinos] = useState(false);
   const [stateVinos1, setStateVinos1] = useState(false);
-  const [stateVinos2, setStateVinos2] = useState(false);
   const location = useLocation();
 
   const onClickMenuResponsive = () => {
@@ -19,7 +18,6 @@ function Heaeder() {
       setStateResponsiveNosotros(false);
       setStateResponsiveVinos(false);
       setStateVinos1(false);
-      setStateVinos2(false);
     }
   };
 
@@ -28,7 +26,6 @@ function Heaeder() {
       setStateResponsiveNosotros(true);
       setStateResponsiveVinos(false);
       setStateVinos1(false);
-      setStateVinos2(false);
     } else {
       setStateResponsiveNosotros(false);
     }
@@ -41,7 +38,6 @@ function Heaeder() {
     } else {
       setStateResponsiveVinos(false);
       setStateVinos1(false);
-      setStateVinos2(false);
     }
   };
 
@@ -50,14 +46,6 @@ function Heaeder() {
       setStateVinos1(true);
     } else {
       setStateVinos1(false);
-    }
-  };
-
-  const onClickLineaGranReserva = () => {
-    if (stateVinos2 === false) {
-      setStateVinos2(true);
-    } else {
-      setStateVinos2(false);
     }
   };
 
@@ -265,7 +253,7 @@ function Heaeder() {
             </svg>
 
             <div className="div-menu-header" style={{ left: "42%" }}>
-              <div className="menu-header" style={{ height: "90px" }}>
+              <div className="menu-header" style={{ height: "45px" }}>
                 <div className="container-text-menu">
                   <text className="text-menu">Linea Reserva</text>
                   <svg
@@ -280,56 +268,24 @@ function Heaeder() {
                   </svg>
                 </div>
 
-                <div className="line-menu" />
-
-                <div className="container-text-menu-2">
-                  <text className="text-menu">Linea Gran Reserva</text>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    fill="gray"
-                    class="bi bi-caret-right-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                  </svg>
-                </div>
-
                 <div className="menu-header-2">
                   <Link to={"/reserva"} className="text-menu">
-                    Malbec
+                    Arrepentido
                   </Link>
                   <div className="line-menu" />
 
                   <Link to={"/reserva"} className="text-menu">
-                    Chardonnay
+                    Cadena Perpetua
                   </Link>
                   <div className="line-menu" />
 
                   <Link to={"/reserva"} className="text-menu">
-                    Cabernet Franc
+                    Fiscal
                   </Link>
                   <div className="line-menu" />
 
                   <Link to={"/reserva"} className="text-menu">
-                    Cabernet Sauvignon
-                  </Link>
-                  <div className="line-menu" />
-
-                  <Link to={"/reserva"} className="text-menu">
-                    Malbec Cabernet Sauvignon
-                  </Link>
-                  <div className="line-menu" />
-
-                  <Link to={"/reserva"} className="text-menu">
-                    Pinot Noir
-                  </Link>
-                </div>
-
-                <div className="menu-header-3">
-                  <Link to={"/gran-reserva"} className="text-menu">
-                    Malbec
+                    Tribunal
                   </Link>
                 </div>
               </div>
@@ -506,7 +462,7 @@ function Heaeder() {
                             className="links-responsive-header"
                             onClick={onClickMenuResponsive}
                           >
-                            Malbec
+                            Arrepentido
                           </Link>
                           <div
                             style={{ width: "85%" }}
@@ -520,7 +476,7 @@ function Heaeder() {
                             className="links-responsive-header"
                             onClick={onClickMenuResponsive}
                           >
-                            Chardonnay
+                            Cadena Perpetua
                           </Link>
                           <div
                             style={{ width: "85%" }}
@@ -534,7 +490,7 @@ function Heaeder() {
                             className="links-responsive-header"
                             onClick={onClickMenuResponsive}
                           >
-                            Cabernet Franc
+                            Fiscal
                           </Link>
                           <div
                             style={{ width: "85%" }}
@@ -548,75 +504,7 @@ function Heaeder() {
                             className="links-responsive-header"
                             onClick={onClickMenuResponsive}
                           >
-                            Cabernet Sauvignon
-                          </Link>
-                          <div
-                            style={{ width: "85%" }}
-                            className="line-responsive-header"
-                          ></div>
-                        </div>
-
-                        <div className="margin-responsive-header">
-                          <Link
-                            to={"/reserva"}
-                            className="links-responsive-header"
-                            onClick={onClickMenuResponsive}
-                          >
-                            Malbec Cabernet Sauvignon
-                          </Link>
-                          <div
-                            style={{ width: "85%" }}
-                            className="line-responsive-header"
-                          ></div>
-                        </div>
-
-                        <div className="margin-responsive-header">
-                          <Link
-                            to={"/reserva"}
-                            className="links-responsive-header"
-                            onClick={onClickMenuResponsive}
-                          >
-                            Pinot Noir
-                          </Link>
-                          <div
-                            style={{ width: "85%" }}
-                            className="line-responsive-header"
-                          ></div>
-                        </div>
-                      </div>
-                    ) : null}
-
-                    <div className="flex-display-responsive">
-                      <div className="container-links-nuevos-header">
-                        <text
-                          className="links-responsive-header"
-                          onClick={onClickLineaGranReserva}
-                        >
-                          Linea Gran Reserva
-                        </text>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          fill="#838383"
-                          class="bi bi-caret-down-fill"
-                          viewBox="0 0 16 16"
-                          onClick={onClickLineaGranReserva}
-                        >
-                          <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                        </svg>
-                      </div>
-                    </div>
-
-                    {stateVinos2 === true ? (
-                      <div className="container-menu-responsive-vinos">
-                        <div className="margin-responsive-header">
-                          <Link
-                            to={"/gran-reserva"}
-                            className="links-responsive-header"
-                            onClick={onClickMenuResponsive}
-                          >
-                            Malbec
+                            Tribunal
                           </Link>
                           <div
                             style={{ width: "85%" }}

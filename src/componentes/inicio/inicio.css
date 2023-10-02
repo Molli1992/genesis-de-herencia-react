@@ -1,0 +1,7 @@
+.body-inicio {
+    display: grid;
+    height: 70vh;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+}
