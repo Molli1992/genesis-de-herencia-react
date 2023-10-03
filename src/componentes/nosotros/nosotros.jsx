@@ -9,7 +9,7 @@ function Nosotros() {
 
     if (elemento) {
       let posicion = elemento.getBoundingClientRect();
-      if (posicion.top < 450 && posicion.top > -350) {
+      if (posicion.top < 850 && posicion.top > -450) {
         elemento.classList.add("animacion-activa");
         elemento.classList.add("opacity-nosotros");
       }
@@ -21,7 +21,7 @@ function Nosotros() {
 
     if (elemento) {
       let posicion = elemento.getBoundingClientRect();
-      if (posicion.top < 545 && posicion.top > -50) {
+      if (posicion.top < 850 && posicion.top > -450) {
         elemento.classList.add("flex-nostros-animation");
         elemento.classList.add("opacity-nosotros");
       }
@@ -33,7 +33,7 @@ function Nosotros() {
 
     if (elemento) {
       let posicion = elemento.getBoundingClientRect();
-      if (posicion.top < 525 && posicion.top > 100) {
+      if (posicion.top < 850 && posicion.top > -450) {
         elemento.classList.add("img-nostros-animation");
         elemento.classList.add("opacity-nosotros");
       }
