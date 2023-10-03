@@ -1,0 +1,42 @@
+.body-admin {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.buttons-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-container button {
+    margin: 15px;
+}
+
+.body-admin h1 {
+    margin-bottom: 50px;
+}
+
+.container-1-admin {
+    width: 500px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 550px) {
+    .container-1-admin {
+        width: 320px;
+    }
+}
+
+
+/*-------------------------- get.css ------------------------------------------------------------  */
+
+.body-get {
+    display: grid;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
