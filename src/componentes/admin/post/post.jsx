@@ -82,6 +82,8 @@ function Post() {
     }
   };
 
+  console.log(dataPost.img);
+
   return (
     <div className="body-admin">
       <h1>Crea tu vino</h1>

@@ -1,8 +1,275 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
+import imagen from "../../imagenes/imagen-10.jpg";
 import "./inicio.css";
 
 function Inicio() {
-  return <div>Inicio</div>;
+  const [data, setData] = useState(false);
+  const [sliderVinos, setSliderVinos] = useState(false);
+  const [stateSlider, setStateSlider] = useState(false);
+  const history = useNavigate();
+
+  const onClickStateSlider = () => {
+    if (stateSlider === false) {
+      setStateSlider(true);
+    } else {
+      setStateSlider(false);
+    }
+  };
+
+  const onClickStateSliderVinos = () => {
+    if (sliderVinos === false) {
+      setSliderVinos(true);
+    } else {
+      setSliderVinos(false);
+    }
+  };
+
+  const autoMoveSlider = () => {
+    setTimeout(() => {
+      onClickStateSlider();
+    }, "10000");
+  };
+
+  const routeViñedosOnClick = () => {
+    history("/nuestros-viñedos");
+    window.scrollTo(0, 0);
+  };
+
+  const routeNosotrosOnClick = () => {
+    history("/conocenos");
+    window.scrollTo(0, 0);
+  };
+
+  useEffect(() => {
+    if (data === false) {
+      axios
+        .get("http://localhost:3001/api/vinos")
+        .then((res) => {
+          setData(res.data);
+          autoMoveSlider();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  });
+
+  //---------------------------------------------- animaciones- ----------------------------------------------
+
+  console.log(data);
+  if (data !== false) {
+    return (
+      <div className="body-inicio">
+        {stateSlider === false ? (
+          <div className="container-inicio-1 imagen-de-fond-1">
+            <img
+              className="animation-bottom-inicio"
+              src={data.length !== 0 ? data[3].img : ""}
+              alt="vino"
+            />
+
+            <p className="animation-bottom-inicio">
+              NUESTROS VINOS REPRESENTAN EXCELENCIA Y SOSTENIBILIDAD
+            </p>
+
+            <button
+              onClick={routeViñedosOnClick}
+              className="button-slider animation-bottom-inicio"
+            >
+              CONOCE NUESTROS VIÑEDOS
+            </button>
+
+            <div className="container-buttons-slider animation-bottom-inicio">
+              <button className="button-select-slider"></button>
+              <button
+                className="button-select-slider-2"
+                onClick={onClickStateSlider}
+              ></button>
+            </div>
+          </div>
+        ) : (
+          <div className="container-inicio-1 imagen-de-fond-2">
+            <div className="img-frutas animation-bottom-inicio">
+              <img
+                src="https://surdelosandes.com/wp-content/uploads/2023/02/im07.png"
+                alt="frutas"
+              />
+            </div>
+
+            <div className="img-slider-2">
+              <img
+                className="animation-bottom-inicio"
+                src={data.length !== 0 ? data[1].img : ""}
+                alt="vino"
+              />
+            </div>
+
+            <p className="animation-bottom-inicio" style={{ color: "#000000" }}>
+              NUESTROS VINOS REPRESENTAN EXCELENCIA Y SOSTENIBILIDAD
+            </p>
+
+            <button
+              onClick={routeViñedosOnClick}
+              className="animation-bottom-inicio button-new-slider button-slider"
+            >
+              CONOCE NUESTROS VIÑEDOS
+            </button>
+
+            <div className="animation-bottom-inicio container-buttons-slider">
+              <button
+                className="button-select-slider-2"
+                onClick={onClickStateSlider}
+              ></button>
+              <button className="button-select-slider"></button>
+            </div>
+          </div>
+        )}
+
+        <div className="container-inicio-2">
+          <div className="container-flex-inicio">
+            <h3>NOSOTROS</h3>
+          </div>
+
+          <div className="container-flex-inicio">
+            <h1>
+              MEZCLAMOS EL SABER PROFESIONAL Y EL ARTE MILENARIO PARA CREAR
+              VINOS EXCEPCIONALES
+            </h1>
+          </div>
+
+          <div className="container-flex-inicio contaner-block-inicio">
+            <div className="container-inicio-2-left">
+              <img src={imagen} alt="vinos" />
+            </div>
+
+            <div className="container-inicio-2-right">
+              <p>
+                Sur de Los Andes nace en 2005 con la visión empresarial de
+                Guillermo Banfi, economista franco-argentino que dejó el terreno
+                de las finanzas para dedicarse a la vitivinicultura y que
+                posicionó con éxito sus propios vinos en Estados Unidos.
+              </p>
+
+              <p>
+                Nuestra bodega se encuentra al pie de la cordillera de los
+                Andes, ubicada en Las Compuertas, en Luján de Cuyo, Mendoza,
+                República Argentina. Allí, recibimos las mejores uvas para la
+                vinificación y procesamos los secretos de la tierra, creando
+                vinos exquisitos, destinados a complacer los paladares más
+                exigentes.
+              </p>
+
+              <div className="container-flex-inicio">
+                <button
+                  onClick={routeNosotrosOnClick}
+                  className="button-1-container-inicio2"
+                >
+                  Conocenos
+                </button>
+                <button
+                  onClick={routeViñedosOnClick}
+                  className="button-2-container-inicio2"
+                >
+                  Nuestros Viñedos
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="container-inicio-3 imagen-de-fond-2">
+          <div className="container-flex-inicio">
+            <h3>NUESTROS VINOS</h3>
+          </div>
+
+          <div className="container-flex-inicio">
+            <h1>DESCUBRE EL ARTE EN CADA SORBO</h1>
+          </div>
+
+          {sliderVinos === false ? (
+            <div className="container-inicio-3-slider">
+              {data &&
+                data.map((i) => {
+                  if (
+                    i.nombre === "ARREPENTIDO" ||
+                    i.nombre === "CADENA PERPETUA"
+                  ) {
+                    return (
+                      <Link
+                        to={"/reserva/" + i.nombre}
+                        className="card-container-inicio-3"
+                      >
+                        <div className="container-card-left">
+                          <img src={i.img} alt="vinos" />
+                        </div>
+
+                        <div className="container-card-right">
+                          <p className="tittle-card">{i.nombre}</p>
+
+                          <p className="sub-tittle-card">{i.resumen}</p>
+                        </div>
+                      </Link>
+                    );
+                  }
+                })}
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                fill="currentColor"
+                class="bi bi-arrow-right-circle-fill"
+                viewBox="0 0 16 16"
+                onClick={onClickStateSliderVinos}
+              >
+                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+              </svg>
+            </div>
+          ) : (
+            <div className="container-inicio-3-slider">
+              {data &&
+                data.map((i) => {
+                  if (i.nombre === "TRIBUNAL" || i.nombre === "FISCAL") {
+                    return (
+                      <Link
+                        to={"/reserva/" + i.nombre}
+                        className="card-container-inicio-3"
+                      >
+                        <div className="container-card-left">
+                          <img src={i.img} alt="vinos" />
+                        </div>
+
+                        <div className="container-card-right">
+                          <p className="tittle-card">{i.nombre}</p>
+
+                          <p className="sub-tittle-card">{i.resumen}</p>
+                        </div>
+                      </Link>
+                    );
+                  }
+                })}
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                fill="currentColor"
+                class="bi bi-arrow-right-circle-fill"
+                viewBox="0 0 16 16"
+                onClick={onClickStateSliderVinos}
+              >
+                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+              </svg>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  } else {
+    return null;
+  }
 }
 
 export default Inicio;
