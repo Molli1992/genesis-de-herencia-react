@@ -103,9 +103,6 @@ function Post() {
     }
   };
 
-  console.log(dataPost.img.length);
-  console.log(dataPost.imgsecundaria.length);
-
   return (
     <div className="body-admin">
       <h1>Crea tu vino</h1>
