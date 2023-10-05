@@ -23,15 +23,12 @@ function Admin() {
       ...user,
       [e.target.name]: e.target.value,
     });
-    console.log(user);
   };
 
   const onSubmit = () => {
     let filter = logeo.filter((i) => {
       return i.contraseña === user.contraseña && i.usuario === user.usuario;
     });
-
-    console.log(filter);
 
     if (filter.length !== 0) {
       Swal.fire({
@@ -95,7 +92,6 @@ function Admin() {
   }, [data, logeo]);
 
   if (state === false) {
-    console.log(logeo);
     return (
       <div className="body-login">
         <div className="container-login">
