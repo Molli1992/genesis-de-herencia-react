@@ -268,23 +268,23 @@ function Heaeder() {
                   </div>
 
                   <div className="menu-header-2">
-                    <Link to={"/reserva"} className="text-menu">
-                      Arrepentido
+                    <Link to={"/reserva/ARREPENTIDO"} className="text-menu">
+                      ARREPENTIDO
                     </Link>
                     <div className="line-menu" />
 
-                    <Link to={"/reserva"} className="text-menu">
-                      Cadena Perpetua
+                    <Link to={"/reserva/CADENA PERPETUA"} className="text-menu">
+                      CADENA PERPETUA
                     </Link>
                     <div className="line-menu" />
 
-                    <Link to={"/reserva"} className="text-menu">
-                      Fiscal
+                    <Link to={"/reserva/FISCAL"} className="text-menu">
+                      FISCAL
                     </Link>
                     <div className="line-menu" />
 
-                    <Link to={"/reserva"} className="text-menu">
-                      Tribunal
+                    <Link to={"/reserva/TRIBUNAL"} className="text-menu">
+                      TRIBUNAL
                     </Link>
                   </div>
                 </div>
@@ -457,11 +457,11 @@ function Heaeder() {
                         <div className="container-menu-responsive-vinos">
                           <div className="margin-responsive-header">
                             <Link
-                              to={"/reserva"}
+                              to={"/reserva/ARREPENTIDO"}
                               className="links-responsive-header"
                               onClick={onClickMenuResponsive}
                             >
-                              Arrepentido
+                              ARREPENTIDO
                             </Link>
                             <div
                               style={{ width: "85%" }}
@@ -471,11 +471,11 @@ function Heaeder() {
 
                           <div className="margin-responsive-header">
                             <Link
-                              to={"/reserva"}
+                              to={"/reserva/CADENA PERPETUA"}
                               className="links-responsive-header"
                               onClick={onClickMenuResponsive}
                             >
-                              Cadena Perpetua
+                              CADENA PERPETUA
                             </Link>
                             <div
                               style={{ width: "85%" }}
@@ -485,11 +485,11 @@ function Heaeder() {
 
                           <div className="margin-responsive-header">
                             <Link
-                              to={"/reserva"}
+                              to={"/reserva/FISCAL"}
                               className="links-responsive-header"
                               onClick={onClickMenuResponsive}
                             >
-                              Fiscal
+                              FISCAL
                             </Link>
                             <div
                               style={{ width: "85%" }}
@@ -499,11 +499,11 @@ function Heaeder() {
 
                           <div className="margin-responsive-header">
                             <Link
-                              to={"/reserva"}
+                              to={"/reserva/TRIBUNAL"}
                               className="links-responsive-header"
                               onClick={onClickMenuResponsive}
                             >
-                              Tribunal
+                              TRIBUNAL
                             </Link>
                             <div
                               style={{ width: "85%" }}

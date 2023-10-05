@@ -8,6 +8,7 @@ import Nosotros from "./componentes/nosotros/nosotros";
 import Viñedos from "./componentes/viñedos/viñedos";
 import Links from "./componentes/link/link";
 import Admin from "./componentes/admin/admin";
+import Vinos from "./componentes/vinos/vinos";
 import "./App.css";
 import "@fontsource/poppins";
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/nuestros-viñedos" element={<Viñedos />} />
           <Route path="/link" element={<Links />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/reserva/:name" element={<Vinos />} />
         </Routes>
 
         <Footer />

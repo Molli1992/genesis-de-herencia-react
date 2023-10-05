@@ -14,6 +14,8 @@ function Put(props) {
     fermentacion: "",
     crianza: "",
     img: "",
+    imgsecundaria: "",
+    subtitulo: "",
   });
 
   const handleInputChangePut = (e) => {
@@ -40,6 +42,23 @@ function Put(props) {
     }
   };
 
+  const handleFileSelectPut2 = (event) => {
+    console.log(event.target.files[0]);
+
+    if (event.target.files[0]) {
+      const reader = new FileReader();
+
+      reader.onload = function (event) {
+        setDataPut({
+          ...dataPut,
+          imgsecundaria: event.target.result,
+        });
+      };
+
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  };
+
   const onChangeSelect = (e) => {
     if (e.target.value === "Slecciona tu vino") {
       setDataPut({
@@ -52,6 +71,8 @@ function Put(props) {
         fermentacion: "",
         crianza: "",
         img: "",
+        imgsecundaria: "",
+        subtitulo: "",
       });
     } else {
       const filter = data.filter((i) => {
@@ -70,6 +91,8 @@ function Put(props) {
         fermentacion: filter[0].fermentacion,
         crianza: filter[0].crianza,
         img: filter[0].img,
+        imgsecundaria: filter[0].imgsecundaria,
+        subtitulo: filter[0].subtitulo,
       });
     }
   };
@@ -164,6 +187,19 @@ function Put(props) {
 
       <div className="container-1-admin">
         <div class="mb-3">
+          <label class="form-label">Uva</label>
+          <input
+            class="form-control"
+            name="subtitulo"
+            onChange={handleInputChangePut}
+            style={{ border: "1px solid gray" }}
+            value={dataPut.subtitulo}
+          />
+        </div>
+      </div>
+
+      <div className="container-1-admin">
+        <div class="mb-3">
           <label class="form-label">Descripcion</label>
           <textarea
             class="form-control"
@@ -223,6 +259,17 @@ function Put(props) {
             onChange={handleInputChangePut}
             style={{ border: "1px solid gray", minHeight: "75px" }}
             value={dataPut.crianza}
+          />
+        </div>
+      </div>
+
+      <div className="container-1-admin">
+        <div class="mb-3">
+          <label class="form-label">Seleccion tu pdf</label>
+          <input
+            type="file"
+            class="form-control"
+            onChange={handleFileSelectPut2}
           />
         </div>
       </div>

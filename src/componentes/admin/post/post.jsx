@@ -12,6 +12,8 @@ function Post() {
     fermentacion: "",
     crianza: "",
     img: "",
+    subtitulo: "",
+    imgsecundaria: "",
   });
 
   const handleInputChangePost = (e) => {
@@ -39,6 +41,23 @@ function Post() {
     }
   };
 
+  const handleFileSelect2 = (event) => {
+    console.log(event.target.files[0]);
+
+    if (event.target.files[0]) {
+      const reader = new FileReader();
+
+      reader.onload = function (event) {
+        setDataPost({
+          ...dataPost,
+          imgsecundaria: event.target.result,
+        });
+      };
+
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  };
+
   const onSubmit = () => {
     if (
       dataPost.nombre === "" ||
@@ -48,7 +67,9 @@ function Post() {
       dataPost.varietal === "" ||
       dataPost.fermentacion === "" ||
       dataPost.crianza === "" ||
-      dataPost.img === ""
+      dataPost.img === "" ||
+      dataPost.subtitulo === "" ||
+      dataPost.imgsecundaria === ""
     ) {
       Swal.fire({
         title: "Error!",
@@ -82,7 +103,8 @@ function Post() {
     }
   };
 
-  console.log(dataPost.img);
+  console.log(dataPost.img.length);
+  console.log(dataPost.imgsecundaria.length);
 
   return (
     <div className="body-admin">
@@ -110,6 +132,19 @@ function Post() {
             onChange={handleInputChangePost}
             style={{ border: "1px solid gray" }}
             value={dataPost.titulo}
+          />
+        </div>
+      </div>
+
+      <div className="container-1-admin">
+        <div class="mb-3">
+          <label class="form-label">Uva</label>
+          <input
+            class="form-control"
+            name="subtitulo"
+            onChange={handleInputChangePost}
+            style={{ border: "1px solid gray" }}
+            value={dataPost.subtitulo}
           />
         </div>
       </div>
@@ -175,6 +210,17 @@ function Post() {
             onChange={handleInputChangePost}
             style={{ border: "1px solid gray", minHeight: "75px" }}
             value={dataPost.crianza}
+          />
+        </div>
+      </div>
+
+      <div className="container-1-admin">
+        <div class="mb-3">
+          <label class="form-label">Seleccion tu pdf</label>
+          <input
+            type="file"
+            class="form-control"
+            onChange={handleFileSelect2}
           />
         </div>
       </div>

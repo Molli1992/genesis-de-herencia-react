@@ -58,7 +58,66 @@ function Inicio() {
 
   //---------------------------------------------- animaciones- ----------------------------------------------
 
-  console.log(data);
+  window.addEventListener("scroll", function () {
+    let elemento = document.querySelector(".animacion-inicio");
+
+    if (elemento) {
+      let posicion = elemento.getBoundingClientRect();
+      if (posicion.top < 550 && posicion.top > -450) {
+        elemento.classList.add("animation-top-viñedos");
+        elemento.classList.add("opacity-viñedos");
+      }
+    }
+  });
+
+  window.addEventListener("scroll", function () {
+    let elemento = document.querySelector(".animacion-inicio-2");
+
+    if (elemento) {
+      let posicion = elemento.getBoundingClientRect();
+      if (posicion.top < 550 && posicion.top > -450) {
+        elemento.classList.add("animation-left-viñedos");
+        elemento.classList.add("opacity-viñedos");
+      }
+    }
+  });
+
+  window.addEventListener("scroll", function () {
+    let elemento = document.querySelector(".animacion-inicio-3");
+
+    if (elemento) {
+      let posicion = elemento.getBoundingClientRect();
+      if (posicion.top < 750 && posicion.top > -450) {
+        elemento.classList.add("animation-top-viñedos");
+        elemento.classList.add("opacity-viñedos");
+      }
+    }
+  });
+
+  window.addEventListener("scroll", function () {
+    let elemento = document.querySelector(".animacion-inicio-4");
+
+    if (elemento) {
+      let posicion = elemento.getBoundingClientRect();
+      if (posicion.top < 550 && posicion.top > -450) {
+        elemento.classList.add("animation-left-viñedos");
+        elemento.classList.add("opacity-viñedos");
+      }
+    }
+  });
+
+  window.addEventListener("scroll", function () {
+    let elemento = document.querySelector(".animacion-inicio-5");
+
+    if (elemento) {
+      let posicion = elemento.getBoundingClientRect();
+      if (posicion.top < 750 && posicion.top > -450) {
+        elemento.classList.add("animation-top-viñedos");
+        elemento.classList.add("opacity-viñedos");
+      }
+    }
+  });
+
   if (data !== false) {
     return (
       <div className="body-inicio">
@@ -132,7 +191,7 @@ function Inicio() {
             <h3>NOSOTROS</h3>
           </div>
 
-          <div className="container-flex-inicio">
+          <div className="container-flex-inicio animacion-inicio">
             <h1>
               MEZCLAMOS EL SABER PROFESIONAL Y EL ARTE MILENARIO PARA CREAR
               VINOS EXCEPCIONALES
@@ -140,7 +199,7 @@ function Inicio() {
           </div>
 
           <div className="container-flex-inicio contaner-block-inicio">
-            <div className="container-inicio-2-left">
+            <div className="container-inicio-2-left animacion-inicio-2">
               <img src={imagen} alt="vinos" />
             </div>
 
@@ -184,7 +243,7 @@ function Inicio() {
             <h3>NUESTROS VINOS</h3>
           </div>
 
-          <div className="container-flex-inicio">
+          <div className="container-flex-inicio animacion-inicio-3">
             <h1>DESCUBRE EL ARTE EN CADA SORBO</h1>
           </div>
 
@@ -213,6 +272,7 @@ function Inicio() {
                       </Link>
                     );
                   }
+                  return null;
                 })}
 
               <svg
@@ -249,6 +309,7 @@ function Inicio() {
                       </Link>
                     );
                   }
+                  return null;
                 })}
 
               <svg
@@ -264,6 +325,103 @@ function Inicio() {
               </svg>
             </div>
           )}
+        </div>
+
+        <div className="container-inicio-4">
+          <h1 className="animacion-inicio-4">
+            ENCUENTRA LA PASIÓN EN CADA COPA
+          </h1>
+
+          <p>
+            Sumérgete en el deleite de sabores exquisitos, capturados en cada
+            botella que encierra el auténtico sabor de nuestra tierra.
+          </p>
+
+          <button
+            onClick={routeViñedosOnClick}
+            className="button-1-container-inicio2 margin-left-container-4"
+          >
+            Saber Mas
+          </button>
+        </div>
+
+        <div className="container-inicio-5">
+          <div className="container-flex-inicio">
+            <h3>¿POR QUÉ ELEGIR NUESTROS VINOS?</h3>
+          </div>
+
+          <div className="container-flex-inicio animacion-inicio-5">
+            <h1 className="container-flex-inicio">
+              NUESTROS EXQUISITOS VINOS ESTÁN DISEÑADOS PARA SATISFACER LOS
+              PALADARES MÁS EXIGENTES, BRINDANDO UNA EXPERIENCIA INIGUALABLE.
+            </h1>
+          </div>
+
+          <div className="container-cards-inicio-5">
+            <div className="card-inicio-5">
+              <img
+                src="https://surdelosandes.com/wp-content/uploads/2023/05/icono-7.png"
+                alt="dibujo"
+              />
+
+              <h5>TRABAJADORES CON TRADICIÓN</h5>
+
+              <p>
+                Las manos que cultivan nuestros viñedos, conocen por tradición
+                el arte de la viticultura.
+              </p>
+
+              <button>VER MAS</button>
+            </div>
+
+            <div className="card-inicio-5">
+              <img
+                src="https://surdelosandes.com/wp-content/uploads/2023/05/icono-8.png"
+                alt="dibujo"
+              />
+
+              <h5>TRAYECTORIA</h5>
+
+              <p>
+                La historia de Sur de Los Andes comienza con la innovación
+                productiva y comercial que introduce Guillermo Banfi.
+              </p>
+
+              <button>VER MAS</button>
+            </div>
+
+            <div className="card-inicio-5">
+              <img
+                src="https://surdelosandes.com/wp-content/uploads/2023/05/icono-9.png"
+                alt="dibujo"
+              />
+
+              <h5>SOSTENIBILIDAD</h5>
+
+              <p>
+                Estamos comprometidos con una economía responsable, con el pleno
+                empleo y el crecimiento en armonía con la naturaleza.
+              </p>
+
+              <button>VER MAS</button>
+            </div>
+
+            <div className="card-inicio-5">
+              <img
+                src="https://surdelosandes.com/wp-content/uploads/2023/05/icono-6.png"
+                alt="dibujo"
+              />
+
+              <h5>SUELOS DE ORIGEN</h5>
+
+              <p>
+                Nuestros vinos traducen el lenguaje oculto de la tierra
+                mendocina: Luján de Cuyo y Valle de Uco.
+              </p>
+
+              <button>VER MAS</button>
+            </div>
+          </div>
         </div>
       </div>
     );
