@@ -3,16 +3,26 @@ import axios from "axios";
 import Post from "./post/post";
 import Put from "./put/put";
 import Delete from "./delete/delete";
+import UsuarioPost from "./usuarioPost/usuarioPost";
+import UsuariosPut from "./usuarioPut/usuariosPut";
+import DeleteUser from "./usuarioDelete/userDelete";
 import Swal from "sweetalert2";
 import "./admin.css";
 
 function Admin() {
   const [data, setData] = useState(false);
+
   const [post, setPost] = useState(false);
   const [put, setPut] = useState(false);
   const [borrar, setBorrar] = useState(false);
+
+  const [postUsuario, setPostUsuario] = useState(false);
+  const [putUsuario, setPutUsuarioUsuario] = useState(false);
+  const [borrarUsuario, setBorrarUsuario] = useState(false);
+
   const [state, setState] = useState(false);
-  const [logeo, setLogeo] = useState(false);
+  const [dataUsers, setDataUsers] = useState(false);
+  const [usuarioLogeado, setUsuarioLogeado] = useState(false);
   const [user, setUser] = useState({
     usuario: "",
     contraseña: "",
@@ -26,9 +36,11 @@ function Admin() {
   };
 
   const onSubmit = () => {
-    let filter = logeo.filter((i) => {
+    let filter = dataUsers.filter((i) => {
       return i.contraseña === user.contraseña && i.usuario === user.usuario;
     });
+
+    setUsuarioLogeado(filter);
 
     if (filter.length !== 0) {
       Swal.fire({
@@ -53,18 +65,54 @@ function Admin() {
     setPost(true);
     setPut(false);
     setBorrar(false);
+    setPostUsuario(false);
+    setPutUsuarioUsuario(false);
+    setBorrarUsuario(false);
   };
 
   const onClickModificarVinos = () => {
     setPost(false);
     setPut(true);
     setBorrar(false);
+    setPostUsuario(false);
+    setPutUsuarioUsuario(false);
+    setBorrarUsuario(false);
   };
 
   const onClickBorrarVinos = () => {
     setPost(false);
     setPut(false);
     setBorrar(true);
+    setPostUsuario(false);
+    setPutUsuarioUsuario(false);
+    setBorrarUsuario(false);
+  };
+
+  const onClickAgregarUsuario = () => {
+    setPostUsuario(true);
+    setPost(false);
+    setPut(false);
+    setBorrar(false);
+    setPutUsuarioUsuario(false);
+    setBorrarUsuario(false);
+  };
+
+  const onClickModificarUsuario = () => {
+    setPutUsuarioUsuario(true);
+    setPost(false);
+    setPut(false);
+    setBorrar(false);
+    setPostUsuario(false);
+    setBorrarUsuario(false);
+  };
+
+  const onClickBorrarUsuario = () => {
+    setBorrarUsuario(true);
+    setPutUsuarioUsuario(false);
+    setPost(false);
+    setPut(false);
+    setBorrar(false);
+    setPostUsuario(false);
   };
 
   useEffect(() => {
@@ -79,17 +127,17 @@ function Admin() {
         });
     }
 
-    if (logeo === false) {
+    if (dataUsers === false) {
       axios
         .get("http://localhost:3001/api/admin")
         .then((response) => {
-          setLogeo(response.data);
+          setDataUsers(response.data);
         })
         .catch((error) => {
           console.error(error);
         });
     }
-  }, [data, logeo]);
+  }, [data, dataUsers]);
 
   if (state === false) {
     return (
@@ -127,6 +175,12 @@ function Admin() {
     return (
       <div style={{ minHeight: "67vh" }}>
         <div className="buttons-container">
+          <h1 style={{ margin: "15px" }}>
+            {usuarioLogeado !== false ? usuarioLogeado[0].usuario : ""}
+          </h1>
+        </div>
+
+        <div className="buttons-container">
           <button class="btn btn-primary" onClick={onClickAgregarVinos}>
             Agregar Vino
           </button>
@@ -140,11 +194,31 @@ function Admin() {
           </button>
         </div>
 
+        <div className="buttons-container">
+          <button class="btn btn-primary" onClick={onClickAgregarUsuario}>
+            Agregar User
+          </button>
+
+          <button class="btn btn-primary" onClick={onClickModificarUsuario}>
+            Modificar User
+          </button>
+
+          <button class="btn btn-primary" onClick={onClickBorrarUsuario}>
+            Borrar User
+          </button>
+        </div>
+
         {post === true ? <Post /> : null}
 
         {put === true ? <Put data={data} /> : null}
 
         {borrar === true ? <Delete data={data} /> : null}
+
+        {postUsuario === true ? <UsuarioPost /> : null}
+
+        {putUsuario === true ? <UsuariosPut data={dataUsers} /> : null}
+
+        {borrarUsuario === true ? <DeleteUser data={dataUsers} /> : null}
       </div>
     );
   }

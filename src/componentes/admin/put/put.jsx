@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Put(props) {
+  const history = useNavigate();
   const data = props.data;
   const [dataPut, setDataPut] = useState({
     id: "",
@@ -26,8 +28,6 @@ function Put(props) {
   };
 
   const handleFileSelectPut = (event) => {
-    console.log(event.target.files[0]);
-
     if (event.target.files[0]) {
       const reader = new FileReader();
 
@@ -43,8 +43,6 @@ function Put(props) {
   };
 
   const handleFileSelectPut2 = (event) => {
-    console.log(event.target.files[0]);
-
     if (event.target.files[0]) {
       const reader = new FileReader();
 
@@ -78,8 +76,6 @@ function Put(props) {
       const filter = data.filter((i) => {
         return i.nombre === e.target.value;
       });
-
-      console.log(filter);
 
       setDataPut({
         id: filter[0].id,
@@ -116,7 +112,8 @@ function Put(props) {
             icon: "success",
             confirmButtonText: "Ok",
           }).then(() => {
-            window.location.reload();
+            history("/link");
+            window.scrollTo(0, 0);
           });
         })
         .catch((err) => {
@@ -133,6 +130,8 @@ function Put(props) {
 
   return (
     <div className="body-admin">
+      <h1>Modifica tu vino</h1>
+
       <select
         class="form-select"
         style={{ marginBottom: "15px" }}
@@ -144,8 +143,6 @@ function Put(props) {
             return <option>{i.nombre}</option>;
           })}
       </select>
-
-      <h1>Modifica tu vino</h1>
 
       <div className="container-1-admin">
         <div class="mb-3">

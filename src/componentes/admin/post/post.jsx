@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Post() {
+  const history = useNavigate();
   const [dataPost, setDataPost] = useState({
     nombre: "",
     titulo: "",
@@ -21,7 +23,6 @@ function Post() {
       ...dataPost,
       [e.target.name]: e.target.value,
     });
-    console.log(dataPost);
   };
 
   const handleFileSelect = (event) => {
@@ -88,14 +89,15 @@ function Post() {
             icon: "success",
             confirmButtonText: "Ok",
           }).then(() => {
-            window.location.reload();
+            history("/link");
+            window.scrollTo(0, 0);
           });
         })
         .catch((err) => {
-          console.log(err);
+          const message = err.response.data;
           Swal.fire({
             title: "Error!",
-            text: "Error en el sistema intentar mas tarde o ponerse en contacto con el servicio",
+            text: message,
             icon: "error",
             confirmButtonText: "Ok",
           });

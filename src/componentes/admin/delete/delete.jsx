@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Delete(props) {
+  const history = useNavigate();
   const data = props.data;
   const [dataPut, setDataPut] = useState({
     id: "",
@@ -34,8 +36,6 @@ function Delete(props) {
         return i.nombre === e.target.value;
       });
 
-      console.log(filter);
-
       setDataPut({
         id: filter[0].id,
         nombre: filter[0].nombre,
@@ -59,7 +59,6 @@ function Delete(props) {
         confirmButtonText: "Ok",
       });
     } else {
-      console.log(dataPut);
       axios
         .delete(`http://localhost:3001/api/vinos/${dataPut.nombre}`)
         .then((res) => {
@@ -70,7 +69,8 @@ function Delete(props) {
             icon: "success",
             confirmButtonText: "Ok",
           }).then(() => {
-            window.location.reload();
+            history("/link");
+            window.scrollTo(0, 0);
           });
         })
         .catch((err) => {
@@ -87,6 +87,8 @@ function Delete(props) {
 
   return (
     <div className="body-admin">
+      <h1>Borra tu vino</h1>
+
       <select
         class="form-select"
         style={{ marginBottom: "15px" }}
@@ -98,8 +100,6 @@ function Delete(props) {
             return <option>{i.nombre}</option>;
           })}
       </select>
-
-      <h1>Borra tu vino</h1>
 
       <div className="container-1-admin">
         <div class="mb-3">
