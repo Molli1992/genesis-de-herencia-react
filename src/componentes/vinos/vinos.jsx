@@ -160,7 +160,11 @@ function Vinos() {
       </div>
     );
   } else {
-    return <div></div>;
+    return (
+      <div className="body-loader">
+        <h1>Cargando...</h1>
+      </div>
+    );
   }
 }
 

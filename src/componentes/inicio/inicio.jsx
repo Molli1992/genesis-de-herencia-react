@@ -426,7 +426,11 @@ function Inicio() {
       </div>
     );
   } else {
-    return null;
+    return (
+      <div className="body-loader">
+        <h1>Cargando...</h1>
+      </div>
+    );
   }
 }
 

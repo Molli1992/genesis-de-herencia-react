@@ -144,8 +144,7 @@ function Contacto() {
             </div>
 
             <div className="container-labels-inputs-contacto margin-top-contacto">
-              <label>Asunto</label>{" "}
-              <input placeholder="¿En que pudo ayudarte?" />
+              <label>Asunto</label> <input placeholder="¿Necesesitas Ayuda?" />
             </div>
           </div>
 
