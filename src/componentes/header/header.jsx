@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import axios from "axios";
 import "./header.css";
 import "@fontsource/roboto";
 
 function Heaeder() {
+  const [data, setData] = useState(false);
   const [stateResponsive, setStateResponsive] = useState(false);
   const [stateResponsiveNosotros, setStateResponsiveNosotros] = useState(false);
   const [stateResponsiveVinos, setStateResponsiveVinos] = useState(false);
@@ -102,6 +104,19 @@ function Heaeder() {
       linkContactanos.classList.add("link-header-2-active");
     }
   }
+
+  useEffect(() => {
+    if (data === false) {
+      axios
+        .get("http://localhost:3001/api/vinos")
+        .then((res) => {
+          setData(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, [data]);
 
   if (location.pathname === "/link") {
     return null;
@@ -268,24 +283,20 @@ function Heaeder() {
                   </div>
 
                   <div className="menu-header-2">
-                    <Link to={"/reserva/ARREPENTIDO"} className="text-menu">
-                      ARREPENTIDO
-                    </Link>
-                    <div className="line-menu" />
-
-                    <Link to={"/reserva/CADENA PERPETUA"} className="text-menu">
-                      CADENA PERPETUA
-                    </Link>
-                    <div className="line-menu" />
-
-                    <Link to={"/reserva/FISCAL"} className="text-menu">
-                      FISCAL
-                    </Link>
-                    <div className="line-menu" />
-
-                    <Link to={"/reserva/TRIBUNAL"} className="text-menu">
-                      TRIBUNAL
-                    </Link>
+                    {data !== false &&
+                      data.map((i) => {
+                        return (
+                          <div style={{ height: "46px", display: "grid" }}>
+                            <Link
+                              to={"/reserva/" + i.nombre}
+                              className="text-menu"
+                            >
+                              {i.nombre}
+                            </Link>
+                            <div className="line-menu" />
+                          </div>
+                        );
+                      })}
                   </div>
                 </div>
               </div>
@@ -455,61 +466,27 @@ function Heaeder() {
 
                       {stateVinos1 === true ? (
                         <div className="container-menu-responsive-vinos">
-                          <div className="margin-responsive-header">
-                            <Link
-                              to={"/reserva/ARREPENTIDO"}
-                              className="links-responsive-header"
-                              onClick={onClickMenuResponsive}
-                            >
-                              ARREPENTIDO
-                            </Link>
-                            <div
-                              style={{ width: "85%" }}
-                              className="line-responsive-header"
-                            ></div>
-                          </div>
-
-                          <div className="margin-responsive-header">
-                            <Link
-                              to={"/reserva/CADENA PERPETUA"}
-                              className="links-responsive-header"
-                              onClick={onClickMenuResponsive}
-                            >
-                              CADENA PERPETUA
-                            </Link>
-                            <div
-                              style={{ width: "85%" }}
-                              className="line-responsive-header"
-                            ></div>
-                          </div>
-
-                          <div className="margin-responsive-header">
-                            <Link
-                              to={"/reserva/FISCAL"}
-                              className="links-responsive-header"
-                              onClick={onClickMenuResponsive}
-                            >
-                              FISCAL
-                            </Link>
-                            <div
-                              style={{ width: "85%" }}
-                              className="line-responsive-header"
-                            ></div>
-                          </div>
-
-                          <div className="margin-responsive-header">
-                            <Link
-                              to={"/reserva/TRIBUNAL"}
-                              className="links-responsive-header"
-                              onClick={onClickMenuResponsive}
-                            >
-                              TRIBUNAL
-                            </Link>
-                            <div
-                              style={{ width: "85%" }}
-                              className="line-responsive-header"
-                            ></div>
-                          </div>
+                          {data !== false &&
+                            data.map((i) => {
+                              return (
+                                <div
+                                  style={{ height: "30px", display: "grid" }}
+                                  className="margin-responsive-header"
+                                >
+                                  <Link
+                                    to={"/reserva/" + i.nombre}
+                                    className="links-responsive-header"
+                                    onClick={onClickMenuResponsive}
+                                  >
+                                    {i.nombre}
+                                  </Link>
+                                  <div
+                                    style={{ width: "85%" }}
+                                    className="line-responsive-header"
+                                  ></div>
+                                </div>
+                              );
+                            })}
                         </div>
                       ) : null}
                     </div>
