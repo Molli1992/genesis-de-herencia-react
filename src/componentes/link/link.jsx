@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import "./link.css";
 
 function Links() {
+  const onClickRouteHome = () => {
+    window.location.href = "/";
+  };
   return (
     <div className="body-link">
       <div className="container-1-link">
@@ -20,14 +23,14 @@ function Links() {
       </div>
 
       <div className="flex-container-link">
-        <Link to={"/"} className="container-2-link">
+        <div className="container-2-link" onClick={onClickRouteHome}>
           <img
             src="https://link.surdelosandes.com/wp-content/uploads/2023/01/icono-2.jpg"
             alt="chrome"
           />
 
           <p>Nuestro Sitio Web</p>
-        </Link>
+        </div>
 
         <div className="container-2-link">
           <img
