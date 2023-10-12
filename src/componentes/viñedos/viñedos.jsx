@@ -153,17 +153,17 @@ function Viñedos() {
           <h1 className="tittle-animation-viñedos-2">TIERRA HERMOSA MÁGICA</h1>
 
           <p className="p-tittle-container-viñedos-2-left">
-            “Los trabajadores de Sur de Los Andes son dueños de un saber
+            “Los trabajadores de Genesis de Herencia son dueños de un saber
             histórico reproducido por generaciones”.
           </p>
 
           <p>
-            En Sur de Los Andes estamos comprometidos con la creación de empleos
-            dignos e innovadores que incluyen a mujeres y hombres en igualdad de
-            condiciones. Las faenas de nuestra producción apuntan siempre a la
-            excelencia, pero también al crecimiento de todos los trabajadores
-            implicados, por lo cual queremos destacar por valores tan
-            importantes como la integridad ética y la responsabilidad
+            En Genesis de Herencia estamos comprometidos con la creación de
+            empleos dignos e innovadores que incluyen a mujeres y hombres en
+            igualdad de condiciones. Las faenas de nuestra producción apuntan
+            siempre a la excelencia, pero también al crecimiento de todos los
+            trabajadores implicados, por lo cual queremos destacar por valores
+            tan importantes como la integridad ética y la responsabilidad
             corporativa.
           </p>
 
@@ -208,10 +208,9 @@ function Viñedos() {
           <h1 className="tittle-animation-viñedos-3">ELABORACIÓN</h1>
 
           <p>
-            La gestión de nuestros viñedos y vinificación es responsabilidad del
-            enólogo argentino Pablo Durigutti, quien decide sobre cortes,
-            técnicas de cultivo y metodologías de elaboración. La gerencia de la
-            Bodega Sur de Los Andes está a cargo del enólogo Tomas Milordo.
+            La gestión de nuestros viñedos y vinificación es responsabilidad de
+            enólogos argentinos, quienes deciden sobre cortes, técnicas de
+            cultivo y metodologías de elaboración.
           </p>
 
           <p>
@@ -254,9 +253,9 @@ function Viñedos() {
           </p>
 
           <p>
-            La bodega Sur de los Andes cuenta con un sector experimental de alta
-            gama destinado al estudio de diferentes parcelas y expresividad de
-            los terroirs. Para ello utilizamos maquinaria Pellenc de última
+            La bodega Genesis de Herencia cuenta con un sector experimental de
+            alta gama destinado al estudio de diferentes parcelas y expresividad
+            de los terroirs. Para ello utilizamos maquinaria Pellenc de última
             generación con el objetivo de preservar la calidad de las uvas
             empleadas.
           </p>
@@ -298,7 +297,7 @@ function Viñedos() {
 
             <p>
               Al hablar de suelos nos referimos a uno de los atributos más
-              definitorios de nuestra identidad como Sur de Los Andes.
+              definitorios de nuestra identidad como Genesis de Herencia.
             </p>
 
             <p>
@@ -322,9 +321,9 @@ function Viñedos() {
             <p>
               Valle de Uco posee un clima seco y de limitadas lluvias, muy
               favorable al cultivo de la vid, con suelos aluvionales, pedregosos
-              y poco fértiles. De allí proviene la otra parte de las uvas de Sur
-              de Los Andes, cultivadas en nuestra hermosa finca de Chacayes,
-              entre los 1100 y 1250 msnm.
+              y poco fértiles. De allí proviene la otra parte de las uvas de
+              Genesis de Herencia, cultivadas en nuestra hermosa finca de
+              Chacayes, entre los 1100 y 1250 msnm.
             </p>
           </div>
         </div>
@@ -335,7 +334,7 @@ function Viñedos() {
           <h3>TRABAJADORES CON TRADICIÓN</h3>
 
           <p>
-            La producción vitivinícola de Sur de Los Andes incorpora varios
+            La producción vitivinícola de Genesis de Hrencia incorpora varios
             actores, entre los cuales destacan los pequeños y medianos
             productores, dueños de un saber histórico reproducido de generación
             en generación. Herederos de antiguas técnicas, hoy se han integrado
@@ -348,7 +347,7 @@ function Viñedos() {
             Los pequeños y medianos productores de Luján de Cuyo y del valle de
             Uco, son los protagonistas de nuestros territorios, los que han
             dibujado el paisaje social y cultural de donde provienen las uvas de
-            Sur de Los Andes. Trabajamos juntos por un medio ambiente sano y
+            Genesis de Hrencia. Trabajamos juntos por un medio ambiente sano y
             sostenible.
           </p>
         </div>
@@ -375,8 +374,8 @@ function Viñedos() {
           <p>Cumplimiento de la Agenda 2030 de la ONU.</p>
 
           <p>
-            Para Sur de Los Andes, sostenibilidad significa que los Objetivos de
-            Desarrollo Sostenible (ODS) son una hoja de ruta que seguimos de
+            Para Genesis de Herencia, sostenibilidad significa que los Objetivos
+            de Desarrollo Sostenible (ODS) son una hoja de ruta que seguimos de
             manera corporativa. En este sentido, estamos implicados y
             comprometidos puntualmente con el logro de los siguientes ODS:
           </p>
@@ -391,32 +390,6 @@ function Viñedos() {
             Objetivo 12: Garantizar modalidades de consumo y producción
             responsables y sostenibles.
           </p>
-        </div>
-      </div>
-
-      <div className="container-viñedos-6">
-        <div className="container-viñedos-6-left">
-          <h3>TRAYECTORIA</h3>
-
-          <p>
-            Sur de Los Andes fue fundada por Guillermo Banfi comenzando el nuevo
-            siglo, entre 2005 y 2006. Guillermo es un economista que se
-            desempeñaba en el terreno de las finanzas hasta decidirse por el
-            mundo del vino. La suya, es una historia de negocio exitoso que se
-            funda en su ingenio y audacia cuando optó por producir excelentes
-            vinos sin tener bodega ni viñedos. Yendo a contracorriente, logró
-            posicionarse en el mercado norteamericano, demostrando que los
-            buenos vinos no siempre dependen de tradiciones familiares
-            convertidas en marcas. Frente a estas historias, surgió Sur de Los
-            Andes con la fortaleza que provee la innovación y el arrojo.
-          </p>
-        </div>
-
-        <div className="container-viñedos-6-rigth animacion-3-container-viñedos-6-rigth">
-          <img
-            src="https://surdelosandes.com/wp-content/uploads/2023/05/trayectoria-surdelosandes.jpg"
-            alt="Trabajadores"
-          />
         </div>
       </div>
     </div>

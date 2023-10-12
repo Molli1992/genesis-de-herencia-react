@@ -39,6 +39,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 75px 0px;
 }
 
 .container-nosotros-2-container-text {
@@ -64,6 +65,10 @@
     align-items: center;
     justify-content: center;
     opacity: 0;
+}
+
+.container-nosotros-2-container-img img {
+    height: 500px;
 }
 
 .animacion-activa {

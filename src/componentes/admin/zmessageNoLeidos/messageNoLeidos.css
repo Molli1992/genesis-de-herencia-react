@@ -1,0 +1,25 @@
+.body-no-leidos {
+    display: grid;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.card-mensajes {
+    border: 1px solid gray;
+    padding: 30px;
+}
+
+.card-mensajes h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 5px;
+    height: 30px;
+}
+
+.card-mensajes p {
+    font-size: 15px;
+    margin-right: 20px;
+    color: gray;
+}

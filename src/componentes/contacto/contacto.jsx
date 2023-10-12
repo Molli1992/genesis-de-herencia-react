@@ -1,7 +1,71 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import Swal from "sweetalert2";
 import "./contacto.css";
 
 function Contacto() {
+  const [dataPost, setDataPost] = useState({
+    nombre: "",
+    apellido: "",
+    correo: "",
+    asunto: "",
+    comentarios: "",
+    ledio: "TRUE",
+  });
+
+  const onChange = (e) => {
+    setDataPost({
+      ...dataPost,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const onSubmit = () => {
+    if (
+      dataPost.nombre === "" ||
+      dataPost.apellido === "" ||
+      dataPost.correo === "" ||
+      dataPost.asunto === "" ||
+      dataPost.comentarios === ""
+    ) {
+      Swal.fire({
+        title: "Error!",
+        text: "Completar todos los campos",
+        icon: "error",
+        confirmButtonText: "Ok",
+      });
+    } else {
+      axios
+        .post("http://localhost:3001/api/message", dataPost)
+        .then((res) => {
+          Swal.fire({
+            title: "Success!",
+            text: "Mensaje enviado correctamente!",
+            icon: "success",
+            confirmButtonText: "Ok",
+          }).then(() => {
+            setDataPost({
+              nombre: "",
+              apellido: "",
+              correo: "",
+              asunto: "",
+              comentarios: "",
+              ledio: "TRUE",
+            });
+          });
+        })
+        .catch((err) => {
+          const message = err.response.data;
+          Swal.fire({
+            title: "Error!",
+            text: message,
+            icon: "error",
+            confirmButtonText: "Ok",
+          });
+        });
+    }
+  };
+
   const onClickFacebook = () => {
     window.open("https://www.facebook.com", "_blank");
   };
@@ -18,6 +82,7 @@ function Contacto() {
     window.open("/link", "_blank");
   };
 
+  console.log(dataPost);
   return (
     <div className="body-contacto">
       <div className="container-contacto-1">
@@ -129,31 +194,59 @@ function Contacto() {
         <div className="container-rigth-contacto">
           <div className="container-inputs-contacto">
             <div className="container-labels-inputs-contacto">
-              <label>Nombre</label> <input placeholder="Nombre" />
+              <label>Nombre</label>
+              <input
+                name="nombre"
+                placeholder="Nombre"
+                onChange={onChange}
+                value={dataPost.nombre}
+              />
             </div>
 
             <div className="container-labels-inputs-contacto">
-              <label>Apellido</label> <input placeholder="Apellido" />
+              <label>Apellido</label>
+              <input
+                name="apellido"
+                placeholder="Apellido"
+                onChange={onChange}
+                value={dataPost.apellido}
+              />
             </div>
           </div>
 
           <div className="container-inputs-contacto">
             <div className="container-labels-inputs-contacto">
-              <label>Correo Electronico</label>{" "}
-              <input placeholder="Correo Electronico" />
+              <label>Correo Electronico</label>
+              <input
+                name="correo"
+                placeholder="Correo Electronico"
+                onChange={onChange}
+                value={dataPost.correo}
+              />
             </div>
 
             <div className="container-labels-inputs-contacto margin-top-contacto">
-              <label>Asunto</label> <input placeholder="¿Necesesitas Ayuda?" />
+              <label>Asunto</label>
+              <input
+                name="asunto"
+                placeholder="¿Necesesitas Ayuda?"
+                onChange={onChange}
+                value={dataPost.asunto}
+              />
             </div>
           </div>
 
           <div className="container-text-area-contacto">
             <label>Comentarios</label>
-            <textarea placeholder="Comentarios"></textarea>
+            <textarea
+              name="comentarios"
+              placeholder="Comentarios"
+              onChange={onChange}
+              value={dataPost.comentarios}
+            ></textarea>
           </div>
 
-          <button>Enviar</button>
+          <button onClick={onSubmit}>Enviar</button>
         </div>
       </div>
     </div>

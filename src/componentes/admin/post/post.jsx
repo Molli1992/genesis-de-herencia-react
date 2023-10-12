@@ -82,7 +82,6 @@ function Post() {
       axios
         .post("http://localhost:3001/api/vinos", dataPost)
         .then((res) => {
-          console.log(res);
           Swal.fire({
             title: "Success!",
             text: "Vino creado correctamente!",
