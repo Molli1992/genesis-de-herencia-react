@@ -36,10 +36,10 @@
   align-items: center;
 }
 
-.header-icon-facebook {
+.header-icon-whatsapp {
   width: 24px;
   height: 24px;
-  background-color: #3b5998;
+  background-color: #25D366;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -319,7 +319,7 @@
   width: 100%;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 940px) {
   .container-header-1 {
     display: none;
   }

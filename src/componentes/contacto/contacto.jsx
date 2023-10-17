@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 import "./contacto.css";
 
 function Contacto() {
+  const history = useNavigate();
   const [dataPost, setDataPost] = useState({
     nombre: "",
     apellido: "",
@@ -66,23 +68,21 @@ function Contacto() {
     }
   };
 
-  const onClickFacebook = () => {
-    window.open("https://www.facebook.com", "_blank");
-  };
-
   const onClickInstagram = () => {
-    window.open("https://www.instagram.com", "_blank");
+    window.open(
+      "https://instagram.com/genesisdeherencia?igshid=MzRlODBiNWFlZA==",
+      "_blank"
+    );
   };
 
   const onClickWhatsapp = () => {
-    window.open("https://web.whatsapp.com/", "_blank");
+    window.open("https://api.whatsapp.com/send?phone=5491167839590", "_blank");
   };
 
   const onClickLink = () => {
-    window.open("/link", "_blank");
+    history("/link");
   };
 
-  console.log(dataPost);
   return (
     <div className="body-contacto">
       <div className="container-contacto-1">
@@ -127,22 +127,6 @@ function Contacto() {
           <h1 style={{ marginTop: "100px" }}>Siguenos</h1>
 
           <div className="container-redes-contacto">
-            <div
-              className="container-facebook-contacto"
-              onClick={onClickFacebook}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="25"
-                height="25"
-                fill="white"
-                class="bi bi-facebook"
-                viewBox="0 0 16 16"
-              >
-                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-              </svg>
-            </div>
-
             <div
               className="container-instagram-contacto"
               onClick={onClickInstagram}
