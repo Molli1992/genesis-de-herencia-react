@@ -1,10 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import "./link.css";
 
 function Links() {
   const onClickRouteHome = () => {
     window.location.href = "/";
+  };
+
+  const onClickNuestosVinos = () => {
+    Swal.fire({
+      title: "Error!",
+      text: "En reparacion",
+      icon: "error",
+      confirmButtonText: "Ok",
+    });
   };
   return (
     <div className="body-link">
@@ -32,7 +42,7 @@ function Links() {
           <p>Nuestro Sitio Web</p>
         </div>
 
-        <div className="container-2-link">
+        <div className="container-2-link" onClick={onClickNuestosVinos}>
           <img
             src="https://link.surdelosandes.com/wp-content/uploads/2023/01/icono-5.jpg"
             alt="vinos"
