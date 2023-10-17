@@ -125,7 +125,7 @@ function Inicio() {
           <div className="container-inicio-1 imagen-de-fond-1">
             <img
               className="animation-bottom-inicio"
-              src={data.length !== 0 ? data[3].img : ""}
+              src={data.length !== 0 ? data[2].img : ""}
               alt="vino"
             />
 

@@ -36,7 +36,6 @@
     position: absolute;
     left: 40%;
     height: 110%;
-    width: 150px;
 }
 
 .img-frutas img {
@@ -448,9 +447,10 @@
     }
 
     .container-inicio-1 p {
-        width: 75%;
+        width: 70%;
         left: 5%;
         top: 30%;
+        font-size: 28px;
     }
 
     .button-slider {
@@ -490,16 +490,17 @@
     }
 
     .img-slider-2 img {
-        left: 70%;
-        width: 100px;
+        left: 63%;
+        top: 50%;
+        transform: translateY(-50%);
         height: 90%;
     }
 
     .container-inicio-1 p {
-        width: 95%;
+        width: 62%;
         left: 2%;
         top: 30%;
-        font-size: 28px;
+        font-size: 24px;
     }
 
     .button-slider {
@@ -543,6 +544,13 @@
         padding: 0px 15px;
     }
 
+}
+
+@media screen and (max-width: 400px) {
+
+    .button-new-slider {
+        width: 195px;
+    }
 }
 
 /*---------------------------------- animaciones ------------------------------------- */
