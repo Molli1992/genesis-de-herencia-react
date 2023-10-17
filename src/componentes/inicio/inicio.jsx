@@ -407,7 +407,7 @@ function Inicio() {
               <h5>TRAYECTORIA</h5>
 
               <p>
-                La historia de Genesis de Herencias comienza con la innovación
+                La historia de Genesis de Herencia comienza con la innovación
                 productiva y comercial que introduce Marcelo J. Ruiz.
               </p>
             </div>

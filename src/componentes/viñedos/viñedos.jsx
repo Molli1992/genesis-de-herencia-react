@@ -150,22 +150,7 @@ function Viñedos() {
       <div className="container-viñedos-2">
         <div className="container-viñedos-2-left">
           <h3>NUESTROS VIÑEDOS</h3>
-          <h1 className="tittle-animation-viñedos-2">TIERRA HERMOSA MÁGICA</h1>
-
-          <p className="p-tittle-container-viñedos-2-left">
-            “Los trabajadores de Genesis de Herencia son dueños de un saber
-            histórico reproducido por generaciones”.
-          </p>
-
-          <p>
-            En Genesis de Herencia estamos comprometidos con la creación de
-            empleos dignos e innovadores que incluyen a mujeres y hombres en
-            igualdad de condiciones. Las faenas de nuestra producción apuntan
-            siempre a la excelencia, pero también al crecimiento de todos los
-            trabajadores implicados, por lo cual queremos destacar por valores
-            tan importantes como la integridad ética y la responsabilidad
-            corporativa.
-          </p>
+          <h1 className="tittle-animation-viñedos-2">TIERRA MÁGICA</h1>
 
           <p>
             Nuestros aliados en Luján de Cuyo -en particular en Las Compuertas,
@@ -209,8 +194,8 @@ function Viñedos() {
 
           <p>
             La gestión de nuestros viñedos y vinificación es responsabilidad de
-            enólogos argentinos, quienes deciden sobre cortes, técnicas de
-            cultivo y metodologías de elaboración.
+            importantes enólogos argentinos, quienes deciden sobre cortes,
+            técnicas de cultivo y metodologías de elaboración.
           </p>
 
           <p>
@@ -259,15 +244,6 @@ function Viñedos() {
             generación con el objetivo de preservar la calidad de las uvas
             empleadas.
           </p>
-
-          <p>
-            Nuestra bodega ostenta una sala amplia con barricas a temperatura y
-            humedad controlada destinada al correcto añejamiento de nuestros
-            vinos. Asimismo, se encuentran 2 naves productivas, una principal
-            con capacidad de 420.000 litros entre piletas de hormigón y tanques
-            de acero inoxidable, y una segunda nave de 100.000 litros con
-            vasijas y tanques pequeños de menos de 5.000 litros.
-          </p>
         </div>
       </div>
 
@@ -311,9 +287,9 @@ function Viñedos() {
             <p>
               Luján de Cuyo asienta viñedos centenarios todavía cultivados con
               técnicas tradicionales. Allí se encuentran Las Compuertas y
-              Agrelo, de donde procede buena parte de las uvas de Sur de Los
-              Andes. Con un clima seco de inviernos fríos, temperaturas altas en
-              verano y una buena aptitud térmica, los suelos de Luján de Cuyo
+              Agrelo, de donde procede buena parte de las uvas de Genesis de
+              Herencia. Con un clima seco de inviernos fríos, temperaturas altas
+              en verano y una buena aptitud térmica, los suelos de Luján de Cuyo
               son francos y franco-arcillosos con abundante material grueso,
               tienen buena permeabilidad y escasa materia orgánica.
             </p>
@@ -334,7 +310,7 @@ function Viñedos() {
           <h3>TRABAJADORES CON TRADICIÓN</h3>
 
           <p>
-            La producción vitivinícola de Genesis de Hrencia incorpora varios
+            La producción vitivinícola de Genesis de Herencia incorpora varios
             actores, entre los cuales destacan los pequeños y medianos
             productores, dueños de un saber histórico reproducido de generación
             en generación. Herederos de antiguas técnicas, hoy se han integrado
@@ -347,7 +323,7 @@ function Viñedos() {
             Los pequeños y medianos productores de Luján de Cuyo y del valle de
             Uco, son los protagonistas de nuestros territorios, los que han
             dibujado el paisaje social y cultural de donde provienen las uvas de
-            Genesis de Hrencia. Trabajamos juntos por un medio ambiente sano y
+            Genesis de Herencia. Trabajamos juntos por un medio ambiente sano y
             sostenible.
           </p>
         </div>
@@ -357,39 +333,6 @@ function Viñedos() {
             src="https://surdelosandes.com/wp-content/uploads/2023/05/trabajadores-con-tradicion-surdelosandes.jpg"
             alt="Trabajadores"
           />
-        </div>
-      </div>
-
-      <div className="container-viñedos-6">
-        <div className="container-viñedos-6-rigth animacion-2-container-viñedos-6-rigth">
-          <img
-            src="https://surdelosandes.com/wp-content/uploads/2023/05/sostenibilidad-surdelosandes.jpg"
-            alt="Trabajadores"
-          />
-        </div>
-
-        <div className="container-viñedos-6-left">
-          <h3>SOSTENIBILIDAD</h3>
-
-          <p>Cumplimiento de la Agenda 2030 de la ONU.</p>
-
-          <p>
-            Para Genesis de Herencia, sostenibilidad significa que los Objetivos
-            de Desarrollo Sostenible (ODS) son una hoja de ruta que seguimos de
-            manera corporativa. En este sentido, estamos implicados y
-            comprometidos puntualmente con el logro de los siguientes ODS:
-          </p>
-
-          <p>
-            Objetivo 8: La promoción del crecimiento económico inclusivo y
-            sostenible, el empleo pleno y productivo y el trabajo decente para
-            todos
-          </p>
-
-          <p>
-            Objetivo 12: Garantizar modalidades de consumo y producción
-            responsables y sostenibles.
-          </p>
         </div>
       </div>
     </div>

@@ -133,7 +133,6 @@
 .container-viñedos-4 {
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
     padding: 80px 0px;
     background-color: #FFFFFF;
@@ -398,6 +397,7 @@
 
     .container-viñedos-4-left {
         width: 90%;
+        margin-bottom: 40px;
     }
 
     .container-viñedos-4-left img {
