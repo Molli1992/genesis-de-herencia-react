@@ -396,8 +396,6 @@ function Inicio() {
                 Las manos que cultivan nuestros viñedos, conocen por tradición
                 el arte de la viticultura.
               </p>
-
-              <button>VER MAS</button>
             </div>
 
             <div className="card-inicio-5">
@@ -412,8 +410,6 @@ function Inicio() {
                 La historia de Genesis de Herencias comienza con la innovación
                 productiva y comercial que introduce Marcelo J. Ruiz.
               </p>
-
-              <button>VER MAS</button>
             </div>
 
             <div className="card-inicio-5">
@@ -428,8 +424,6 @@ function Inicio() {
                 Estamos comprometidos con una economía responsable, con el pleno
                 empleo y el crecimiento en armonía con la naturaleza.
               </p>
-
-              <button>VER MAS</button>
             </div>
 
             <div className="card-inicio-5">
@@ -444,8 +438,6 @@ function Inicio() {
                 Nuestros vinos traducen el lenguaje oculto de la tierra
                 mendocina: Luján de Cuyo y Valle de Uco.
               </p>
-
-              <button>VER MAS</button>
             </div>
           </div>
         </div>
