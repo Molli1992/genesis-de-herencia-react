@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 function Post() {
   const history = useNavigate();
+  const [buttonValue, setButtonValue] = useState("Submit");
   const [dataPost, setDataPost] = useState({
     nombre: "",
     titulo: "",
@@ -79,6 +80,7 @@ function Post() {
         confirmButtonText: "Ok",
       });
     } else {
+      setButtonValue("Cargando...");
       axios
         .post(
           "https://vinos-marcelo-api-production.up.railway.app/api/vinos",
@@ -234,7 +236,7 @@ function Post() {
       </div>
 
       <button class="btn btn-primary" onClick={onSubmit}>
-        Submit
+        {buttonValue}
       </button>
     </div>
   );

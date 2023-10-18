@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 function Delete(props) {
   const history = useNavigate();
   const data = props.data;
+  const [buttonValue, setButtonValue] = useState("Submit");
   const [dataPut, setDataPut] = useState({
     id: "",
     nombre: "",
@@ -59,6 +60,7 @@ function Delete(props) {
         confirmButtonText: "Ok",
       });
     } else {
+      setButtonValue("Cargando...");
       axios
         .delete(
           `https://vinos-marcelo-api-production.up.railway.app/api/vinos/${dataPut.nombre}`
@@ -207,7 +209,7 @@ function Delete(props) {
       </div>
 
       <button class="btn btn-primary" onClick={onSubmit}>
-        Submit
+        {buttonValue}
       </button>
     </div>
   );

@@ -17,7 +17,9 @@ function MessageLeidos() {
     }
   });
 
-  if (data.length === 0) {
+  console.log(data);
+
+  if (data !== false && data.message.length === 0) {
     return (
       <div
         style={{
@@ -32,11 +34,13 @@ function MessageLeidos() {
         <h1>No hay mensajes</h1>
       </div>
     );
-  } else if (data.length !== 0) {
+  } else if (data !== false && data.message.length !== 0) {
     return (
       <div className="body-no-leidos">
+        <h1>Mensaje Leidos:</h1>
+
         {data &&
-          data.map((i) => {
+          data.message.map((i) => {
             if (i.ledio === "FALSE") {
               return (
                 <div

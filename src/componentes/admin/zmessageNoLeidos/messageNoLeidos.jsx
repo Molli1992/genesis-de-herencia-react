@@ -4,9 +4,11 @@ import Swal from "sweetalert2";
 import "./messageNoLeidos.css";
 
 function MessageNoLeidos(props) {
+  const [buttonValue, setButtonValue] = useState("Mover a Leidos");
   const [data, setData] = useState(false);
 
   const onSubmit = (i) => {
+    setButtonValue("Cargando...");
     axios
       .put("https://vinos-marcelo-api-production.up.railway.app/api/message", {
         ledio: "FALSE",
@@ -25,6 +27,7 @@ function MessageNoLeidos(props) {
             )
             .then((response) => {
               setData(response.data);
+              setButtonValue("Mover a Leidos");
             })
             .catch((error) => {
               console.error(error);
@@ -55,9 +58,7 @@ function MessageNoLeidos(props) {
     }
   });
 
-  console.log(data);
-
-  if (data.length === 0) {
+  if (data !== false && data.message.length === 0) {
     return (
       <div
         style={{
@@ -71,11 +72,13 @@ function MessageNoLeidos(props) {
         <h1>No hay mensajes</h1>
       </div>
     );
-  } else if (data.length !== 0) {
+  } else if (data !== false && data.message.length !== 0) {
     return (
       <div className="body-no-leidos">
+        <h1>Mensaje no Leidos:</h1>
+
         {data &&
-          data.map((i) => {
+          data.message.map((i) => {
             if (i.ledio === "TRUE") {
               return (
                 <div className="card-mensajes">
@@ -130,7 +133,7 @@ function MessageNoLeidos(props) {
                     }}
                   >
                     <button onClick={() => onSubmit(i)} class="btn btn-primary">
-                      Mover a leidos
+                      {buttonValue}
                     </button>
                   </div>
                 </div>

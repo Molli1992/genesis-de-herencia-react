@@ -41,7 +41,7 @@ function Admin() {
   };
 
   const onSubmit = () => {
-    let filter = dataUsers.filter((i) => {
+    let filter = dataUsers.usuarios.filter((i) => {
       return i.contraseña === user.contraseña && i.usuario === user.usuario;
     });
 
@@ -259,15 +259,17 @@ function Admin() {
 
         {post === true ? <Post /> : null}
 
-        {put === true ? <Put data={data} /> : null}
+        {put === true ? <Put data={data.vinos} /> : null}
 
-        {borrar === true ? <Delete data={data} /> : null}
+        {borrar === true ? <Delete data={data.vinos} /> : null}
 
         {postUsuario === true ? <UsuarioPost /> : null}
 
-        {putUsuario === true ? <UsuariosPut data={dataUsers} /> : null}
+        {putUsuario === true ? <UsuariosPut data={dataUsers.usuarios} /> : null}
 
-        {borrarUsuario === true ? <DeleteUser data={dataUsers} /> : null}
+        {borrarUsuario === true ? (
+          <DeleteUser data={dataUsers.usuarios} />
+        ) : null}
 
         {mensajesNoLeidos === true ? <MensajesNoLeidos /> : null}
 

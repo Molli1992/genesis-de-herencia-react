@@ -118,14 +118,14 @@ function Inicio() {
     }
   });
 
-  if (data !== false) {
+  if (data !== false && data.vinos.length !== 0) {
     return (
       <div className="body-inicio">
         {stateSlider === false ? (
           <div className="container-inicio-1 imagen-de-fond-1">
             <img
               className="animation-bottom-inicio"
-              src={data.length !== 0 ? data[2].img : ""}
+              src={data.vinos.length !== 0 ? data.vinos[0].img : ""}
               alt="vino"
             />
 
@@ -160,7 +160,7 @@ function Inicio() {
             <div className="img-slider-2">
               <img
                 className="animation-bottom-inicio"
-                src={data.length !== 0 ? data[1].img : ""}
+                src={data.vinos.length !== 0 ? data.vinos[1].img : ""}
                 alt="vino"
               />
             </div>
@@ -276,7 +276,7 @@ function Inicio() {
           {sliderVinos === false ? (
             <div className="container-inicio-3-slider">
               {data &&
-                data.map((i) => {
+                data.vinos.map((i) => {
                   if (
                     i.nombre === "ARREPENTIDO" ||
                     i.nombre === "CADENA PERPETUA"
@@ -316,7 +316,7 @@ function Inicio() {
           ) : (
             <div className="container-inicio-3-slider">
               {data &&
-                data.map((i) => {
+                data.vinos.map((i) => {
                   if (i.nombre === "TRIBUNAL" || i.nombre === "FISCAL") {
                     return (
                       <Link

@@ -91,8 +91,10 @@ function Heaeder() {
     }
 
     if (
-      location.pathname === "/reserva" ||
-      location.pathname === "/gran-reserva"
+      location.pathname === "/reserva/FISCAL" ||
+      location.pathname === "/reserva/ARREPENTIDO" ||
+      location.pathname === "/reserva/CADENA%20PERPETUA" ||
+      location.pathname === "/reserva/FISCAL"
     ) {
       linkHome.classList.remove("link-header-2-active");
       linkNosotros.classList.remove("link-header-2-active");
@@ -275,7 +277,7 @@ function Heaeder() {
 
                   <div className="menu-header-2">
                     {data !== false &&
-                      data.map((i) => {
+                      data.vinos.map((i) => {
                         return (
                           <div style={{ height: "46px", display: "grid" }}>
                             <Link
@@ -458,7 +460,7 @@ function Heaeder() {
                       {stateVinos1 === true ? (
                         <div className="container-menu-responsive-vinos">
                           {data !== false &&
-                            data.map((i) => {
+                            data.vinos.map((i) => {
                               return (
                                 <div
                                   style={{ height: "30px", display: "grid" }}

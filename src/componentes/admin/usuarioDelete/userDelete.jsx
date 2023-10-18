@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 function DeleteUser(props) {
   const history = useNavigate();
   const data = props.data;
+  const [buttonValue, setButtonValue] = useState("Submit");
   const [dataPut, setDataPut] = useState({
     id: "",
     usuario: "",
@@ -33,6 +34,7 @@ function DeleteUser(props) {
   };
 
   const onSubmit = () => {
+    setButtonValue("Cargando...");
     axios
       .delete(
         `https://vinos-marcelo-api-production.up.railway.app/api/admin/${dataPut.usuario}`
@@ -117,7 +119,7 @@ function DeleteUser(props) {
       </div>
 
       <button class="btn btn-primary" onClick={onSubmit}>
-        Submit
+        {buttonValue}
       </button>
     </div>
   );

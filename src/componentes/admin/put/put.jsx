@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 function Put(props) {
   const history = useNavigate();
   const data = props.data;
+  const [buttonValue, setButtonValue] = useState("Submit");
   const [dataPut, setDataPut] = useState({
     id: "",
     nombre: "",
@@ -102,6 +103,7 @@ function Put(props) {
         confirmButtonText: "Ok",
       });
     } else {
+      setButtonValue("Cargando...");
       axios
         .put(
           "https://vinos-marcelo-api-production.up.railway.app/api/vinos",
@@ -286,7 +288,7 @@ function Put(props) {
       </div>
 
       <button class="btn btn-primary" onClick={onSubmit}>
-        Submit
+        {buttonValue}
       </button>
     </div>
   );
