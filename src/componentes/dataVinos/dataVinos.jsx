@@ -1,23 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function DataVinos() {
+  const arrayVinos = JSON.parse(localStorage.getItem("arrayVinos"));
   const history = useNavigate();
-  const [data, setData] = useState(false);
 
-  if (data === false) {
-    axios
-      .get("https://vinos-marcelo-api-production.up.railway.app/api/vinos")
-      .then((res) => {
-        localStorage.setItem("arrayVinos", JSON.stringify(res.data.vinos));
-        history("/inicio");
-        setData(true);
-      })
-      .catch((err) => {
-        console.error("Error en la solicitud:", err);
-      });
-  }
+  useEffect(() => {
+    if (arrayVinos !== null) {
+      history("/inicio");
+    } else {
+      axios
+        .get("https://vinos-marcelo-api-production.up.railway.app/api/vinos")
+        .then((res) => {
+          localStorage.setItem("arrayVinos", JSON.stringify(res.data.vinos));
+          history("/inicio");
+        })
+        .catch((err) => {
+          console.error("Error en la solicitud:", err);
+        });
+    }
+  });
 
   return (
     <div
