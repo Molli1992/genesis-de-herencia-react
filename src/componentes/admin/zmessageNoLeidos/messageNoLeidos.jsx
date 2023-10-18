@@ -82,60 +82,34 @@ function MessageNoLeidos(props) {
             if (i.ledio === "TRUE") {
               return (
                 <div className="card-mensajes">
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "100%",
-                      alignItems: "center",
-                      margin: "10px",
-                    }}
-                  >
+                  <div class="info">
                     <h1>Asunto:</h1>
                     <p>{i.asunto}</p>
+                  </div>
 
+                  <div class="info">
                     <h1>Correo:</h1>
                     <p>{i.correo}</p>
                   </div>
 
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "100%",
-                      alignItems: "center",
-                      margin: "10px",
-                    }}
-                  >
+                  <div class="info">
                     <h1>Nombre:</h1>
                     <p>{i.nombre}</p>
+                  </div>
 
+                  <div class="info">
                     <h1>Apellido:</h1>
                     <p>{i.apellido}</p>
                   </div>
 
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "100%",
-                      alignItems: "center",
-                      margin: "10px",
-                    }}
-                  >
+                  <div class="info">
                     <h1>Comentario:</h1>
                     <p>{i.comentarios}</p>
                   </div>
 
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "100%",
-                      alignItems: "center",
-                      margin: "10px",
-                    }}
-                  >
-                    <button onClick={() => onSubmit(i)} class="btn btn-primary">
-                      {buttonValue}
-                    </button>
-                  </div>
+                  <button onClick={() => onSubmit(i)} class="btn btn-primary">
+                    {buttonValue}
+                  </button>
                 </div>
               );
             } else {

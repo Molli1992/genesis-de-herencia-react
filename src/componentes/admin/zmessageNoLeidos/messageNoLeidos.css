@@ -1,25 +1,32 @@
 .body-no-leidos {
-    display: grid;
+    display: block;
     width: 100%;
     align-items: center;
     justify-content: center;
-    padding: 50px;
+    padding: 50px 10px;
 }
 
 .card-mensajes {
     border: 1px solid gray;
-    padding: 30px;
+    padding: 30px 10px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.info {
+    display: block;
+    margin-bottom: 10px;
+    word-wrap: break-word;
 }
 
 .card-mensajes h1 {
     font-size: 18px;
     font-weight: bold;
-    margin-right: 5px;
-    height: 30px;
 }
 
 .card-mensajes p {
     font-size: 15px;
-    margin-right: 20px;
     color: gray;
 }
+
+@media screen and (max-width: 600px) {}

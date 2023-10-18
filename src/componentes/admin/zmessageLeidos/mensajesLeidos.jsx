@@ -16,9 +16,6 @@ function MessageLeidos() {
         });
     }
   });
-
-  console.log(data);
-
   if (data !== false && data.message.length === 0) {
     return (
       <div
@@ -47,44 +44,27 @@ function MessageLeidos() {
                   className="card-mensajes"
                   style={{ backgroundColor: "aliceblue" }}
                 >
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "100%",
-                      alignItems: "center",
-                      margin: "10px",
-                    }}
-                  >
+                  <div class="info">
                     <h1>Asunto:</h1>
                     <p>{i.asunto}</p>
+                  </div>
 
+                  <div class="info">
                     <h1>Correo:</h1>
                     <p>{i.correo}</p>
                   </div>
 
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "100%",
-                      alignItems: "center",
-                      margin: "10px",
-                    }}
-                  >
+                  <div class="info">
                     <h1>Nombre:</h1>
                     <p>{i.nombre}</p>
+                  </div>
 
+                  <div class="info">
                     <h1>Apellido:</h1>
                     <p>{i.apellido}</p>
                   </div>
 
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "100%",
-                      alignItems: "center",
-                      margin: "10px",
-                    }}
-                  >
+                  <div class="info">
                     <h1>Comentario:</h1>
                     <p>{i.comentarios}</p>
                   </div>
