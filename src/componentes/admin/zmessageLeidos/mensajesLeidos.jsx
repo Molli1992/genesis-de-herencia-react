@@ -7,7 +7,7 @@ function MessageLeidos() {
   useEffect(() => {
     if (data === false) {
       axios
-        .get("http://localhost:3001/api/message")
+        .get("https://vinos-marcelo-api-production.up.railway.app/api/message")
         .then((response) => {
           setData(response.data);
         })

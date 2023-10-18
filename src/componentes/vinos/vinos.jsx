@@ -11,7 +11,7 @@ function Vinos() {
 
   if (name !== newUrl && vino !== false) {
     axios
-      .get("http://localhost:3001/api/vinos")
+      .get("https://vinos-marcelo-api-production.up.railway.app/api/vinos")
       .then((res) => {
         const filter = res.data.filter((i) => {
           return i.nombre === name;
@@ -47,7 +47,7 @@ function Vinos() {
   useEffect(() => {
     if (vino === false) {
       axios
-        .get("http://localhost:3001/api/vinos")
+        .get("https://vinos-marcelo-api-production.up.railway.app/api/vinos")
         .then((res) => {
           const filter = res.data.filter((i) => {
             return i.nombre === name;

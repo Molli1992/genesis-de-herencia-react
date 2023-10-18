@@ -40,7 +40,10 @@ function UsuarioPost() {
       });
     } else {
       axios
-        .post("http://localhost:3001/api/admin", dataPost)
+        .post(
+          "https://vinos-marcelo-api-production.up.railway.app/api/admin",
+          dataPost
+        )
         .then((res) => {
           console.log(res);
           Swal.fire({

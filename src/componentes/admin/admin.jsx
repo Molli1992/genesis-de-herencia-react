@@ -157,7 +157,7 @@ function Admin() {
   useEffect(() => {
     if (data === false) {
       axios
-        .get("http://localhost:3001/api/vinos")
+        .get("https://vinos-marcelo-api-production.up.railway.app/api/vinos")
         .then((response) => {
           setData(response.data);
         })
@@ -168,7 +168,7 @@ function Admin() {
 
     if (dataUsers === false) {
       axios
-        .get("http://localhost:3001/api/admin")
+        .get("https://vinos-marcelo-api-production.up.railway.app/api/admin")
         .then((response) => {
           setDataUsers(response.data);
         })

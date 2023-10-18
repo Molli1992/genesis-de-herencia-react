@@ -60,7 +60,9 @@ function Delete(props) {
       });
     } else {
       axios
-        .delete(`http://localhost:3001/api/vinos/${dataPut.nombre}`)
+        .delete(
+          `https://vinos-marcelo-api-production.up.railway.app/api/vinos/${dataPut.nombre}`
+        )
         .then((res) => {
           console.log(res);
           Swal.fire({

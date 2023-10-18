@@ -80,7 +80,10 @@ function Post() {
       });
     } else {
       axios
-        .post("http://localhost:3001/api/vinos", dataPost)
+        .post(
+          "https://vinos-marcelo-api-production.up.railway.app/api/vinos",
+          dataPost
+        )
         .then((res) => {
           Swal.fire({
             title: "Success!",

@@ -45,7 +45,7 @@ function Inicio() {
   useEffect(() => {
     if (data === false) {
       axios
-        .get("http://localhost:3001/api/vinos")
+        .get("https://vinos-marcelo-api-production.up.railway.app/api/vinos")
         .then((res) => {
           setData(res.data);
           autoMoveSlider();

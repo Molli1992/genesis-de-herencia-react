@@ -103,7 +103,10 @@ function Put(props) {
       });
     } else {
       axios
-        .put("http://localhost:3001/api/vinos", dataPut)
+        .put(
+          "https://vinos-marcelo-api-production.up.railway.app/api/vinos",
+          dataPut
+        )
         .then((res) => {
           console.log(res);
           Swal.fire({

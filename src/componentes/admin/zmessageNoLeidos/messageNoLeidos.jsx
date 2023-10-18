@@ -8,7 +8,10 @@ function MessageNoLeidos(props) {
 
   const onSubmit = (i) => {
     axios
-      .put("http://localhost:3001/api/message", { ledio: "FALSE", id: i.id })
+      .put("https://vinos-marcelo-api-production.up.railway.app/api/message", {
+        ledio: "FALSE",
+        id: i.id,
+      })
       .then((res) => {
         Swal.fire({
           title: "Success!",
@@ -17,7 +20,9 @@ function MessageNoLeidos(props) {
           confirmButtonText: "Ok",
         }).then(() => {
           axios
-            .get("http://localhost:3001/api/message")
+            .get(
+              "https://vinos-marcelo-api-production.up.railway.app/api/message"
+            )
             .then((response) => {
               setData(response.data);
             })
@@ -40,7 +45,7 @@ function MessageNoLeidos(props) {
   useEffect(() => {
     if (data === false) {
       axios
-        .get("http://localhost:3001/api/message")
+        .get("https://vinos-marcelo-api-production.up.railway.app/api/message")
         .then((response) => {
           setData(response.data);
         })

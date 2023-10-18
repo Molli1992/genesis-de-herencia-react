@@ -34,7 +34,9 @@ function DeleteUser(props) {
 
   const onSubmit = () => {
     axios
-      .delete(`http://localhost:3001/api/admin/${dataPut.usuario}`)
+      .delete(
+        `https://vinos-marcelo-api-production.up.railway.app/api/admin/${dataPut.usuario}`
+      )
       .then((res) => {
         console.log(res);
         Swal.fire({
