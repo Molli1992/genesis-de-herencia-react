@@ -73,7 +73,7 @@ function Heaeder() {
     linkVinos !== null &&
     linkContactanos !== null
   ) {
-    if (location.pathname === "/") {
+    if (location.pathname === "/inicio") {
       linkHome.classList.add("link-header-2-active");
       linkNosotros.classList.remove("link-header-2-active");
       linkVinos.classList.remove("link-header-2-active");
@@ -213,7 +213,7 @@ function Heaeder() {
           </div>
 
           <div className="container-links-header-2">
-            <Link id="link-home" to={"/"} className="link-header-2">
+            <Link id="link-home" to={"/inicio"} className="link-header-2">
               Home
             </Link>
 
@@ -354,7 +354,7 @@ function Heaeder() {
             <div className="container-links-responsive-header">
               <div className="container-links-nuevos-header">
                 <Link
-                  to={"/"}
+                  to={"/inicio"}
                   className="links-responsive-header"
                   onClick={onClickMenuResponsive}
                 >

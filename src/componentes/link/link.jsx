@@ -1,11 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./link.css";
 
 function Links() {
+  const history = useNavigate();
+
   const onClickRouteHome = () => {
-    window.location.href = "/";
+    history("/inicio");
+    window.scroll(0, 0);
   };
 
   const onClickNuestosVinos = () => {

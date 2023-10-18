@@ -1,28 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import imagen from "../../imagenes/imagen-8.jpg";
 import "./vinos.css";
 
 function Vinos() {
+  const arrayVinos = JSON.parse(localStorage.getItem("arrayVinos"));
   const [vino, setVinos] = useState(false);
   const { name } = useParams();
   const [newUrl, setNewUrl] = useState(false);
 
   if (name !== newUrl && vino !== false) {
     setVinos(false);
-    axios
-      .get("https://vinos-marcelo-api-production.up.railway.app/api/vinos")
-      .then((res) => {
-        const filter = res.data.vinos.filter((i) => {
-          return i.nombre === name;
-        });
-        setNewUrl(name);
-        setVinos(filter);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    const filter = arrayVinos.filter((i) => {
+      return i.nombre === name;
+    });
+    setNewUrl(name);
+    setVinos(filter);
   }
 
   const onClickPdf = () => {
@@ -47,20 +40,13 @@ function Vinos() {
 
   useEffect(() => {
     if (vino === false) {
-      axios
-        .get("https://vinos-marcelo-api-production.up.railway.app/api/vinos")
-        .then((res) => {
-          const filter = res.data.vinos.filter((i) => {
-            return i.nombre === name;
-          });
-          setNewUrl(name);
-          setVinos(filter);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      const filter = arrayVinos.filter((i) => {
+        return i.nombre === name;
+      });
+      setNewUrl(name);
+      setVinos(filter);
     }
-  });
+  }, [arrayVinos, name, vino]);
 
   window.addEventListener("scroll", function () {
     let elemento = document.querySelector(".animacion-1-vinos");

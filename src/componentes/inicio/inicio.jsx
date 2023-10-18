@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import axios from "axios";
 import imagen from "../../imagenes/imagen-10.jpg";
 import "./inicio.css";
 
 function Inicio() {
-  const [data, setData] = useState(false);
+  const arrayVinos = JSON.parse(localStorage.getItem("arrayVinos"));
   const [sliderVinos, setSliderVinos] = useState(false);
   const [stateSlider, setStateSlider] = useState(false);
   const history = useNavigate();
@@ -26,12 +25,6 @@ function Inicio() {
     }
   };
 
-  const autoMoveSlider = () => {
-    setTimeout(() => {
-      onClickStateSlider();
-    }, "10000");
-  };
-
   const routeViñedosOnClick = () => {
     history("/nuestros-viñedos");
     window.scrollTo(0, 0);
@@ -41,20 +34,6 @@ function Inicio() {
     history("/conocenos");
     window.scrollTo(0, 0);
   };
-
-  useEffect(() => {
-    if (data === false) {
-      axios
-        .get("https://vinos-marcelo-api-production.up.railway.app/api/vinos")
-        .then((res) => {
-          setData(res.data);
-          autoMoveSlider();
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  });
 
   //---------------------------------------------- animaciones- ----------------------------------------------
 
@@ -118,14 +97,14 @@ function Inicio() {
     }
   });
 
-  if (data !== false && data.vinos.length !== 0) {
+  if (arrayVinos !== null) {
     return (
       <div className="body-inicio">
         {stateSlider === false ? (
           <div className="container-inicio-1 imagen-de-fond-1">
             <img
               className="animation-bottom-inicio"
-              src={data.vinos.length !== 0 ? data.vinos[0].img : ""}
+              src={arrayVinos.length !== 0 ? arrayVinos[0].img : ""}
               alt="vino"
             />
 
@@ -160,7 +139,7 @@ function Inicio() {
             <div className="img-slider-2">
               <img
                 className="animation-bottom-inicio"
-                src={data.vinos.length !== 0 ? data.vinos[1].img : ""}
+                src={arrayVinos.length !== 0 ? arrayVinos[1].img : ""}
                 alt="vino"
               />
             </div>
@@ -275,8 +254,8 @@ function Inicio() {
 
           {sliderVinos === false ? (
             <div className="container-inicio-3-slider">
-              {data &&
-                data.vinos.map((i) => {
+              {arrayVinos &&
+                arrayVinos.map((i) => {
                   if (
                     i.nombre === "ARREPENTIDO" ||
                     i.nombre === "CADENA PERPETUA"
@@ -315,8 +294,8 @@ function Inicio() {
             </div>
           ) : (
             <div className="container-inicio-3-slider">
-              {data &&
-                data.vinos.map((i) => {
+              {arrayVinos &&
+                arrayVinos.map((i) => {
                   if (i.nombre === "TRIBUNAL" || i.nombre === "FISCAL") {
                     return (
                       <Link
