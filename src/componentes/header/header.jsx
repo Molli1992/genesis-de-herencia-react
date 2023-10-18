@@ -345,6 +345,11 @@ function Heaeder() {
             alt="logo-empresa"
           />
 
+          <div className="tittle-logo-ruiz-2">
+            <h1>Familia Ruiz</h1>
+            <h3>Genesis de Herencia</h3>
+          </div>
+
           {stateResponsive === true ? (
             <div className="container-links-responsive-header">
               <div className="container-links-nuevos-header">

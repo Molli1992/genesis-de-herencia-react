@@ -258,6 +258,11 @@
   width: 106px;
   height: 47px;
   right: 50px;
+  display: none;
+}
+
+.tittle-logo-ruiz-2 {
+  display: none;
 }
 
 .container-links-responsive-header {
@@ -350,4 +355,23 @@
     justify-content: center;
     z-index: 999;
   }
+
+  .tittle-logo-ruiz-2 {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 50px;
+    text-align: center;
+    color: #838383;
+  }
+
+  .tittle-logo-ruiz-2 h1 {
+    font-size: 20px;
+  }
+
+  .tittle-logo-ruiz-2 h3 {
+    font-size: 16px;
+  }
+
 }
