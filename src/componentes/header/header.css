@@ -91,6 +91,22 @@
   left: 65px;
   width: 155px;
   height: 65px;
+  display: none;
+}
+
+.tittle-logo-ruiz {
+  position: absolute;
+  left: 65px;
+  color: #838383;
+  text-align: center;
+}
+
+.tittle-logo-ruiz h1 {
+  font-size: 25px;
+}
+
+.tittle-logo-ruiz h3 {
+  font-size: 18px;
 }
 
 .container-links-header-2 {

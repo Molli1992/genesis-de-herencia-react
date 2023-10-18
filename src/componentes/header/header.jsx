@@ -203,9 +203,14 @@ function Heaeder() {
 
         <div className="container-header-2">
           <img
-            src="https://surdelosandes.com/wp-content/uploads/2023/05/logo-sur-de-los-andes-1024x446.png"
+            src="https://www.clipartmax.com/png/middle/97-973465_balanza-de-la-justicia-vector-png.png"
             alt="logo-empresa"
           />
+
+          <div className="tittle-logo-ruiz">
+            <h1>Familia Ruiz</h1>
+            <h3>Genesis de Herencia</h3>
+          </div>
 
           <div className="container-links-header-2">
             <Link id="link-home" to={"/"} className="link-header-2">
