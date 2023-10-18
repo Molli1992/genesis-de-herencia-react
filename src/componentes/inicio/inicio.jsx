@@ -4,7 +4,7 @@ import imagen from "../../imagenes/imagen-10.jpg";
 import "./inicio.css";
 
 function Inicio() {
-  const arrayVinos = JSON.parse(localStorage.getItem("arrayVinos"));
+  const arrayVinos = JSON.parse(sessionStorage.getItem("arrayVinos"));
   const [sliderVinos, setSliderVinos] = useState(false);
   const [stateSlider, setStateSlider] = useState(false);
   const history = useNavigate();

@@ -12,7 +12,7 @@ import Swal from "sweetalert2";
 import "./admin.css";
 
 function Admin() {
-  const [data, setData] = useState(false);
+  const data = JSON.parse(sessionStorage.getItem("arrayVinos"));
 
   const [mensajesLeidos, setMensajesLeidos] = useState(false);
   const [mensajesNoLeidos, setMensajesNoLeidos] = useState(false);
@@ -155,17 +155,6 @@ function Admin() {
   };
 
   useEffect(() => {
-    if (data === false) {
-      axios
-        .get("https://vinos-marcelo-api-production.up.railway.app/api/vinos")
-        .then((response) => {
-          setData(response.data);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-
     if (dataUsers === false) {
       axios
         .get("https://vinos-marcelo-api-production.up.railway.app/api/admin")
@@ -176,7 +165,7 @@ function Admin() {
           console.error(error);
         });
     }
-  }, [data, dataUsers]);
+  }, [dataUsers]);
 
   if (state === false) {
     return (
@@ -259,9 +248,9 @@ function Admin() {
 
         {post === true ? <Post /> : null}
 
-        {put === true ? <Put data={data.vinos} /> : null}
+        {put === true ? <Put data={data} /> : null}
 
-        {borrar === true ? <Delete data={data.vinos} /> : null}
+        {borrar === true ? <Delete data={data} /> : null}
 
         {postUsuario === true ? <UsuarioPost /> : null}
 

@@ -4,7 +4,7 @@ import imagen from "../../imagenes/imagen-8.jpg";
 import "./vinos.css";
 
 function Vinos() {
-  const arrayVinos = JSON.parse(localStorage.getItem("arrayVinos"));
+  const arrayVinos = JSON.parse(sessionStorage.getItem("arrayVinos"));
   const [vino, setVinos] = useState(false);
   const { name } = useParams();
   const [newUrl, setNewUrl] = useState(false);

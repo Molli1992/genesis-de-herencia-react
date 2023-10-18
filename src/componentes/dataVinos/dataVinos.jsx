@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function DataVinos() {
-  const arrayVinos = JSON.parse(localStorage.getItem("arrayVinos"));
+  const arrayVinos = JSON.parse(sessionStorage.getItem("arrayVinos"));
   const history = useNavigate();
 
   useEffect(() => {
@@ -13,7 +13,7 @@ function DataVinos() {
       axios
         .get("https://vinos-marcelo-api-production.up.railway.app/api/vinos")
         .then((res) => {
-          localStorage.setItem("arrayVinos", JSON.stringify(res.data.vinos));
+          sessionStorage.setItem("arrayVinos", JSON.stringify(res.data.vinos));
           history("/inicio");
         })
         .catch((err) => {
