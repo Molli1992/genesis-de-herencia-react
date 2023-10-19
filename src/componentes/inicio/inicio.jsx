@@ -294,13 +294,30 @@ function Inicio() {
             <div className="container-inicio-3-slider">
               {arrayVinos &&
                 arrayVinos.map((i) => {
-                  if (i.nombre === "ARREPENTIDO" || i.nombre === "FISCAL") {
+                  if (i.nombre === "FISCAL") {
                     return (
                       <Link
                         to={"/reserva/" + i.nombre}
                         className="card-container-inicio-3"
                       >
                         <div className="container-card-left">
+                          <img src={i.img} alt="vinos" />
+                        </div>
+
+                        <div className="container-card-right">
+                          <p className="tittle-card">{i.nombre}</p>
+
+                          <p className="sub-tittle-card">{i.resumen}</p>
+                        </div>
+                      </Link>
+                    );
+                  } else if (i.nombre === "ARREPENTIDO") {
+                    return (
+                      <Link
+                        to={"/reserva/" + i.nombre}
+                        className="card-container-inicio-3"
+                      >
+                        <div className="container-card-left img-arrepentido">
                           <img src={i.img} alt="vinos" />
                         </div>
 
