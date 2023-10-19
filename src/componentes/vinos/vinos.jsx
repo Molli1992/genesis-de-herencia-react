@@ -49,18 +49,6 @@ function Vinos() {
   }, [arrayVinos, name, vino]);
 
   window.addEventListener("scroll", function () {
-    let elemento = document.querySelector(".animacion-1-vinos");
-
-    if (elemento) {
-      let posicion = elemento.getBoundingClientRect();
-      if (posicion.top < 850 && posicion.top > -850) {
-        elemento.classList.add("animation-left-viñedos");
-        elemento.classList.add("opacity-1-inicio");
-      }
-    }
-  });
-
-  window.addEventListener("scroll", function () {
     let elemento = document.querySelector(".animacion-2-vinos");
 
     if (elemento) {
@@ -97,7 +85,7 @@ function Vinos() {
           <div className="container-left-vinos-2">
             <h3>LÍNEA RESERVA</h3>
 
-            <h1 className="animacion-1-vinos">{vino[0].titulo}</h1>
+            <h1>{vino[0].titulo}</h1>
 
             <p>{vino[0].descripcion}</p>
           </div>
