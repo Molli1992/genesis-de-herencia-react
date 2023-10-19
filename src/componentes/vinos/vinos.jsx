@@ -48,18 +48,6 @@ function Vinos() {
     }
   }, [arrayVinos, name, vino]);
 
-  window.addEventListener("scroll", function () {
-    let elemento = document.querySelector(".animacion-2-vinos");
-
-    if (elemento) {
-      let posicion = elemento.getBoundingClientRect();
-      if (posicion.top < 2000 && posicion.top > -2000) {
-        elemento.classList.add("animation-rigth-viñedos");
-        elemento.classList.add("opacity-1-inicio");
-      }
-    }
-  });
-
   if (vino !== false) {
     return (
       <div className="body-vinos">
@@ -78,7 +66,7 @@ function Vinos() {
             <p>{vino[0].descripcion}</p>
           </div>
 
-          <div className="container-right-vinos-2 animacion-2-vinos">
+          <div className="container-right-vinos-2">
             <img src={imagen} alt="vinos" />
           </div>
         </div>
