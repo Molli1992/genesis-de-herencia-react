@@ -21,7 +21,7 @@ function Footer() {
   } else {
     return (
       <div className="body-footer">
-        <text>Todos los derechos reservados 2023 Sur de Los Andes</text>
+        <text>Todos los derechos reservados 2023 Genesis de Herencia</text>
 
         <div className="container-footer-1">
           <div className="container-whatsapp-footer" onClick={onClickWhatsapp}>
