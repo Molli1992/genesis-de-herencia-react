@@ -42,7 +42,7 @@ function Inicio() {
 
     if (elemento) {
       let posicion = elemento.getBoundingClientRect();
-      if (posicion.top < 850 && posicion.top > -850) {
+      if (posicion.top < 1200 && posicion.top > -1200) {
         elemento.classList.add("animation-left-viñedos");
         elemento.classList.add("opacity-viñedos");
       }
@@ -54,7 +54,7 @@ function Inicio() {
 
     if (elemento) {
       let posicion = elemento.getBoundingClientRect();
-      if (posicion.top < 850 && posicion.top > -850) {
+      if (posicion.top < 1200 && posicion.top > -1200) {
         elemento.classList.add("animation-top-viñedos");
         elemento.classList.add("opacity-viñedos");
       }
@@ -66,7 +66,7 @@ function Inicio() {
 
     if (elemento) {
       let posicion = elemento.getBoundingClientRect();
-      if (posicion.top < 850 && posicion.top > -850) {
+      if (posicion.top < 1200 && posicion.top > -1200) {
         elemento.classList.add("animation-top-viñedos");
         elemento.classList.add("opacity-viñedos");
       }
