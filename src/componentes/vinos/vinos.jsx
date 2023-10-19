@@ -53,7 +53,7 @@ function Vinos() {
 
     if (elemento) {
       let posicion = elemento.getBoundingClientRect();
-      if (posicion.top < 550 && posicion.top > -450) {
+      if (posicion.top < 850 && posicion.top > -850) {
         elemento.classList.add("animation-left-viñedos");
         elemento.classList.add("opacity-1-inicio");
       }
@@ -65,7 +65,7 @@ function Vinos() {
 
     if (elemento) {
       let posicion = elemento.getBoundingClientRect();
-      if (posicion.top < 550 && posicion.top > -450) {
+      if (posicion.top < 850 && posicion.top > -850) {
         elemento.classList.add("animation-rigth-viñedos");
         elemento.classList.add("opacity-1-inicio");
       }
@@ -77,7 +77,7 @@ function Vinos() {
 
     if (elemento) {
       let posicion = elemento.getBoundingClientRect();
-      if (posicion.top < 550 && posicion.top > -450) {
+      if (posicion.top < 850 && posicion.top > -850) {
         elemento.classList.add("img-inicio-animation");
         elemento.classList.add("opacity-1-inicio");
       }
