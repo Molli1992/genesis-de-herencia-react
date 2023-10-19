@@ -72,7 +72,7 @@
 }
 
 .animacion-activa {
-    animation: moveInRight 2s ease-out;
+    animation: moveInRight 1s ease-out;
     animation-iteration-count: 2s;
 }
 
@@ -103,7 +103,7 @@
 }
 
 .flex-nostros-animation {
-    animation: moveInTop 2s ease-out;
+    animation: moveInTop 1s ease-out;
     animation-iteration-count: 1;
 }
 
@@ -155,7 +155,7 @@
 }
 
 .img-nostros-animation {
-    animation: moveInDown 2s ease-out;
+    animation: moveInDown 1s ease-out;
     animation-iteration-count: 1;
 }
 
