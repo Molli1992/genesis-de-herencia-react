@@ -53,7 +53,7 @@ function Vinos() {
 
     if (elemento) {
       let posicion = elemento.getBoundingClientRect();
-      if (posicion.top < 1200 && posicion.top > -1200) {
+      if (posicion.top < 2000 && posicion.top > -2000) {
         elemento.classList.add("animation-rigth-viñedos");
         elemento.classList.add("opacity-1-inicio");
       }
