@@ -103,7 +103,6 @@ function Inicio() {
         {stateSlider === false ? (
           <div className="container-inicio-1 imagen-de-fond-1">
             <img
-              className="animation-bottom-inicio"
               src={arrayVinos.length !== 0 ? arrayVinos[0].img : ""}
               alt="vino"
             />
@@ -138,8 +137,7 @@ function Inicio() {
 
             <div className="img-slider-2">
               <img
-                className="animation-bottom-inicio"
-                src={arrayVinos.length !== 0 ? arrayVinos[1].img : ""}
+                src={arrayVinos.length !== 0 ? arrayVinos[3].img : ""}
                 alt="vino"
               />
             </div>
@@ -257,7 +255,7 @@ function Inicio() {
               {arrayVinos &&
                 arrayVinos.map((i) => {
                   if (
-                    i.nombre === "ARREPENTIDO" ||
+                    i.nombre === "TRIBUNAL" ||
                     i.nombre === "CADENA PERPETUA"
                   ) {
                     return (
@@ -296,7 +294,7 @@ function Inicio() {
             <div className="container-inicio-3-slider">
               {arrayVinos &&
                 arrayVinos.map((i) => {
-                  if (i.nombre === "TRIBUNAL" || i.nombre === "FISCAL") {
+                  if (i.nombre === "ARREPENTIDO" || i.nombre === "FISCAL") {
                     return (
                       <Link
                         to={"/reserva/" + i.nombre}

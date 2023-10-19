@@ -119,11 +119,7 @@ function Vinos() {
             <p>{vino[0].crianza}</p>
           </div>
 
-          <img
-            className="img-container-vinos-3 animacion-3-vinos"
-            src={vino[0].img}
-            alt="Vino"
-          />
+          <img className="img-container-vinos-3" src={vino[0].img} alt="Vino" />
 
           <div className="container-vinos-3-right">
             <h1>{vino[0].subtitulo}</h1>

@@ -153,9 +153,10 @@
 }
 
 .img-container-vinos-3 {
-    height: 90%;
+    height: 900px;
     position: absolute;
-    left: 25%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 @media screen and (max-width: 950px) {
@@ -217,10 +218,8 @@
     }
 
     .img-container-vinos-3 {
-        height: 620px;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 32%;
+        height: 700px;
+        top: 38.5%;
     }
 }
 
