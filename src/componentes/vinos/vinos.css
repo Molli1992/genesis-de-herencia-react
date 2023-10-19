@@ -242,7 +242,7 @@
 }
 
 .img-inicio-animation {
-    animation: moveInDown 1s ease-out;
+    animation: moveInDown 1.5s ease-out;
     animation-iteration-count: 1;
 }
 

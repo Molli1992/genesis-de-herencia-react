@@ -37,42 +37,6 @@ function Inicio() {
 
   //---------------------------------------------- animaciones- ----------------------------------------------
 
-  window.addEventListener("scroll", function () {
-    let elemento = document.querySelector(".animacion-inicio-2");
-
-    if (elemento) {
-      let posicion = elemento.getBoundingClientRect();
-      if (posicion.top < 1200 && posicion.top > -1200) {
-        elemento.classList.add("animation-left-viñedos");
-        elemento.classList.add("opacity-viñedos");
-      }
-    }
-  });
-
-  window.addEventListener("scroll", function () {
-    let elemento = document.querySelector(".animacion-inicio-3");
-
-    if (elemento) {
-      let posicion = elemento.getBoundingClientRect();
-      if (posicion.top < 1200 && posicion.top > -1200) {
-        elemento.classList.add("animation-top-viñedos");
-        elemento.classList.add("opacity-viñedos");
-      }
-    }
-  });
-
-  window.addEventListener("scroll", function () {
-    let elemento = document.querySelector(".animacion-inicio-5");
-
-    if (elemento) {
-      let posicion = elemento.getBoundingClientRect();
-      if (posicion.top < 1200 && posicion.top > -1200) {
-        elemento.classList.add("animation-top-viñedos");
-        elemento.classList.add("opacity-viñedos");
-      }
-    }
-  });
-
   if (arrayVinos !== null) {
     return (
       <div className="body-inicio">
@@ -152,7 +116,7 @@ function Inicio() {
           </div>
 
           <div className="container-flex-inicio contaner-block-inicio">
-            <div className="container-inicio-2-left animacion-inicio-2">
+            <div className="container-inicio-2-left">
               <img src={imagen} alt="vinos" />
             </div>
 
@@ -344,7 +308,7 @@ function Inicio() {
             <h3>¿POR QUÉ ELEGIR NUESTROS VINOS?</h3>
           </div>
 
-          <div className="container-flex-inicio animacion-inicio-5">
+          <div className="container-flex-inicio">
             <h1 className="container-flex-inicio">
               NUESTROS EXQUISITOS VINOS ESTÁN DISEÑADOS PARA SATISFACER LOS
               PALADARES MÁS EXIGENTES, BRINDANDO UNA EXPERIENCIA INIGUALABLE.

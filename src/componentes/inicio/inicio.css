@@ -580,7 +580,7 @@
 }
 
 .animation-bottom-inicio {
-    animation: moveInBottom 1s ease-out;
+    animation: moveInBottom 1.5s ease-out;
     animation-iteration-count: 1;
 }
 
