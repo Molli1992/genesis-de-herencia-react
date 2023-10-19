@@ -186,7 +186,7 @@ function Inicio() {
             <h3>NUESTROS VINOS</h3>
           </div>
 
-          <div className="container-flex-inicio animacion-inicio-3">
+          <div className="container-flex-inicio">
             <h1>DESCUBRE EL ARTE EN CADA SORBO</h1>
           </div>
 
