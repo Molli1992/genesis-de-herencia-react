@@ -38,18 +38,6 @@ function Inicio() {
   //---------------------------------------------- animaciones- ----------------------------------------------
 
   window.addEventListener("scroll", function () {
-    let elemento = document.querySelector(".animacion-inicio");
-
-    if (elemento) {
-      let posicion = elemento.getBoundingClientRect();
-      if (posicion.top < 850 && posicion.top > -850) {
-        elemento.classList.add("animation-top-viñedos");
-        elemento.classList.add("opacity-viñedos");
-      }
-    }
-  });
-
-  window.addEventListener("scroll", function () {
     let elemento = document.querySelector(".animacion-inicio-2");
 
     if (elemento) {
@@ -68,18 +56,6 @@ function Inicio() {
       let posicion = elemento.getBoundingClientRect();
       if (posicion.top < 850 && posicion.top > -850) {
         elemento.classList.add("animation-top-viñedos");
-        elemento.classList.add("opacity-viñedos");
-      }
-    }
-  });
-
-  window.addEventListener("scroll", function () {
-    let elemento = document.querySelector(".animacion-inicio-4");
-
-    if (elemento) {
-      let posicion = elemento.getBoundingClientRect();
-      if (posicion.top < 850 && posicion.top > -850) {
-        elemento.classList.add("animation-left-viñedos");
         elemento.classList.add("opacity-viñedos");
       }
     }
@@ -168,7 +144,7 @@ function Inicio() {
             <h3>NOSOTROS</h3>
           </div>
 
-          <div className="container-flex-inicio animacion-inicio">
+          <div className="container-flex-inicio">
             <h1>
               MEZCLAMOS EL SABER PROFESIONAL Y EL ARTE MILENARIO PARA CREAR
               VINOS EXCEPCIONALES
@@ -348,9 +324,7 @@ function Inicio() {
         </div>
 
         <div className="container-inicio-4">
-          <h1 className="animacion-inicio-4">
-            ENCUENTRA LA PASIÓN EN CADA COPA
-          </h1>
+          <h1>ENCUENTRA LA PASIÓN EN CADA COPA</h1>
 
           <p>
             Sumérgete en el deleite de sabores exquisitos, capturados en cada
