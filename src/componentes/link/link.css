@@ -23,6 +23,7 @@
     bottom: -103px;
     height: 214px;
     width: 214px;
+    border-radius: 50%;
 }
 
 .flex-container-link {

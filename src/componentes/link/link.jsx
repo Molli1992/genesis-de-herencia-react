@@ -29,7 +29,7 @@ function Links() {
         />
 
         <img
-          src="https://link.surdelosandes.com/wp-content/uploads/2023/01/logo-sdla.png"
+          src="https://media.istockphoto.com/id/960574664/es/vector/copa-de-vino-tinto-con-splash-dibujo-a-mano-icono-de-la-copa-de-vino-vector-stock-logo.jpg?s=612x612&w=0&k=20&c=COVLBCccwT0GnQeEysOBC172o4aSI7K6YcyyjFtK8DU="
           alt="escudo"
           className="container-1-link-img-2"
         />
