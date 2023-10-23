@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import imagen from "../../imagenes/imagen-10.jpg";
+import imgCadenaPerpetua from "../../imagenes/img-cadena-perpetua.png";
+import imgTribunal from "../../imagenes/img-tribunal.png";
 import "./inicio.css";
 
 function Inicio() {
@@ -43,8 +45,9 @@ function Inicio() {
         {stateSlider === false ? (
           <div className="container-inicio-1 imagen-de-fond-1">
             <img
-              src={arrayVinos.length !== 0 ? arrayVinos[0].img : ""}
+              src={imgCadenaPerpetua}
               alt="vino"
+              className="img-cadena-perpetua"
             />
 
             <p className="animation-bottom-inicio">
@@ -76,10 +79,7 @@ function Inicio() {
             </div>
 
             <div className="img-slider-2">
-              <img
-                src={arrayVinos.length !== 0 ? arrayVinos[3].img : ""}
-                alt="vino"
-              />
+              <img src={imgTribunal} alt="vino" className="img-tribunal" />
             </div>
 
             <p className="animation-bottom-inicio" style={{ color: "#000000" }}>
