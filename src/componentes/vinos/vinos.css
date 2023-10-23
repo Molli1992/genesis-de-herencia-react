@@ -34,12 +34,26 @@
     font-weight: bold;
 }
 
+.container-h4-vinos {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 60%;
+}
+
 .container-vinos-1 h4 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.container-vinos-1 h2 {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 60%;
-    font-size: 32px;
+    top: 72%;
+    font-size: 22px;
     font-weight: bold;
 }
 
@@ -220,6 +234,12 @@
     .img-container-vinos-3 {
         height: 700px;
         top: 38.5%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container-vinos-1 h4 {
+        font-size: 28px;
     }
 }
 

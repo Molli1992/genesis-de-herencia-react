@@ -54,7 +54,10 @@ function Vinos() {
         <div className="container-vinos-1">
           <h3>NUESTROS VINOS</h3>
           <h1>RESERVA</h1>
-          <h4>{vino[0].subtitulo}</h4>
+          <div className="container-h4-vinos">
+            <h4>{vino[0].subtitulo}</h4>
+          </div>
+          <h2>{vino[0].nombre}</h2>
         </div>
 
         <div className="container-vinos-2">
