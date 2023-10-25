@@ -88,7 +88,7 @@ function Put(props) {
         fermentacion: filter[0].fermentacion,
         crianza: filter[0].crianza,
         img: filter[0].img,
-        imgsecundaria: filter[0].imgsecundaria,
+        imgsecundaria: "vacio",
         subtitulo: filter[0].subtitulo,
       });
     }
