@@ -369,7 +369,7 @@ function Heaeder() {
             <div className="container-links-responsive-header">
               <div className="container-links-nuevos-header">
                 <Link
-                  to={"/inicio"}
+                  to={"/"}
                   className="links-responsive-header"
                   onClick={onClickMenuResponsive}
                 >
