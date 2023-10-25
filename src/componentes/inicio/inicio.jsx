@@ -1,14 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import imagen from "../../imagenes/imagen-10.jpg";
 import imgCadenaPerpetua from "../../imagenes/img-cadena-perpetua.png";
 import imgTribunal from "../../imagenes/img-tribunal.png";
+import axios from "axios";
 import "./inicio.css";
 
 function Inicio() {
+  useEffect(() => {
+    if (inicioData === false) {
+      axios
+        .get("https://vinos-marcelo-api-production.up.railway.app/api/vinos")
+        .then((res) => {
+          sessionStorage.setItem("arrayVinos", JSON.stringify(res.data.vinos));
+          setInicioData(true);
+        })
+        .catch((err) => {
+          console.error("Error en la solicitud:", err);
+        });
+    }
+  });
+
   const arrayVinos = JSON.parse(sessionStorage.getItem("arrayVinos"));
   const [sliderVinos, setSliderVinos] = useState(false);
   const [stateSlider, setStateSlider] = useState(false);
+  const [inicioData, setInicioData] = useState(false);
   const history = useNavigate();
 
   const onClickStateSlider = () => {
@@ -377,8 +393,18 @@ function Inicio() {
     );
   } else {
     return (
-      <div className="body-loader">
-        <h1>Cargando...</h1>
+      <div
+        style={{
+          width: "100%",
+          minHeight: "70vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div class="spinner-grow text-dark" role="status">
+          <span class="sr-only"></span>
+        </div>
       </div>
     );
   }

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import imagen from "../../imagenes/imagen-8.jpg";
-import pdfCadenaPerpetu from "../../pdf/fichas-tecnicas/ficha_técnica _CADENA_PERPETUA_compressed.pdf";
-import pdfArrepentido from "../../pdf/fichas-tecnicas/ficha_técnica__ARREPENTIDO_PINOT_NOIR.pdf";
-import pdfTribuanl from "../../pdf/fichas-tecnicas/ficha_técnica _TRIBUNAL_compressed.pdf";
-import pdfFiscal from "../../pdf/fichas-tecnicas/ficha_técnica_FISCAL.pdf";
+import pdfCadenaPerpetu from "../../pdf/ficha_técnica _CADENA_PERPETUA_compressed.pdf";
+import pdfArrepentido from "../../pdf/ficha_técnica__ARREPENTIDO_PINOT_NOIR.pdf";
+import pdfTribuanl from "../../pdf/ficha_técnica _TRIBUNAL_compressed.pdf";
+import pdfFiscal from "../../pdf/ficha_técnica_FISCAL.pdf";
 import "./vinos.css";
 
 function Vinos() {
