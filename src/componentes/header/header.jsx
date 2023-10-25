@@ -228,7 +228,7 @@ function Heaeder() {
           </div>
 
           <div className="container-links-header-2">
-            <Link id="link-home" to={"/inicio"} className="link-header-2">
+            <Link id="link-home" to={"/"} className="link-header-2">
               Home
             </Link>
 
