@@ -32,7 +32,9 @@ function DataVinos() {
         justifyContent: "center",
       }}
     >
-      <h1>Cargando...</h1>
+      <div class="spinner-grow text-dark" role="status">
+        <span class="sr-only"></span>
+      </div>
     </div>
   );
 }
