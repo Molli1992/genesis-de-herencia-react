@@ -73,7 +73,7 @@ function Heaeder() {
     linkVinos !== null &&
     linkContactanos !== null
   ) {
-    if (location.pathname === "/inicio") {
+    if (location.pathname === "/") {
       linkHome.classList.add("link-header-2-active");
       linkNosotros.classList.remove("link-header-2-active");
       linkVinos.classList.remove("link-header-2-active");
