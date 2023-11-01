@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./header.css";
 import "@fontsource/roboto";
 
 function Heaeder() {
+  const navigate = useNavigate();
+  const arrayVinos = JSON.parse(sessionStorage.getItem("arrayVinos"));
   const [data, setData] = useState(false);
   const [stateResponsive, setStateResponsive] = useState(false);
   const [stateResponsiveNosotros, setStateResponsiveNosotros] = useState(false);
@@ -111,6 +113,9 @@ function Heaeder() {
   }
 
   useEffect(() => {
+    if (arrayVinos === null) {
+      navigate("/");
+    }
     if (data === false) {
       axios
         .get("https://vinos-marcelo-api-production.up.railway.app/api/vinos")
@@ -121,7 +126,7 @@ function Heaeder() {
           console.log(err);
         });
     }
-  }, [data]);
+  }, [data, navigate, arrayVinos]);
 
   if (location.pathname === "/link") {
     return null;
@@ -310,6 +315,14 @@ function Heaeder() {
                           </div>
                         );
                       })}
+                    {data === false ? (
+                      <div style={{ height: "46px", display: "grid" }}>
+                        <Link to={"/"} className="text-menu">
+                          Cargando...
+                        </Link>
+                        <div className="line-menu" />
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               </div>
@@ -505,6 +518,24 @@ function Heaeder() {
                                 </div>
                               );
                             })}
+                          {data === false ? (
+                            <div
+                              style={{ height: "30px", display: "grid" }}
+                              className="margin-responsive-header"
+                            >
+                              <Link
+                                to={"/"}
+                                className="links-responsive-header"
+                                onClick={onClickMenuResponsive}
+                              >
+                                Cargando...
+                              </Link>
+                              <div
+                                style={{ width: "85%" }}
+                                className="line-responsive-header"
+                              ></div>
+                            </div>
+                          ) : null}
                         </div>
                       ) : null}
                     </div>
