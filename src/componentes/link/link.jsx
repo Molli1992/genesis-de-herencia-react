@@ -7,7 +7,7 @@ function Links() {
   const history = useNavigate();
 
   const onClickRouteHome = () => {
-    history("/");
+    history("/inicio");
     window.scroll(0, 0);
   };
 
