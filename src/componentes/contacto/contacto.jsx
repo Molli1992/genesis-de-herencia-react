@@ -12,7 +12,6 @@ function Contacto() {
     correo: "",
     asunto: "",
     comentarios: "",
-    ledio: "TRUE",
   });
 
   const onChange = (e) => {
@@ -38,10 +37,7 @@ function Contacto() {
       });
     } else {
       axios
-        .post(
-          "https://vinos-marcelo-api-production.up.railway.app/api/message",
-          dataPost
-        )
+        .post("https://vinos-marcelo-api-production.up.railway.app/api/sendEmail", dataPost)
         .then((res) => {
           Swal.fire({
             title: "Success!",
@@ -55,7 +51,6 @@ function Contacto() {
               correo: "",
               asunto: "",
               comentarios: "",
-              ledio: "TRUE",
             });
           });
         })

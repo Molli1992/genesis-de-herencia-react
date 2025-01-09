@@ -49,7 +49,29 @@
   display: block;
 }
 
+.altura-body {
+  min-height: calc(100vh - 205px);
+}
+
+@media screen and (max-width: 940px) {
+  .altura-body {
+    min-height: calc(100vh - 140px);
+  }
+
+  .body-login {
+    min-height: calc(100vh - 140px);
+  }
+}
+
 @media screen and (max-width: 550px) {
+  .altura-body {
+    min-height: calc(100vh - 190px);
+  }
+
+  .body-login {
+    min-height: calc(100vh - 190px);
+  }
+
   .container-1-admin {
     width: 320px;
   }

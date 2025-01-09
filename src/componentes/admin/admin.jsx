@@ -6,16 +6,11 @@ import Delete from "./delete/delete";
 import UsuarioPost from "./usuarioPost/usuarioPost";
 import UsuariosPut from "./usuarioPut/usuariosPut";
 import DeleteUser from "./usuarioDelete/userDelete";
-import MensajesNoLeidos from "./zmessageNoLeidos/messageNoLeidos";
-import MessageLeidos from "./zmessageLeidos/mensajesLeidos";
 import Swal from "sweetalert2";
 import "./admin.css";
 
 function Admin() {
   const data = JSON.parse(sessionStorage.getItem("arrayVinos"));
-
-  const [mensajesLeidos, setMensajesLeidos] = useState(false);
-  const [mensajesNoLeidos, setMensajesNoLeidos] = useState(false);
 
   const [post, setPost] = useState(false);
   const [put, setPut] = useState(false);
@@ -73,8 +68,6 @@ function Admin() {
     setPostUsuario(false);
     setPutUsuarioUsuario(false);
     setBorrarUsuario(false);
-    setMensajesNoLeidos(false);
-    setMensajesLeidos(false);
   };
 
   const onClickModificarVinos = () => {
@@ -84,8 +77,6 @@ function Admin() {
     setPostUsuario(false);
     setPutUsuarioUsuario(false);
     setBorrarUsuario(false);
-    setMensajesNoLeidos(false);
-    setMensajesLeidos(false);
   };
 
   const onClickBorrarVinos = () => {
@@ -95,8 +86,6 @@ function Admin() {
     setPostUsuario(false);
     setPutUsuarioUsuario(false);
     setBorrarUsuario(false);
-    setMensajesNoLeidos(false);
-    setMensajesLeidos(false);
   };
 
   const onClickAgregarUsuario = () => {
@@ -106,8 +95,6 @@ function Admin() {
     setBorrar(false);
     setPutUsuarioUsuario(false);
     setBorrarUsuario(false);
-    setMensajesNoLeidos(false);
-    setMensajesLeidos(false);
   };
 
   const onClickModificarUsuario = () => {
@@ -117,36 +104,10 @@ function Admin() {
     setBorrar(false);
     setPostUsuario(false);
     setBorrarUsuario(false);
-    setMensajesNoLeidos(false);
-    setMensajesLeidos(false);
   };
 
   const onClickBorrarUsuario = () => {
     setBorrarUsuario(true);
-    setPutUsuarioUsuario(false);
-    setPost(false);
-    setPut(false);
-    setBorrar(false);
-    setPostUsuario(false);
-    setMensajesNoLeidos(false);
-    setMensajesLeidos(false);
-  };
-
-  const onClickMensajesLeidos = () => {
-    setMensajesLeidos(true);
-    setMensajesNoLeidos(false);
-    setBorrarUsuario(false);
-    setPutUsuarioUsuario(false);
-    setPost(false);
-    setPut(false);
-    setBorrar(false);
-    setPostUsuario(false);
-  };
-
-  const onClickMensajesNoLeidos = () => {
-    setMensajesNoLeidos(true);
-    setMensajesLeidos(false);
-    setBorrarUsuario(false);
     setPutUsuarioUsuario(false);
     setPost(false);
     setPut(false);
@@ -201,7 +162,7 @@ function Admin() {
     );
   } else {
     return (
-      <div style={{ minHeight: "calc(100vh - 205px)" }}>
+      <div className="altura-body">
         <div className="buttons-container">
           <h1 style={{ margin: "15px" }}>
             {usuarioLogeado !== false ? usuarioLogeado[0].usuario : ""}
@@ -236,16 +197,6 @@ function Admin() {
           </button>
         </div>
 
-        <div className="buttons-container">
-          <button class="btn btn-primary" onClick={onClickMensajesNoLeidos}>
-            Mensajes no Leidos
-          </button>
-
-          <button class="btn btn-primary" onClick={onClickMensajesLeidos}>
-            Mensajes Leidos
-          </button>
-        </div>
-
         {post === true ? <Post /> : null}
 
         {put === true ? <Put data={data} /> : null}
@@ -259,10 +210,6 @@ function Admin() {
         {borrarUsuario === true ? (
           <DeleteUser data={dataUsers.usuarios} />
         ) : null}
-
-        {mensajesNoLeidos === true ? <MensajesNoLeidos /> : null}
-
-        {mensajesLeidos === true ? <MessageLeidos /> : null}
       </div>
     );
   }

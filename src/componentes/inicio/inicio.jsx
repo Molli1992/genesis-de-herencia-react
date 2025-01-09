@@ -393,15 +393,7 @@ function Inicio() {
     );
   } else {
     return (
-      <div
-        style={{
-          width: "100%",
-          minHeight: "calc(100vh - 205px)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      <div className="altura-body-inicio">
         <div class="spinner-grow text-dark" role="status">
           <span class="sr-only"></span>
         </div>
