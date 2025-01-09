@@ -201,7 +201,7 @@ function Admin() {
     );
   } else {
     return (
-      <div style={{ minHeight: "67vh" }}>
+      <div style={{ minHeight: "calc(100vh - 205px)" }}>
         <div className="buttons-container">
           <h1 style={{ margin: "15px" }}>
             {usuarioLogeado !== false ? usuarioLogeado[0].usuario : ""}

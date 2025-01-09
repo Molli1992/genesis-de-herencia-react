@@ -396,7 +396,7 @@ function Inicio() {
       <div
         style={{
           width: "100%",
-          minHeight: "70vh",
+          minHeight: "calc(100vh - 205px)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
