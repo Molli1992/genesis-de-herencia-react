@@ -27,6 +27,7 @@ function Admin() {
     usuario: "",
     contraseña: "",
   });
+  const [loading, setLoading] = useState(false);
 
   const handleInputChange = (e) => {
     setUser({
@@ -36,29 +37,35 @@ function Admin() {
   };
 
   const onSubmit = () => {
-    let filter = dataUsers.usuarios.filter((i) => {
-      return i.contraseña === user.contraseña && i.usuario === user.usuario;
-    });
+    setLoading(true);
 
-    setUsuarioLogeado(filter);
-
-    if (filter.length !== 0) {
-      Swal.fire({
-        title: "Success!",
-        text: "Te has logeado correctamente!",
-        icon: "success",
-        confirmButtonText: "Ok",
-      }).then(() => {
-        setState(true);
+    axios
+      .get(
+        `${process.env.REACT_APP_API_URL}/api/admin/${user.usuario}/${user.contraseña}`
+      )
+      .then((res) => {
+        setUsuarioLogeado(res.data.usuario);
+        Swal.fire({
+          title: "Success!",
+          text: "Te has logeado correctamente!",
+          icon: "success",
+          confirmButtonText: "Ok",
+        }).then(() => {
+          setLoading(false);
+          setState(true);
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        Swal.fire({
+          title: "Error!",
+          text: "Usuario o contraseñas incorrectos",
+          icon: "error",
+          confirmButtonText: "Ok",
+        }).then(() => {
+          setLoading(false);
+        });
       });
-    } else {
-      Swal.fire({
-        title: "Error!",
-        text: "Usuario o contraseñas incorrectos",
-        icon: "error",
-        confirmButtonText: "Ok",
-      });
-    }
   };
 
   const onClickAgregarVinos = () => {
@@ -154,8 +161,11 @@ function Admin() {
             />
           </div>
 
-          <button class="btn btn-primary" onClick={onSubmit}>
-            Submit
+          <button
+            className="btn btn-primary"
+            onClick={onSubmit}
+          >
+            {loading ? <i className="fa fa-spinner fa-spin"></i> : "Submit"}
           </button>
         </div>
       </div>
@@ -165,7 +175,7 @@ function Admin() {
       <div className="altura-body">
         <div className="buttons-container">
           <h1 style={{ margin: "15px" }}>
-            {usuarioLogeado !== false ? usuarioLogeado[0].usuario : ""}
+            {usuarioLogeado !== false ? usuarioLogeado.usuario : ""}
           </h1>
         </div>
 

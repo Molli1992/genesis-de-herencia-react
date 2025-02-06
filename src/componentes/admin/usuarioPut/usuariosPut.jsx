@@ -29,8 +29,8 @@ function UsuariosPut(props) {
       setDataPut({
         id: filter[0].id,
         usuario: filter[0].usuario,
-        contraseña: filter[0].contraseña,
-        repetircontraseña: filter[0].contraseña,
+        contraseña: "",
+        repetircontraseña: "",
       });
     }
   };
@@ -65,10 +65,7 @@ function UsuariosPut(props) {
     } else {
       setButtonValue("Cargando...");
       axios
-        .put(
-          `${process.env.REACT_APP_API_URL}/api/admin`,
-          dataPut
-        )
+        .put(`${process.env.REACT_APP_API_URL}/api/admin`, dataPut)
         .then((res) => {
           console.log(res);
           Swal.fire({
