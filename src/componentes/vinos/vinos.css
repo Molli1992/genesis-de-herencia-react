@@ -1,279 +1,276 @@
 .body-vinos {
-    width: 100%;
-    display: block;
-    background-color: #000000;
+  width: 100%;
+  display: block;
+  background-color: #000000;
 }
 
 /*------------------------------------contaner-vinos-1-------------------------------------------*/
 
 .container-vinos-1 {
-    width: 100%;
-    height: 400px;
-    display: block;
-    position: relative;
-    background-image: url("https://surdelosandes.com/wp-content/uploads/2023/09/paisaje-surdelosandes-2.jpg-e1694911376211.png");
-    background-size: cover;
-    background-position: bottom;
-    color: #FFFFFF;
+  width: 100%;
+  height: 400px;
+  display: block;
+  position: relative;
+  background-image: url("https://surdelosandes.com/wp-content/uploads/2023/09/paisaje-surdelosandes-2.jpg-e1694911376211.png");
+  background-size: cover;
+  background-position: bottom;
+  color: #ffffff;
 }
 
 .container-vinos-1 h3 {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 30%;
-    font-size: 18px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30%;
+  font-size: 18px;
 }
 
 .container-vinos-1 h1 {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 40%;
-    font-size: 62px;
-    font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40%;
+  font-size: 62px;
+  font-weight: bold;
 }
 
 .container-h4-vinos {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 60%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 60%;
 }
 
 .container-vinos-1 h4 {
-    font-size: 32px;
-    font-weight: bold;
+  font-size: 32px;
+  font-weight: bold;
 }
 
 .container-vinos-1 h2 {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 72%;
-    font-size: 22px;
-    font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 72%;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 /*------------------------------------contaner-vinos-2-------------------------------------------*/
 
 .container-vinos-2 {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #000000;
-    padding: 75px 0px;
-    gap: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  padding: 75px 0px;
+  gap: 30px;
 }
 
 .container-left-vinos-2 {
-    display: block;
-    width: 40%;
-    color: #FFFFFF;
+  display: block;
+  width: 40%;
+  color: #ffffff;
 }
 
 .container-left-vinos-2 h3 {
-    font-size: 16px;
-    margin-bottom: 20px;
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
 .container-left-vinos-2 h1 {
-    font-size: 32px;
-    margin-bottom: 75px;
+  font-size: 32px;
+  margin-bottom: 75px;
 }
 
 .container-left-vinos-2 p {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 .container-right-vinos-2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
 }
 
 .container-right-vinos-2 img {
-    width: 400px;
+  width: 400px;
 }
 
 /*------------------------------------contaner-vinos-3-------------------------------------------*/
 
 .container-vinos-3 {
-    width: 100%;
-    height: 800px;
-    position: relative;
-    background-color: #f5f5dc;
-    clip-path: polygon(50% 0, 75% 3%, 100% 0, 100% 100%, 0 100%, 0 0, 20% 2%);
+  width: 100%;
+  height: 800px;
+  position: relative;
+  background-color: #f5f5dc;
+  clip-path: polygon(50% 0, 75% 3%, 100% 0, 100% 100%, 0 100%, 0 0, 20% 2%);
 }
 
 .container-vinos-3-left {
-    position: absolute;
-    width: 30%;
-    left: 15px;
-    top: 10%;
-    color: #000000;
+  position: absolute;
+  width: 30%;
+  left: 15px;
+  top: 10%;
+  color: #000000;
 }
 
 .container-vinos-3-left h1 {
-    font-size: 30px;
-    margin-bottom: 20px;
+  font-size: 30px;
+  margin-bottom: 20px;
 }
 
 .container-vinos-3-left p {
-    font-size: 15px;
-    margin-bottom: 100px;
+  font-size: 15px;
+  margin-bottom: 100px;
 }
 
 .container-vinos-3-right {
-    position: absolute;
-    width: 50%;
-    left: 65%;
-    top: 50%;
-    width: 33%;
+  position: absolute;
+  width: 50%;
+  left: 65%;
+  top: 50%;
+  width: 33%;
 }
 
 .container-vinos-3-right h1 {
-    font-size: 30px;
-    margin-bottom: 15px;
+  font-size: 30px;
+  margin-bottom: 15px;
 }
 
 .container-vinos-3-right p {
-    font-size: 15px;
-    color: #000000;
-    margin-bottom: 20px;
+  font-size: 15px;
+  color: #000000;
+  margin-bottom: 20px;
 }
 
 .container-vinos-3-right button {
-    width: 100%;
-    height: 55px;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    background-color: #AE132E;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: all 0.5s;
+  width: 100%;
+  height: 55px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  background-color: #ae132e;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.5s;
 }
 
 .container-vinos-3-right button:hover {
-    background-color: #FFFFFF;
-    color: #AE132E;
+  background-color: #ffffff;
+  color: #ae132e;
 }
 
 .img-container-vinos-3 {
-    height: 900px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @media screen and (max-width: 950px) {
-    .container-left-vinos-2 {
-        width: 50%;
-        margin-left: 10px;
-    }
+  .container-left-vinos-2 {
+    width: 50%;
+    margin-left: 10px;
+  }
 
-
-    .container-right-vinos-2 {
-        width: 50%;
-        margin-right: 10px;
-    }
+  .container-right-vinos-2 {
+    width: 50%;
+    margin-right: 10px;
+  }
 }
 
 @media screen and (max-width: 950px) {
-    .container-vinos-2 {
-        display: block;
-    }
+  .container-vinos-2 {
+    display: block;
+  }
 
-    .container-left-vinos-2 {
-        width: 90%;
-        margin-left: 10px;
-        margin-bottom: 50px;
-    }
+  .container-left-vinos-2 {
+    width: 90%;
+    margin-left: 10px;
+    margin-bottom: 50px;
+  }
 
+  .container-right-vinos-2 {
+    width: 100%;
+    margin-right: 0px;
+  }
 
-    .container-right-vinos-2 {
-        width: 100%;
-        margin-right: 0px;
-    }
-
-    .container-right-vinos-2 img {
-        width: 90%;
-    }
+  .container-right-vinos-2 img {
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 900px) {
+  .container-vinos-3 {
+    height: 1300px;
+  }
 
-    .container-vinos-3 {
-        height: 1300px;
-    }
+  .container-vinos-3-left {
+    width: 95%;
+    left: 10px;
+  }
 
-    .container-vinos-3-left {
-        width: 95%;
-        left: 10px;
-    }
+  .container-vinos-3-left p {
+    margin-bottom: 40px;
+  }
 
-    .container-vinos-3-left p {
-        margin-bottom: 40px;
-    }
+  .container-vinos-3-right {
+    position: absolute;
+    width: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 80%;
+  }
 
-    .container-vinos-3-right {
-        position: absolute;
-        width: 300px;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 80%;
-    }
-
-    .img-container-vinos-3 {
-        height: 700px;
-        top: 38%;
-    }
+  .img-container-vinos-3 {
+    height: 700px;
+    top: 38%;
+  }
 }
 
 @media screen and (max-width: 400px) {
-    .container-vinos-1 h4 {
-        font-size: 28px;
-    }
+  .container-vinos-1 h4 {
+    font-size: 28px;
+  }
 }
 
 /*------------------------------------Animaciones -------------------------------------------*/
 
 .animacion-1-vinos {
-    opacity: 0;
+  opacity: 0;
 }
 
 .animacion-2-vinos {
-    opacity: 0;
+  opacity: 0;
 }
 
 .animacion-3-vinos {
-    opacity: 0;
+  opacity: 0;
 }
 
 .opacity-1-inicio {
-    opacity: 1;
+  opacity: 1;
 }
 
 .img-inicio-animation {
-    animation: moveInDown 1.5s ease-out;
-    animation-iteration-count: 1;
+  animation: moveInDown 1.5s ease-out;
+  animation-iteration-count: 1;
 }
 
 @keyframes moveInDown {
-    0% {
-        opacity: 0;
-        transform: translate(-250px);
-    }
+  0% {
+    opacity: 0;
+    transform: translate(-250px);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }

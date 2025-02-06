@@ -14,8 +14,6 @@ function Vinos() {
   const { name } = useParams();
   const [newUrl, setNewUrl] = useState(false);
 
-  console.log(location.pathname);
-
   if (name !== newUrl && vino !== false) {
     setVinos(false);
     const filter = arrayVinos.filter((i) => {
