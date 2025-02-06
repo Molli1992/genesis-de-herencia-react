@@ -37,7 +37,7 @@ function DeleteUser(props) {
     setButtonValue("Cargando...");
     axios
       .delete(
-        `https://vinos-marcelo-api-production.up.railway.app/api/admin/${dataPut.usuario}`
+        `${process.env.REACT_APP_API_URL}/api/admin/${dataPut.usuario}`
       )
       .then((res) => {
         console.log(res);

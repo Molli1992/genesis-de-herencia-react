@@ -118,7 +118,7 @@ function Admin() {
   useEffect(() => {
     if (dataUsers === false) {
       axios
-        .get("https://vinos-marcelo-api-production.up.railway.app/api/admin")
+        .get(`${process.env.REACT_APP_API_URL}/api/admin`)
         .then((response) => {
           setDataUsers(response.data);
         })

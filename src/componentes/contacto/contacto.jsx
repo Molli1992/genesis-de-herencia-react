@@ -37,7 +37,7 @@ function Contacto() {
       });
     } else {
       axios
-        .post("https://vinos-marcelo-api-production.up.railway.app/api/sendEmail", dataPost)
+        .post(`${process.env.REACT_APP_API_URL}/api/sendEmail`, dataPost)
         .then((res) => {
           Swal.fire({
             title: "Success!",

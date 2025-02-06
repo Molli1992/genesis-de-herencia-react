@@ -66,7 +66,7 @@ function UsuariosPut(props) {
       setButtonValue("Cargando...");
       axios
         .put(
-          "https://vinos-marcelo-api-production.up.railway.app/api/admin",
+          `${process.env.REACT_APP_API_URL}/api/admin`,
           dataPut
         )
         .then((res) => {

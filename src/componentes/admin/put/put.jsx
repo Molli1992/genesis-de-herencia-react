@@ -106,7 +106,7 @@ function Put(props) {
       setButtonValue("Cargando...");
       axios
         .put(
-          "https://vinos-marcelo-api-production.up.railway.app/api/vinos",
+          `${process.env.REACT_APP_API_URL}/api/vinos`,
           dataPut
         )
         .then((res) => {

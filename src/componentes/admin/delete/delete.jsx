@@ -63,7 +63,7 @@ function Delete(props) {
       setButtonValue("Cargando...");
       axios
         .delete(
-          `https://vinos-marcelo-api-production.up.railway.app/api/vinos/${dataPut.nombre}`
+          `${process.env.REACT_APP_API_URL}/api/vinos/${dataPut.nombre}`
         )
         .then((res) => {
           console.log(res);

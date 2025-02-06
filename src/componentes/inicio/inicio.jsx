@@ -10,7 +10,7 @@ function Inicio() {
   useEffect(() => {
     if (inicioData === false) {
       axios
-        .get("https://vinos-marcelo-api-production.up.railway.app/api/vinos")
+        .get(`${process.env.REACT_APP_API_URL}/api/vinos`)
         .then((res) => {
           sessionStorage.setItem("arrayVinos", JSON.stringify(res.data.vinos));
           setInicioData(true);

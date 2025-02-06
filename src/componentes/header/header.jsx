@@ -5,6 +5,7 @@ import "./header.css";
 import "@fontsource/roboto";
 
 function Heaeder() {
+  console.log(process.env.REACT_APP_API_URL);
   const navigate = useNavigate();
   const arrayVinos = JSON.parse(sessionStorage.getItem("arrayVinos"));
   const [data, setData] = useState(false);
@@ -118,7 +119,7 @@ function Heaeder() {
     }
     if (data === false) {
       axios
-        .get("https://vinos-marcelo-api-production.up.railway.app/api/vinos")
+        .get(`${process.env.REACT_APP_API_URL}/api/vinos`)
         .then((res) => {
           setData(res.data);
         })

@@ -43,7 +43,7 @@ function UsuarioPost() {
       setButtonValue("Cargando...");
       axios
         .post(
-          "https://vinos-marcelo-api-production.up.railway.app/api/admin",
+          `${process.env.REACT_APP_API_URL}/api/admin`,
           dataPost
         )
         .then((res) => {
