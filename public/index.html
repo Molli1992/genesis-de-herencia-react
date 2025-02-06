@@ -1,26 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Genesis de Herencia" />
+
+    <!-- Meta Description para SEO -->
     <meta
       name="description"
-      content="Bienvenidos al sitio web de nuestro viñedo en Mendoza, Argentina. Producimos y vendemos vinos de alta calidad, cultivados en el corazón de la región vitivinícola más famosa del mundo. Descubre nuestra historia, los productos y la tradición de nuestra tierra."
+      content="Compra los mejores vinos de Mendoza, Argentina. Descubre nuestra selección exclusiva de vinos de alta calidad, cultivados con pasión y tradición."
     />
 
-    <!-- Open Graph Meta Tags -->
+    <!-- Open Graph Meta Tags (para Facebook y WhatsApp) -->
     <meta
       property="og:title"
-      content="Genesis de Herencia - Viñedo en Mendoza"
+      content="Genesis de Herencia - Vinos de Mendoza"
     />
     <meta
       property="og:description"
-      content="Producimos y vendemos vinos únicos, cultivados en el corazón de Mendoza, Argentina. Visita nuestra página para descubrir nuestra oferta y la pasión detrás de cada botella."
+      content="Compra vinos únicos de Mendoza, Argentina. Visita nuestra página para conocer nuestra pasión por el vino."
     />
     <meta
       property="og:image"
-      content="https://media.istockphoto.com/id/960574664/es/vector/copa-de-vino-tinto-con-splash-dibujo-a-mano-icono-de-la-copa-de-vino-vector-stock-logo.jpg?s=612x612&w=0&k=20&c=COVLBCccwT0GnQeEysOBC172o4aSI7K6YcyyjFtK8DU="
+      content="https://media.istockphoto.com/id/960574664/es/vector/copa-de-vino-tinto-con-splash.jpg"
     />
     <meta
       property="og:image:alt"
@@ -29,19 +33,19 @@
     <meta property="og:url" content="https://tu-sitio-web.com" />
     <meta property="og:type" content="website" />
 
-    <!-- Twitter Card Meta Tags -->
+    <!-- Twitter Card Meta Tags (para Twitter) -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Genesis de Herencia - Viñedo en Mendoza"
+      content="Genesis de Herencia - Vinos de Mendoza"
     />
     <meta
       name="twitter:description"
-      content="Conoce Genesis de Herencia, un viñedo en Mendoza, Argentina, que produce vinos de la más alta calidad. Ven a descubrir nuestra tradición y productos."
+      content="Compra vinos exclusivos de Mendoza, Argentina. La mejor selección de vinos con tradición y calidad."
     />
     <meta
       name="twitter:image"
-      content="https://media.istockphoto.com/id/960574664/es/vector/copa-de-vino-tinto-con-splash-dibujo-a-mano-icono-de-la-copa-de-vino-vector-stock-logo.jpg?s=612x612&w=0&k=20&c=COVLBCccwT0GnQeEysOBC172o4aSI7K6YcyyjFtK8DU="
+      content="https://media.istockphoto.com/id/960574664/es/vector/copa-de-vino-tinto-con-splash.jpg"
     />
     <meta
       name="twitter:image:alt"
@@ -51,27 +55,36 @@
     <!-- Favicon -->
     <link
       rel="icon"
-      href="https://media.istockphoto.com/id/960574664/es/vector/copa-de-vino-tinto-con-splash-dibujo-a-mano-icono-de-la-copa-de-vino-vector-stock-logo.jpg?s=612x612&w=0&k=20&c=COVLBCccwT0GnQeEysOBC172o4aSI7K6YcyyjFtK8DU="
+      href="https://media.istockphoto.com/id/960574664/es/vector/copa-de-vino-tinto-con-splash.jpg"
     />
+
+    <!-- Schema.org (JSON-LD para SEO) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Genesis de Herencia",
+        "url": "https://genesisdeherencia.com/",
+        "logo": "https://media.istockphoto.com/id/960574664/es/vector/copa-de-vino-tinto-con-splash.jpg",
+        "sameAs": [
+          "https://www.instagram.com/genesisdeherencia/?igshid=MzRlODBiNWFlZA%3D%3D"
+        ]
+      }
+    </script>
 
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-
-    <title>Genesis de Herencia</title>
+    <title>Genesis de Herencia - Vinos de Mendoza</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript
+      >Necesitas habilitar JavaScript para ejecutar esta aplicación.</noscript
+    >
     <div id="root"></div>
   </body>
 </html>
