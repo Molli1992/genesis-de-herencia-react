@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import Post from "./post/post";
 import Put from "./put/put";
@@ -33,6 +33,23 @@ function Admin() {
     contraseña: "",
   });
   const [loading, setLoading] = useState(false);
+
+  const fetchUser = useCallback(async () => {
+    if (users === false) {
+      axios
+        .get(`${process.env.REACT_APP_API_URL}/api/admin`)
+        .then((response) => {
+          setUsers(response.data.usuarios);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  }, [setUsers, user]);
+
+  useEffect(() => {
+    fetchUser();
+  }, [fetchUser]);
 
   const handleInputChange = (e) => {
     setUser({
@@ -126,19 +143,6 @@ function Admin() {
     setBorrar(false);
     setPostUsuario(false);
   };
-
-  useEffect(() => {
-    if (users === false) {
-      axios
-        .get(`${process.env.REACT_APP_API_URL}/api/admin`)
-        .then((response) => {
-          setUsers(response.data.usuarios);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-  }, [users]);
 
   if (state === false) {
     return (
