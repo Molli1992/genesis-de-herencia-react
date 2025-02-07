@@ -8,7 +8,6 @@ import Swal from "sweetalert2";
 
 function Heaeder() {
   const { vinos, setVinos } = vinosStore();
-  const [data, setData] = useState(false);
   const [stateResponsive, setStateResponsive] = useState(false);
   const [stateResponsiveNosotros, setStateResponsiveNosotros] = useState(false);
   const [stateResponsiveVinos, setStateResponsiveVinos] = useState(false);
@@ -21,7 +20,6 @@ function Heaeder() {
         .get(`${process.env.REACT_APP_API_URL}/api/vinos`)
         .then((res) => {
           setVinos(res.data.vinos);
-          setData(res.data);
         })
         .catch((err) => {
           console.error("Error en la solicitud:", err);
@@ -310,8 +308,8 @@ function Heaeder() {
                   </div>
 
                   <div className="menu-header-2">
-                    {data !== false &&
-                      data.vinos.map((i) => {
+                    {vinos &&
+                      vinos.map((i) => {
                         return (
                           <div style={{ height: "46px", display: "grid" }}>
                             <Link
@@ -324,7 +322,7 @@ function Heaeder() {
                           </div>
                         );
                       })}
-                    {data === false ? (
+                    {vinos === false ? (
                       <div style={{ height: "46px", display: "grid" }}>
                         <Link to={"/"} className="text-menu">
                           Cargando...
@@ -506,8 +504,8 @@ function Heaeder() {
 
                       {stateVinos1 === true ? (
                         <div className="container-menu-responsive-vinos">
-                          {data !== false &&
-                            data.vinos.map((i) => {
+                          {vinos &&
+                            vinos.map((i) => {
                               return (
                                 <div
                                   style={{ height: "30px", display: "grid" }}
@@ -527,7 +525,7 @@ function Heaeder() {
                                 </div>
                               );
                             })}
-                          {data === false ? (
+                          {!vinos ? (
                             <div
                               style={{ height: "30px", display: "grid" }}
                               className="margin-responsive-header"
