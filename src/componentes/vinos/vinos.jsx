@@ -39,7 +39,7 @@ function Vinos() {
     if (!vinos) {
       navigate("/");
     }
-  }, [vinos]);
+  }, [vinos, navigate]);
 
   if (vinos && vino !== false) {
     return (

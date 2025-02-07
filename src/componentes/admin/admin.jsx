@@ -149,7 +149,7 @@ function Admin() {
     if (!vinos) {
       navigate("/");
     }
-  }, [vinos]);
+  }, [vinos, navigate]);
 
   if (state === false || !vinos) {
     return (
