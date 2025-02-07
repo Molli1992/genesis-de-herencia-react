@@ -11,11 +11,13 @@ import Swal from "sweetalert2";
 import "./admin.css";
 import vinosStore from "../../zustand/vinosStore";
 import usersStore from "../../zustand/usersStore";
+import loginStore from "../../zustand/loginStore";
 
 function Admin() {
   const navigate = useNavigate();
   const { vinos } = vinosStore();
   const { users, setUsers } = usersStore();
+  const { login, setLogin } = loginStore();
   const data = vinos;
 
   const [post, setPost] = useState(false);
@@ -26,7 +28,6 @@ function Admin() {
   const [putUsuario, setPutUsuarioUsuario] = useState(false);
   const [borrarUsuario, setBorrarUsuario] = useState(false);
 
-  const [state, setState] = useState(false);
   const dataUsers = users;
   const [usuarioLogeado, setUsuarioLogeado] = useState(false);
   const [user, setUser] = useState({
@@ -75,7 +76,7 @@ function Admin() {
           confirmButtonText: "Ok",
         }).then(() => {
           setLoading(false);
-          setState(true);
+          setLogin(true);
         });
       })
       .catch((err) => {
@@ -151,7 +152,7 @@ function Admin() {
     }
   }, [vinos, navigate]);
 
-  if (state === false || !vinos) {
+  if (!login || !vinos) {
     return (
       <div className="body-login">
         <div className="container-login">
