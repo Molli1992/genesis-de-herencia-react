@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import usersStore from "../../../zustand/usersStore";
 
 function UsuariosPut(props) {
-  const history = useNavigate();
   const data = props.data;
-  const [buttonValue, setButtonValue] = useState("Submit");
+  const { users, setUsers } = usersStore();
+  const [loading, setLoading] = useState(false);
   const [dataPut, setDataPut] = useState({
     id: "",
     usuario: "",
@@ -17,6 +17,7 @@ function UsuariosPut(props) {
   const onChangeSelect = (e) => {
     if (e.target.value === "Slecciona tu usuario") {
       setDataPut({
+        id: "",
         usuario: "",
         contraseña: "",
         repetircontraseña: "",
@@ -63,23 +64,39 @@ function UsuariosPut(props) {
         confirmButtonText: "Ok",
       });
     } else {
-      setButtonValue("Cargando...");
+      setLoading(true);
       axios
         .put(`${process.env.REACT_APP_API_URL}/api/admin`, dataPut)
         .then((res) => {
           console.log(res);
+          const usuarioModificado = users.filter((user) => {
+            return user.id !== dataPut.id;
+          });
+          usuarioModificado.push(res.data);
+          setUsers(usuarioModificado);
+          setLoading(false);
+          setDataPut({
+            id: "",
+            usuario: "",
+            contraseña: "",
+            repetircontraseña: "",
+          });
           Swal.fire({
             title: "Success!",
             text: "Usuario modificado correctamente!",
             icon: "success",
             confirmButtonText: "Ok",
-          }).then(() => {
-            history("/link");
-            window.scrollTo(0, 0);
           });
         })
         .catch((err) => {
           console.log(err);
+          setLoading(false);
+          setDataPut({
+            id: "",
+            usuario: "",
+            contraseña: "",
+            repetircontraseña: "",
+          });
           Swal.fire({
             title: "Error!",
             text: "Error en el sistema intentar mas tarde o ponerse en contacto con el servicio",
@@ -158,8 +175,8 @@ function UsuariosPut(props) {
         </div>
       </div>
 
-      <button class="btn btn-primary" onClick={onSubmit}>
-        {buttonValue}
+      <button class="btn btn-primary" onClick={onSubmit} disabled={loading}>
+        {loading ? <i className="fa fa-spinner fa-spin"></i> : "Submit"}
       </button>
     </div>
   );

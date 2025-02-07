@@ -3,11 +3,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./header.css";
 import "@fontsource/roboto";
+import vinosStore from "../../zustand/vinosStore";
 
 function Heaeder() {
-  console.log(process.env.REACT_APP_API_URL);
   const navigate = useNavigate();
-  const arrayVinos = JSON.parse(sessionStorage.getItem("arrayVinos"));
+  const { vinos } = vinosStore();
+  const arrayVinos = vinos;
   const [data, setData] = useState(false);
   const [stateResponsive, setStateResponsive] = useState(false);
   const [stateResponsiveNosotros, setStateResponsiveNosotros] = useState(false);

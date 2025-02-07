@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import imagen from "../../imagenes/imagen-8.jpg";
-import pdfCadenaPerpetu from "../../pdf/ficha_técnica _CADENA_PERPETUA_compressed.pdf";
-import pdfArrepentido from "../../pdf/ficha_técnica__ARREPENTIDO_PINOT_NOIR.pdf";
-import pdfTribuanl from "../../pdf/ficha_técnica _TRIBUNAL_compressed.pdf";
-import pdfFiscal from "../../pdf/ficha_técnica_FISCAL.pdf";
 import "./vinos.css";
+import vinosStore from "../../zustand/vinosStore";
 
 function Vinos() {
-  let location = useLocation();
-  const arrayVinos = JSON.parse(sessionStorage.getItem("arrayVinos"));
+  const { vinos } = vinosStore();
+  const arrayVinos = vinos;
   const [vino, setVinos] = useState(false);
   const { name } = useParams();
   const [newUrl, setNewUrl] = useState(false);
@@ -24,33 +21,7 @@ function Vinos() {
   }
 
   const onClickPdf = () => {
-    var dataURL;
-    if (location.pathname === "/reserva/CADENA%20PERPETUA") {
-      dataURL = pdfCadenaPerpetu;
-    } else if (location.pathname === "/reserva/ARREPENTIDO") {
-      dataURL = pdfArrepentido;
-    } else if (location.pathname === "/reserva/TRIBUNAL") {
-      dataURL = pdfTribuanl;
-    } else if (location.pathname === "/reserva/FISCAL") {
-      dataURL = pdfFiscal;
-    }
-
-    const iframe = document.createElement("iframe");
-    iframe.src = dataURL;
-    iframe.style.width = "100%";
-    iframe.style.height = "100%";
-    iframe.style.position = "fixed";
-    iframe.style.top = "0";
-    iframe.style.left = "0";
-    iframe.style.right = "0";
-    iframe.style.bottom = "0";
-    iframe.style.border = "none";
-    const newWindow = window.open();
-    newWindow.document.write(
-      '<iframe src="' +
-        dataURL +
-        '" style="width:100%; height:100%; border:none;"></iframe>'
-    );
+    window.open(vino[0].imgsecundaria, "_blank");
   };
 
   useEffect(() => {

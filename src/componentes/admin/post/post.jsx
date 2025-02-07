@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import vinosStore from "../../../zustand/vinosStore";
 
 function Post() {
-  const history = useNavigate();
-  const [buttonValue, setButtonValue] = useState("Submit");
+  const { vinos, setVinos } = vinosStore();
+  const [loading, setLoading] = useState(false);
   const [dataPost, setDataPost] = useState({
     nombre: "",
     titulo: "",
@@ -27,36 +27,20 @@ function Post() {
   };
 
   const handleFileSelect = (event) => {
-    console.log(event.target.files[0]);
-
     if (event.target.files[0]) {
-      const reader = new FileReader();
-
-      reader.onload = function (event) {
-        setDataPost({
-          ...dataPost,
-          img: event.target.result,
-        });
-      };
-
-      reader.readAsDataURL(event.target.files[0]);
+      setDataPost((prevData) => ({
+        ...prevData,
+        img: event.target.files[0],
+      }));
     }
   };
 
   const handleFileSelect2 = (event) => {
-    console.log(event.target.files[0]);
-
     if (event.target.files[0]) {
-      const reader = new FileReader();
-
-      reader.onload = function (event) {
-        setDataPost({
-          ...dataPost,
-          imgsecundaria: event.target.result,
-        });
-      };
-
-      reader.readAsDataURL(event.target.files[0]);
+      setDataPost((prevData) => ({
+        ...prevData,
+        imgsecundaria: event.target.files[0],
+      }));
     }
   };
 
@@ -80,28 +64,68 @@ function Post() {
         confirmButtonText: "Ok",
       });
     } else {
-      setButtonValue("Cargando...");
+      const formData = new FormData();
+      Object.keys(dataPost).forEach((key) => {
+        formData.append(key, dataPost[key]);
+      });
+
+      if (dataPost.img instanceof File) {
+        formData.append("img", dataPost.img);
+      }
+
+      if (dataPost.imgsecundaria instanceof File) {
+        formData.append("imgsecundaria", dataPost.imgsecundaria);
+      }
+
+      setLoading(true);
       axios
-        .post(
-          `${process.env.REACT_APP_API_URL}/api/vinos`,
-          dataPost
-        )
+        .post(`${process.env.REACT_APP_API_URL}/api/vinos`, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
         .then((res) => {
+          const addVinos = vinos;
+          addVinos.push(res.data);
+          setVinos(addVinos);
+          setLoading(false);
+          setDataPost({
+            nombre: "",
+            titulo: "",
+            descripcion: "",
+            resumen: "",
+            varietal: "",
+            fermentacion: "",
+            crianza: "",
+            img: "",
+            subtitulo: "",
+            imgsecundaria: "",
+          });
           Swal.fire({
             title: "Success!",
             text: "Vino creado correctamente!",
             icon: "success",
             confirmButtonText: "Ok",
-          }).then(() => {
-            history("/link");
-            window.scrollTo(0, 0);
           });
         })
         .catch((err) => {
-          const message = err.response.data;
+          console.log(err);
+          setLoading(false);
+          setDataPost({
+            nombre: "",
+            titulo: "",
+            descripcion: "",
+            resumen: "",
+            varietal: "",
+            fermentacion: "",
+            crianza: "",
+            img: "",
+            subtitulo: "",
+            imgsecundaria: "",
+          });
           Swal.fire({
             title: "Error!",
-            text: message,
+            text: "Error creando vino",
             icon: "error",
             confirmButtonText: "Ok",
           });
@@ -235,8 +259,8 @@ function Post() {
         </div>
       </div>
 
-      <button class="btn btn-primary" onClick={onSubmit}>
-        {buttonValue}
+      <button class="btn btn-primary" onClick={onSubmit} disabled={loading}>
+        {loading ? <i className="fa fa-spinner fa-spin"></i> : "Submit"}
       </button>
     </div>
   );

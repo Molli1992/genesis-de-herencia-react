@@ -1,58 +1,66 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import usersStore from "../../../zustand/usersStore";
 
 function DeleteUser(props) {
-  const history = useNavigate();
+  const { users, setUsers } = usersStore();
   const data = props.data;
-  const [buttonValue, setButtonValue] = useState("Submit");
-  const [dataPut, setDataPut] = useState({
+  const [loading, setLoading] = useState(false);
+  const [dataDelete, setDataDelete] = useState({
     id: "",
     usuario: "",
-    contraseña: "",
   });
 
   const onChangeSelect = (e) => {
     if (e.target.value === "Slecciona tu usuario") {
-      setDataPut({
+      setDataDelete({
+        id: "",
         usuario: "",
-        contraseña: "",
-        repetircontraseña: "",
       });
     } else {
       const filter = data.filter((i) => {
         return i.usuario === e.target.value;
       });
 
-      setDataPut({
+      setDataDelete({
         id: filter[0].id,
         usuario: filter[0].usuario,
-        contraseña: filter[0].contraseña,
       });
     }
   };
 
   const onSubmit = () => {
-    setButtonValue("Cargando...");
+    setLoading(true);
     axios
       .delete(
-        `${process.env.REACT_APP_API_URL}/api/admin/${dataPut.usuario}`
+        `${process.env.REACT_APP_API_URL}/api/admin/${dataDelete.usuario}`
       )
       .then((res) => {
         console.log(res);
+        const deleteUser = users.filter((user) => {
+          return user.usuario !== dataDelete.usuario;
+        });
+        setUsers(deleteUser);
+        setLoading(false);
+        setDataDelete({
+          id: "",
+          usuario: "",
+        });
         Swal.fire({
           title: "Success!",
           text: "Usuario eliminado correctamente!",
           icon: "success",
           confirmButtonText: "Ok",
-        }).then(() => {
-          history("/link");
-          window.scrollTo(0, 0);
         });
       })
       .catch((err) => {
         console.log(err);
+        setLoading(false);
+        setDataDelete({
+          id: "",
+          usuario: "",
+        });
         Swal.fire({
           title: "Error!",
           text: "Error en el sistema intentar mas tarde o ponerse en contacto con el servicio",
@@ -62,7 +70,6 @@ function DeleteUser(props) {
       });
   };
 
-  console.log(dataPut);
   return (
     <div className="body-admin">
       <h1>Borrar Usuario</h1>
@@ -86,7 +93,7 @@ function DeleteUser(props) {
             class="form-control"
             readOnly
             style={{ border: "1px solid gray" }}
-            value={dataPut.id}
+            value={dataDelete.id}
           />
         </div>
       </div>
@@ -97,29 +104,15 @@ function DeleteUser(props) {
           <input
             class="form-control"
             style={{ border: "1px solid gray" }}
-            value={dataPut.usuario}
+            value={dataDelete.usuario}
             name="usuario"
             readOnly
           />
         </div>
       </div>
 
-      <div className="container-1-admin">
-        <div class="mb-3">
-          <label class="form-label">Contraseña</label>
-          <input
-            type="password"
-            class="form-control"
-            style={{ border: "1px solid gray" }}
-            value={dataPut.contraseña}
-            name="contraseña"
-            readOnly
-          />
-        </div>
-      </div>
-
-      <button class="btn btn-primary" onClick={onSubmit}>
-        {buttonValue}
+      <button class="btn btn-primary" onClick={onSubmit} disabled={loading}>
+        {loading ? <i className="fa fa-spinner fa-spin"></i> : "Submit"}
       </button>
     </div>
   );

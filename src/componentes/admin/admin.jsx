@@ -8,9 +8,14 @@ import UsuariosPut from "./usuarioPut/usuariosPut";
 import DeleteUser from "./usuarioDelete/userDelete";
 import Swal from "sweetalert2";
 import "./admin.css";
+import vinosStore from "../../zustand/vinosStore";
+import usersStore from "../../zustand/usersStore";
 
 function Admin() {
-  const data = JSON.parse(sessionStorage.getItem("arrayVinos"));
+  const { vinos } = vinosStore();
+  const { users, setUsers } = usersStore();
+  const data = vinos;
+  console.log(users);
 
   const [post, setPost] = useState(false);
   const [put, setPut] = useState(false);
@@ -21,7 +26,7 @@ function Admin() {
   const [borrarUsuario, setBorrarUsuario] = useState(false);
 
   const [state, setState] = useState(false);
-  const [dataUsers, setDataUsers] = useState(false);
+  const dataUsers = users;
   const [usuarioLogeado, setUsuarioLogeado] = useState(false);
   const [user, setUser] = useState({
     usuario: "",
@@ -123,17 +128,17 @@ function Admin() {
   };
 
   useEffect(() => {
-    if (dataUsers === false) {
+    if (users === false) {
       axios
         .get(`${process.env.REACT_APP_API_URL}/api/admin`)
         .then((response) => {
-          setDataUsers(response.data);
+          setUsers(response.data.usuarios);
         })
         .catch((error) => {
           console.error(error);
         });
     }
-  }, [dataUsers]);
+  }, [users]);
 
   if (state === false) {
     return (
@@ -164,6 +169,7 @@ function Admin() {
           <button
             className="btn btn-primary"
             onClick={onSubmit}
+            disabled={loading}
           >
             {loading ? <i className="fa fa-spinner fa-spin"></i> : "Submit"}
           </button>
@@ -215,11 +221,9 @@ function Admin() {
 
         {postUsuario === true ? <UsuarioPost /> : null}
 
-        {putUsuario === true ? <UsuariosPut data={dataUsers.usuarios} /> : null}
+        {putUsuario === true ? <UsuariosPut data={dataUsers} /> : null}
 
-        {borrarUsuario === true ? (
-          <DeleteUser data={dataUsers.usuarios} />
-        ) : null}
+        {borrarUsuario === true ? <DeleteUser data={dataUsers} /> : null}
       </div>
     );
   }

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import vinosStore from "../../../zustand/vinosStore";
 
 function Delete(props) {
-  const history = useNavigate();
   const data = props.data;
-  const [buttonValue, setButtonValue] = useState("Submit");
+  const { vinos, setVinos } = vinosStore();
+  const [loading, setLoading] = useState(false);
   const [dataPut, setDataPut] = useState({
     id: "",
     nombre: "",
@@ -60,25 +60,48 @@ function Delete(props) {
         confirmButtonText: "Ok",
       });
     } else {
-      setButtonValue("Cargando...");
+      setLoading(true);
       axios
-        .delete(
-          `${process.env.REACT_APP_API_URL}/api/vinos/${dataPut.nombre}`
-        )
+        .delete(`${process.env.REACT_APP_API_URL}/api/vinos/${dataPut.nombre}`)
         .then((res) => {
           console.log(res);
+          const filterVinos = vinos.filter((vino) => {
+            return vino.nombre !== dataPut.nombre;
+          });
+          setVinos(filterVinos);
+          setLoading(false);
+          setDataPut({
+            id: "",
+            nombre: "",
+            titulo: "",
+            descripcion: "",
+            resumen: "",
+            varietal: "",
+            fermentacion: "",
+            crianza: "",
+            img: "",
+          });
           Swal.fire({
             title: "Success!",
             text: "Vino eliminado correctamente!",
             icon: "success",
             confirmButtonText: "Ok",
-          }).then(() => {
-            history("/link");
-            window.scrollTo(0, 0);
           });
         })
         .catch((err) => {
           console.log(err);
+          setLoading(false);
+          setDataPut({
+            id: "",
+            nombre: "",
+            titulo: "",
+            descripcion: "",
+            resumen: "",
+            varietal: "",
+            fermentacion: "",
+            crianza: "",
+            img: "",
+          });
           Swal.fire({
             title: "Error!",
             text: "Error en el sistema intentar mas tarde o ponerse en contacto con el servicio",
@@ -208,8 +231,8 @@ function Delete(props) {
         </div>
       </div>
 
-      <button class="btn btn-primary" onClick={onSubmit}>
-        {buttonValue}
+      <button class="btn btn-primary" onClick={onSubmit} disabled={loading}>
+        {loading ? <i className="fa fa-spinner fa-spin"></i> : "Submit"}
       </button>
     </div>
   );

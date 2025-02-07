@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import vinosStore from "../../../zustand/vinosStore";
 
 function Put(props) {
-  const history = useNavigate();
+  const { vinos, setVinos } = vinosStore();
   const data = props.data;
-  const [buttonValue, setButtonValue] = useState("Submit");
+  const [loading, setLoading] = useState(false);
   const [dataPut, setDataPut] = useState({
     id: "",
     nombre: "",
@@ -30,31 +30,19 @@ function Put(props) {
 
   const handleFileSelectPut = (event) => {
     if (event.target.files[0]) {
-      const reader = new FileReader();
-
-      reader.onload = function (event) {
-        setDataPut({
-          ...dataPut,
-          img: event.target.result,
-        });
-      };
-
-      reader.readAsDataURL(event.target.files[0]);
+      setDataPut((prevData) => ({
+        ...prevData,
+        img: event.target.files[0],
+      }));
     }
   };
 
   const handleFileSelectPut2 = (event) => {
     if (event.target.files[0]) {
-      const reader = new FileReader();
-
-      reader.onload = function (event) {
-        setDataPut({
-          ...dataPut,
-          imgsecundaria: event.target.result,
-        });
-      };
-
-      reader.readAsDataURL(event.target.files[0]);
+      setDataPut((prevData) => ({
+        ...prevData,
+        imgsecundaria: event.target.files[0],
+      }));
     }
   };
 
@@ -88,7 +76,7 @@ function Put(props) {
         fermentacion: filter[0].fermentacion,
         crianza: filter[0].crianza,
         img: filter[0].img,
-        imgsecundaria: "vacio",
+        imgsecundaria: filter[0].imgsecundaria,
         subtitulo: filter[0].subtitulo,
       });
     }
@@ -103,26 +91,69 @@ function Put(props) {
         confirmButtonText: "Ok",
       });
     } else {
-      setButtonValue("Cargando...");
+      const formData = new FormData();
+      Object.keys(dataPut).forEach((key) => {
+        formData.append(key, dataPut[key]);
+      });
+
+      if (dataPut.img instanceof File) {
+        formData.append("img", dataPut.img);
+      }
+
+      if (dataPut.imgsecundaria instanceof File) {
+        formData.append("imgsecundaria", dataPut.imgsecundaria);
+      }
+
+      setLoading(true);
       axios
-        .put(
-          `${process.env.REACT_APP_API_URL}/api/vinos`,
-          dataPut
-        )
+        .put(`${process.env.REACT_APP_API_URL}/api/vinos`, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
         .then((res) => {
-          console.log(res);
+          const filterVinos = vinos.filter((vino) => {
+            return vino.id !== dataPut.id;
+          });
+          filterVinos.push(res.data);
+          setVinos(filterVinos);
+          setLoading(false);
+          setDataPut({
+            id: "",
+            nombre: "",
+            titulo: "",
+            descripcion: "",
+            resumen: "",
+            varietal: "",
+            fermentacion: "",
+            crianza: "",
+            img: "",
+            imgsecundaria: "",
+            subtitulo: "",
+          });
           Swal.fire({
             title: "Success!",
             text: "Vino modificado correctamente!",
             icon: "success",
             confirmButtonText: "Ok",
-          }).then(() => {
-            history("/link");
-            window.scrollTo(0, 0);
           });
         })
         .catch((err) => {
           console.log(err);
+          setLoading(false);
+          setDataPut({
+            id: "",
+            nombre: "",
+            titulo: "",
+            descripcion: "",
+            resumen: "",
+            varietal: "",
+            fermentacion: "",
+            crianza: "",
+            img: "",
+            imgsecundaria: "",
+            subtitulo: "",
+          });
           Swal.fire({
             title: "Error!",
             text: "Error en el sistema intentar mas tarde o ponerse en contacto con el servicio",
@@ -287,8 +318,8 @@ function Put(props) {
         </div>
       </div>
 
-      <button class="btn btn-primary" onClick={onSubmit}>
-        {buttonValue}
+      <button class="btn btn-primary" onClick={onSubmit} disabled={loading}>
+        {loading ? <i className="fa fa-spinner fa-spin"></i> : "Submit"}
       </button>
     </div>
   );

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import usersStore from "../../../zustand/usersStore";
 
 function UsuarioPost() {
-  const history = useNavigate();
-  const [buttonValue, setButtonValue] = useState("Submit");
+  const { users, setUsers } = usersStore();
+  const [loading, setLoading] = useState(false);
   const [dataPost, setDataPost] = useState({
     usuario: "",
     contraseña: "",
@@ -17,7 +17,6 @@ function UsuarioPost() {
       ...dataPost,
       [e.target.name]: e.target.value,
     });
-    console.log(dataPost);
   };
 
   const onSubmit = () => {
@@ -40,29 +39,37 @@ function UsuarioPost() {
         confirmButtonText: "Ok",
       });
     } else {
-      setButtonValue("Cargando...");
+      setLoading(true);
       axios
-        .post(
-          `${process.env.REACT_APP_API_URL}/api/admin`,
-          dataPost
-        )
+        .post(`${process.env.REACT_APP_API_URL}/api/admin`, dataPost)
         .then((res) => {
-          console.log(res);
+          const addUser = users;
+          addUser.push(res.data);
+          setUsers(addUser);
+          setLoading(false);
+          setDataPost({
+            usuario: "",
+            contraseña: "",
+            repetircontraseña: "",
+          });
           Swal.fire({
             title: "Success!",
             text: "Vino creado correctamente!",
             icon: "success",
             confirmButtonText: "Ok",
-          }).then(() => {
-            history("/link");
-            window.scrollTo(0, 0);
           });
         })
         .catch((err) => {
-          const message = err.response.data;
+          console.log(err);
+          setLoading(false);
+          setDataPost({
+            usuario: "",
+            contraseña: "",
+            repetircontraseña: "",
+          });
           Swal.fire({
             title: "Error!",
-            text: message,
+            text: "Error creando usuario",
             icon: "error",
             confirmButtonText: "Ok",
           });
@@ -82,6 +89,7 @@ function UsuarioPost() {
             name="usuario"
             style={{ border: "1px solid gray" }}
             onChange={handleInputChangePost}
+            value={dataPost.usuario}
           />
         </div>
       </div>
@@ -95,6 +103,7 @@ function UsuarioPost() {
             name="contraseña"
             style={{ border: "1px solid gray" }}
             onChange={handleInputChangePost}
+            value={dataPost.contraseña}
           />
         </div>
       </div>
@@ -108,12 +117,13 @@ function UsuarioPost() {
             name="repetircontraseña"
             style={{ border: "1px solid gray" }}
             onChange={handleInputChangePost}
+            value={dataPost.repetircontraseña}
           />
         </div>
       </div>
 
-      <button class="btn btn-primary" onClick={onSubmit}>
-        {buttonValue}
+      <button class="btn btn-primary" onClick={onSubmit} disabled={loading}>
+        {loading ? <i className="fa fa-spinner fa-spin"></i> : "Submit"}
       </button>
     </div>
   );

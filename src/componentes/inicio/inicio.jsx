@@ -5,14 +5,17 @@ import imgCadenaPerpetua from "../../imagenes/img-cadena-perpetua.png";
 import imgTribunal from "../../imagenes/img-tribunal.png";
 import axios from "axios";
 import "./inicio.css";
+import vinosStore from "../../zustand/vinosStore";
 
 function Inicio() {
+  const { vinos, setVinos } = vinosStore();
+
   useEffect(() => {
     if (inicioData === false) {
       axios
         .get(`${process.env.REACT_APP_API_URL}/api/vinos`)
         .then((res) => {
-          sessionStorage.setItem("arrayVinos", JSON.stringify(res.data.vinos));
+          setVinos(res.data.vinos);
           setInicioData(true);
         })
         .catch((err) => {
@@ -21,7 +24,7 @@ function Inicio() {
     }
   });
 
-  const arrayVinos = JSON.parse(sessionStorage.getItem("arrayVinos"));
+  const arrayVinos = vinos;
   const [sliderVinos, setSliderVinos] = useState(false);
   const [stateSlider, setStateSlider] = useState(false);
   const [inicioData, setInicioData] = useState(false);
