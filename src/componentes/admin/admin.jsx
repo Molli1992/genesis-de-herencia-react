@@ -15,7 +15,6 @@ function Admin() {
   const { vinos } = vinosStore();
   const { users, setUsers } = usersStore();
   const data = vinos;
-  console.log(users);
 
   const [post, setPost] = useState(false);
   const [put, setPut] = useState(false);
@@ -45,7 +44,7 @@ function Admin() {
           console.error(error);
         });
     }
-  }, [setUsers, user]);
+  }, [setUsers, users]);
 
   useEffect(() => {
     fetchUser();
