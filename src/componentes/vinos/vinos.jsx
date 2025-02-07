@@ -3,6 +3,10 @@ import { useParams, useNavigate } from "react-router-dom";
 import imagen from "../../imagenes/imagen-8.jpg";
 import "./vinos.css";
 import vinosStore from "../../zustand/vinosStore";
+import PdfArrepentido from "../../pdf/ficha_técnica__ARREPENTIDO_PINOT_NOIR.pdf";
+import PdfCadenaPerpetua from "../../pdf/ficha_técnica _CADENA_PERPETUA_compressed.pdf";
+import PdfFiscal from "../../pdf/ficha_técnica_FISCAL.pdf";
+import PdfTribunal from "../../pdf/ficha_técnica _TRIBUNAL_compressed.pdf";
 
 function Vinos() {
   const navigate = useNavigate();
@@ -22,7 +26,21 @@ function Vinos() {
   }
 
   const onClickPdf = () => {
-    window.open(vino[0].imgsecundaria, "_blank");
+    if (vino[0].nombre === "TRIBUNAL") {
+      window.open(PdfTribunal, "_blank");
+    }
+
+    if (vino[0].nombre === "ARREPENTIDO") {
+      window.open(PdfArrepentido, "_blank");
+    }
+
+    if (vino[0].nombre === "CADENA PERPETUA") {
+      window.open(PdfCadenaPerpetua, "_blank");
+    }
+
+    if (vino[0].nombre === "FISCAL") {
+      window.open(PdfFiscal, "_blank");
+    }
   };
 
   useEffect(() => {
