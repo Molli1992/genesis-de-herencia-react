@@ -58,9 +58,9 @@ function Post() {
       dataPost.imgsecundaria === ""
     ) {
       Swal.fire({
-        title: "Error!",
+        title: "Info!",
         text: "Completar todos los campos",
-        icon: "error",
+        icon: "info",
         confirmButtonText: "Ok",
       });
     } else {

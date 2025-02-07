@@ -31,43 +31,52 @@ function DeleteUser(props) {
   };
 
   const onSubmit = () => {
-    setLoading(true);
-    axios
-      .delete(
-        `${process.env.REACT_APP_API_URL}/api/admin/${dataDelete.usuario}`
-      )
-      .then((res) => {
-        console.log(res);
-        const deleteUser = users.filter((user) => {
-          return user.usuario !== dataDelete.usuario;
-        });
-        setUsers(deleteUser);
-        setLoading(false);
-        setDataDelete({
-          id: "",
-          usuario: "",
-        });
-        Swal.fire({
-          title: "Success!",
-          text: "Usuario eliminado correctamente!",
-          icon: "success",
-          confirmButtonText: "Ok",
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-        setLoading(false);
-        setDataDelete({
-          id: "",
-          usuario: "",
-        });
-        Swal.fire({
-          title: "Error!",
-          text: "Error en el sistema intentar mas tarde o ponerse en contacto con el servicio",
-          icon: "error",
-          confirmButtonText: "Ok",
-        });
+    if (!dataDelete.usuario) {
+      Swal.fire({
+        title: "Info!",
+        text: "Seleccionar un usuario",
+        icon: "info",
+        confirmButtonText: "Ok",
       });
+    } else {
+      setLoading(true);
+      axios
+        .delete(
+          `${process.env.REACT_APP_API_URL}/api/admin/${dataDelete.usuario}`
+        )
+        .then((res) => {
+          console.log(res);
+          const deleteUser = users.filter((user) => {
+            return user.usuario !== dataDelete.usuario;
+          });
+          setUsers(deleteUser);
+          setLoading(false);
+          setDataDelete({
+            id: "",
+            usuario: "",
+          });
+          Swal.fire({
+            title: "Success!",
+            text: "Usuario eliminado correctamente!",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoading(false);
+          setDataDelete({
+            id: "",
+            usuario: "",
+          });
+          Swal.fire({
+            title: "Error!",
+            text: "Error en el sistema intentar mas tarde o ponerse en contacto con el servicio",
+            icon: "error",
+            confirmButtonText: "Ok",
+          });
+        });
+    }
   };
 
   return (

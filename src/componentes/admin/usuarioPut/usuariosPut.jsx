@@ -44,6 +44,8 @@ function UsuariosPut(props) {
   };
 
   const onSubmit = () => {
+    const alphanumericRegex = /^[a-zA-Z0-9]+$/;
+
     if (
       dataPut.usuario === "" ||
       dataPut.contraseña === "" ||
@@ -51,16 +53,30 @@ function UsuariosPut(props) {
       dataPut.id === ""
     ) {
       Swal.fire({
-        title: "Error!",
-        text: "Falta enviar datos obligatorios",
-        icon: "error",
+        title: "Info!",
+        text: "Completar todos los campos",
+        icon: "info",
+        confirmButtonText: "Ok",
+      });
+    } else if (!alphanumericRegex.test(dataPut.usuario)) {
+      Swal.fire({
+        title: "Info!",
+        text: "El nombre de usuario solo puede contener letras y números",
+        icon: "info",
+        confirmButtonText: "Ok",
+      });
+    } else if (!alphanumericRegex.test(dataPut.contraseña)) {
+      Swal.fire({
+        title: "Info!",
+        text: "La contraseña solo puede contener letras y números",
+        icon: "info",
         confirmButtonText: "Ok",
       });
     } else if (dataPut.contraseña !== dataPut.repetircontraseña) {
       Swal.fire({
-        title: "Error!",
+        title: "Info!",
         text: "Contraseña y Repetir contraseña deben ser iguales",
-        icon: "error",
+        icon: "info",
         confirmButtonText: "Ok",
       });
     } else {
@@ -106,6 +122,7 @@ function UsuariosPut(props) {
         });
     }
   };
+
   return (
     <div className="body-admin">
       <h1>Modificar usurios</h1>

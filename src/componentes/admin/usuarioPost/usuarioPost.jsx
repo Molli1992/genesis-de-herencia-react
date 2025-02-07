@@ -20,22 +20,38 @@ function UsuarioPost() {
   };
 
   const onSubmit = () => {
+    const alphanumericRegex = /^[a-zA-Z0-9]*$/;
+
     if (
       dataPost.usuario === "" ||
       dataPost.contraseña === "" ||
       dataPost.repetircontraseña === ""
     ) {
       Swal.fire({
-        title: "Error!",
+        title: "Info!",
         text: "Completar todos los campos",
-        icon: "error",
+        icon: "info",
+        confirmButtonText: "Ok",
+      });
+    } else if (!alphanumericRegex.test(dataPost.usuario.trim())) {
+      Swal.fire({
+        title: "Info!",
+        text: "El nombre de usuario solo puede contener letras y números",
+        icon: "info",
+        confirmButtonText: "Ok",
+      });
+    } else if (!alphanumericRegex.test(dataPost.contraseña.trim())) {
+      Swal.fire({
+        title: "Info!",
+        text: "La contraseña solo puede contener letras y números",
+        icon: "info",
         confirmButtonText: "Ok",
       });
     } else if (dataPost.contraseña !== dataPost.repetircontraseña) {
       Swal.fire({
-        title: "Error!",
+        title: "Info!",
         text: "Contraseña y Repetir Contraseña deben ser iguales",
-        icon: "error",
+        icon: "info",
         confirmButtonText: "Ok",
       });
     } else {

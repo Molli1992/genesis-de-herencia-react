@@ -7,7 +7,7 @@ function Delete(props) {
   const data = props.data;
   const { vinos, setVinos } = vinosStore();
   const [loading, setLoading] = useState(false);
-  const [dataPut, setDataPut] = useState({
+  const [dataDelete, setDataDelete] = useState({
     id: "",
     nombre: "",
     titulo: "",
@@ -21,7 +21,7 @@ function Delete(props) {
 
   const onChangeSelect = (e) => {
     if (e.target.value === "Slecciona tu vino") {
-      setDataPut({
+      setDataDelete({
         id: "",
         nombre: "",
         titulo: "",
@@ -37,7 +37,7 @@ function Delete(props) {
         return i.nombre === e.target.value;
       });
 
-      setDataPut({
+      setDataDelete({
         id: filter[0].id,
         nombre: filter[0].nombre,
         titulo: filter[0].titulo,
@@ -52,25 +52,27 @@ function Delete(props) {
   };
 
   const onSubmit = () => {
-    if (dataPut.nombre === "") {
+    if (dataDelete.nombre === "") {
       Swal.fire({
-        title: "Error!",
+        title: "Info!",
         text: "Seleccionar un vino",
-        icon: "error",
+        icon: "info",
         confirmButtonText: "Ok",
       });
     } else {
       setLoading(true);
       axios
-        .delete(`${process.env.REACT_APP_API_URL}/api/vinos/${dataPut.nombre}`)
+        .delete(
+          `${process.env.REACT_APP_API_URL}/api/vinos/${dataDelete.nombre}`
+        )
         .then((res) => {
           console.log(res);
           const filterVinos = vinos.filter((vino) => {
-            return vino.nombre !== dataPut.nombre;
+            return vino.nombre !== dataDelete.nombre;
           });
           setVinos(filterVinos);
           setLoading(false);
-          setDataPut({
+          setDataDelete({
             id: "",
             nombre: "",
             titulo: "",
@@ -91,7 +93,7 @@ function Delete(props) {
         .catch((err) => {
           console.log(err);
           setLoading(false);
-          setDataPut({
+          setDataDelete({
             id: "",
             nombre: "",
             titulo: "",
@@ -135,7 +137,7 @@ function Delete(props) {
             class="form-control"
             readOnly
             style={{ border: "1px solid gray" }}
-            value={dataPut.id}
+            value={dataDelete.id}
           />
         </div>
       </div>
@@ -147,7 +149,7 @@ function Delete(props) {
             class="form-control"
             name="nombre"
             style={{ border: "1px solid gray" }}
-            value={dataPut.nombre}
+            value={dataDelete.nombre}
             readOnly
           />
         </div>
@@ -160,7 +162,7 @@ function Delete(props) {
             class="form-control"
             name="titulo"
             style={{ border: "1px solid gray" }}
-            value={dataPut.titulo}
+            value={dataDelete.titulo}
             readOnly
           />
         </div>
@@ -173,7 +175,7 @@ function Delete(props) {
             class="form-control"
             name="descripcion"
             style={{ border: "1px solid gray", minHeight: "150px" }}
-            value={dataPut.descripcion}
+            value={dataDelete.descripcion}
             readOnly
           />
         </div>
@@ -186,7 +188,7 @@ function Delete(props) {
             class="form-control"
             name="resumen"
             style={{ border: "1px solid gray", minHeight: "150px" }}
-            value={dataPut.resumen}
+            value={dataDelete.resumen}
             readOnly
           />
         </div>
@@ -199,7 +201,7 @@ function Delete(props) {
             class="form-control"
             name="varietal"
             style={{ border: "1px solid gray" }}
-            value={dataPut.varietal}
+            value={dataDelete.varietal}
             readOnly
           />
         </div>
@@ -212,7 +214,7 @@ function Delete(props) {
             class="form-control"
             name="fermentacion"
             style={{ border: "1px solid gray", minHeight: "150px" }}
-            value={dataPut.fermentacion}
+            value={dataDelete.fermentacion}
             readOnly
           />
         </div>
@@ -225,7 +227,7 @@ function Delete(props) {
             class="form-control"
             name="crianza"
             style={{ border: "1px solid gray", minHeight: "75px" }}
-            value={dataPut.crianza}
+            value={dataDelete.crianza}
             readOnly
           />
         </div>

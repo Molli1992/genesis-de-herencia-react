@@ -85,9 +85,9 @@ function Put(props) {
   const onSubmit = () => {
     if (dataPut.nombre === "" || dataPut.id === "") {
       Swal.fire({
-        title: "Error!",
+        title: "Info!",
         text: "El nombre y el id son obligatorios",
-        icon: "error",
+        icon: "info",
         confirmButtonText: "Ok",
       });
     } else {
