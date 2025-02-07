@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Post from "./post/post";
 import Put from "./put/put";
@@ -12,6 +13,7 @@ import vinosStore from "../../zustand/vinosStore";
 import usersStore from "../../zustand/usersStore";
 
 function Admin() {
+  const navigate = useNavigate();
   const { vinos } = vinosStore();
   const { users, setUsers } = usersStore();
   const data = vinos;
@@ -143,7 +145,13 @@ function Admin() {
     setPostUsuario(false);
   };
 
-  if (state === false) {
+  useEffect(() => {
+    if (!vinos) {
+      navigate("/");
+    }
+  }, [vinos]);
+
+  if (state === false || !vinos) {
     return (
       <div className="body-login">
         <div className="container-login">

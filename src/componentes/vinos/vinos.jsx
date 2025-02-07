@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import imagen from "../../imagenes/imagen-8.jpg";
 import "./vinos.css";
 import vinosStore from "../../zustand/vinosStore";
 
 function Vinos() {
+  const navigate = useNavigate();
   const { vinos } = vinosStore();
   const arrayVinos = vinos;
   const [vino, setVinos] = useState(false);
   const { name } = useParams();
   const [newUrl, setNewUrl] = useState(false);
 
-  if (name !== newUrl && vino !== false) {
+  if (name !== newUrl && vino !== false && vinos) {
     setVinos(false);
     const filter = arrayVinos.filter((i) => {
       return i.nombre === name;
@@ -25,16 +26,22 @@ function Vinos() {
   };
 
   useEffect(() => {
-    if (vino === false) {
+    if (vino === false && vinos) {
       const filter = arrayVinos.filter((i) => {
         return i.nombre === name;
       });
       setNewUrl(name);
       setVinos(filter);
     }
-  }, [arrayVinos, name, vino]);
+  }, [arrayVinos, name, vino, vinos]);
 
-  if (vino !== false) {
+  useEffect(() => {
+    if (!vinos) {
+      navigate("/");
+    }
+  }, [vinos]);
+
+  if (vinos && vino !== false) {
     return (
       <div className="body-vinos">
         <div className="container-vinos-1">
