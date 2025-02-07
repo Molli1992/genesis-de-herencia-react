@@ -1,20 +1,43 @@
-import React, { useState, useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import React, { useState, useEffect, useCallback } from "react";
+import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./header.css";
 import "@fontsource/roboto";
 import vinosStore from "../../zustand/vinosStore";
+import Swal from "sweetalert2";
 
 function Heaeder() {
-  const navigate = useNavigate();
-  const { vinos } = vinosStore();
-  const arrayVinos = vinos;
+  const { vinos, setVinos } = vinosStore();
   const [data, setData] = useState(false);
   const [stateResponsive, setStateResponsive] = useState(false);
   const [stateResponsiveNosotros, setStateResponsiveNosotros] = useState(false);
   const [stateResponsiveVinos, setStateResponsiveVinos] = useState(false);
   const [stateVinos1, setStateVinos1] = useState(false);
   const location = useLocation();
+
+  const fetchVinos = useCallback(async () => {
+    if (!vinos) {
+      axios
+        .get(`${process.env.REACT_APP_API_URL}/api/vinos`)
+        .then((res) => {
+          setVinos(res.data.vinos);
+          setData(res.data);
+        })
+        .catch((err) => {
+          console.error("Error en la solicitud:", err);
+          Swal.fire({
+            title: "Error!",
+            text: "Error al cargar los vinos, intentar luego mas tarde o ponerse en contacto con el servidor",
+            icon: "error",
+            confirmButtonText: "Ok",
+          });
+        });
+    }
+  }, [vinos, setVinos]);
+
+  useEffect(() => {
+    fetchVinos();
+  }, [fetchVinos]);
 
   const onClickMenuResponsive = () => {
     if (stateResponsive === false) {
@@ -113,22 +136,6 @@ function Heaeder() {
       linkContactanos.classList.add("link-header-2-active");
     }
   }
-
-  useEffect(() => {
-    if (arrayVinos === null) {
-      navigate("/");
-    }
-    if (data === false) {
-      axios
-        .get(`${process.env.REACT_APP_API_URL}/api/vinos`)
-        .then((res) => {
-          setData(res.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  }, [data, navigate, arrayVinos]);
 
   if (location.pathname === "/link") {
     return null;

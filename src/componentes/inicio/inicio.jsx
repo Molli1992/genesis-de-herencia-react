@@ -1,33 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import imagen from "../../imagenes/imagen-10.jpg";
 import imgCadenaPerpetua from "../../imagenes/img-cadena-perpetua.png";
 import imgTribunal from "../../imagenes/img-tribunal.png";
-import axios from "axios";
 import "./inicio.css";
 import vinosStore from "../../zustand/vinosStore";
 
 function Inicio() {
-  const { vinos, setVinos } = vinosStore();
-
-  useEffect(() => {
-    if (inicioData === false) {
-      axios
-        .get(`${process.env.REACT_APP_API_URL}/api/vinos`)
-        .then((res) => {
-          setVinos(res.data.vinos);
-          setInicioData(true);
-        })
-        .catch((err) => {
-          console.error("Error en la solicitud:", err);
-        });
-    }
-  });
+  const { vinos } = vinosStore();
 
   const arrayVinos = vinos;
   const [sliderVinos, setSliderVinos] = useState(false);
   const [stateSlider, setStateSlider] = useState(false);
-  const [inicioData, setInicioData] = useState(false);
   const history = useNavigate();
 
   const onClickStateSlider = () => {
@@ -58,7 +42,7 @@ function Inicio() {
 
   //---------------------------------------------- animaciones- ----------------------------------------------
 
-  if (arrayVinos !== null) {
+  if (vinos) {
     return (
       <div className="body-inicio">
         {stateSlider === false ? (
@@ -396,7 +380,7 @@ function Inicio() {
     );
   } else {
     return (
-      <div className="altura-body-inicio">
+      <div className="body-loader">
         <div class="spinner-grow text-dark" role="status">
           <span class="sr-only"></span>
         </div>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Post from "./post/post";
 import Put from "./put/put";
@@ -14,10 +13,9 @@ import usersStore from "../../zustand/usersStore";
 import loginStore from "../../zustand/loginStore";
 
 function Admin() {
-  const navigate = useNavigate();
   const { vinos } = vinosStore();
   const { users, setUsers } = usersStore();
-  const { login, setLogin } = loginStore();
+  const { isLogin, setIsLogin, userLogin, setUserLogin } = loginStore();
   const data = vinos;
 
   const [post, setPost] = useState(false);
@@ -29,7 +27,6 @@ function Admin() {
   const [borrarUsuario, setBorrarUsuario] = useState(false);
 
   const dataUsers = users;
-  const [usuarioLogeado, setUsuarioLogeado] = useState(false);
   const [user, setUser] = useState({
     usuario: "",
     contraseña: "",
@@ -68,15 +65,15 @@ function Admin() {
         `${process.env.REACT_APP_API_URL}/api/admin/${user.usuario}/${user.contraseña}`
       )
       .then((res) => {
-        setUsuarioLogeado(res.data.usuario);
         Swal.fire({
           title: "Success!",
           text: "Te has logeado correctamente!",
           icon: "success",
           confirmButtonText: "Ok",
         }).then(() => {
+          setUserLogin(res.data.usuario);
           setLoading(false);
-          setLogin(true);
+          setIsLogin(true);
         });
       })
       .catch((err) => {
@@ -146,13 +143,7 @@ function Admin() {
     setPostUsuario(false);
   };
 
-  useEffect(() => {
-    if (!vinos) {
-      navigate("/");
-    }
-  }, [vinos, navigate]);
-
-  if (!login || !vinos) {
+  if (!isLogin || !vinos) {
     return (
       <div className="body-login">
         <div className="container-login">
@@ -193,7 +184,7 @@ function Admin() {
       <div className="altura-body">
         <div className="buttons-container">
           <h1 style={{ margin: "15px" }}>
-            {usuarioLogeado !== false ? usuarioLogeado.usuario : ""}
+            {userLogin ? userLogin.usuario : ""}
           </h1>
         </div>
 

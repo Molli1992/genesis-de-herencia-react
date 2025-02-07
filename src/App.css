@@ -1,23 +1,27 @@
 * {
-    padding: 0;
-    margin: 0;
-    font-family: "Poppins";
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins";
 }
 
 .body-loader {
-    min-height: 67vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #FFFFFF;
-    font-size: 50px;
-    color: #000000;
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  font-size: 50px;
+  color: #000000;
 }
 
-/*  
+@media screen and (max-width: 940px) {
+  .body-loader {
+    min-height: calc(100vh - 140px);
+  }
+}
 
-font-family: "Roboto"; 
-
-import "@fontsource/roboto"; // Defaults to weight 400
-
-*/
+@media screen and (max-width: 550px) {
+  .body-loader {
+    min-height: calc(100vh - 190px);
+  }
+}

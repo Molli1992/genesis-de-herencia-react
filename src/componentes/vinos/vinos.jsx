@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import imagen from "../../imagenes/imagen-8.jpg";
 import "./vinos.css";
 import vinosStore from "../../zustand/vinosStore";
@@ -9,20 +9,19 @@ import PdfFiscal from "../../pdf/ficha_técnica_FISCAL.pdf";
 import PdfTribunal from "../../pdf/ficha_técnica _TRIBUNAL_compressed.pdf";
 
 function Vinos() {
-  const navigate = useNavigate();
   const { vinos } = vinosStore();
   const arrayVinos = vinos;
-  const [vino, setVinos] = useState(false);
+  const [vino, setVino] = useState(false);
   const { name } = useParams();
   const [newUrl, setNewUrl] = useState(false);
 
   if (name !== newUrl && vino !== false && vinos) {
-    setVinos(false);
+    setVino(false);
     const filter = arrayVinos.filter((i) => {
       return i.nombre === name;
     });
     setNewUrl(name);
-    setVinos(filter);
+    setVino(filter);
   }
 
   const onClickPdf = () => {
@@ -49,15 +48,9 @@ function Vinos() {
         return i.nombre === name;
       });
       setNewUrl(name);
-      setVinos(filter);
+      setVino(filter);
     }
   }, [arrayVinos, name, vino, vinos]);
-
-  useEffect(() => {
-    if (!vinos) {
-      navigate("/");
-    }
-  }, [vinos, navigate]);
 
   if (vinos && vino !== false) {
     return (
@@ -122,7 +115,7 @@ function Vinos() {
     );
   } else {
     return (
-      <div className="body-loader">
+      <div className="body-loader" style={{ height: "calc(100vh - 200px)" }}>
         <h1>Cargando...</h1>
       </div>
     );

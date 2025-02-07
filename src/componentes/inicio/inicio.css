@@ -628,23 +628,3 @@
     transform: translate(0);
   }
 }
-
-.altura-body-inicio {
-  width: 100%;
-  min-height: calc(100vh - 205px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@media screen and (max-width: 940px) {
-  .altura-body-inicio {
-    min-height: calc(100vh - 140px);
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .altura-body-inicio {
-    min-height: calc(100vh - 190px);
-  }
-}
