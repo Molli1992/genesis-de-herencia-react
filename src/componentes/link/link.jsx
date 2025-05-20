@@ -13,12 +13,13 @@ function Links() {
 
   const onClickNuestosVinos = () => {
     Swal.fire({
-      title: "Error!",
-      text: "En reparacion",
-      icon: "error",
+      title: "Info!",
+      text: "Momentáneamente en reparación. Por favor, intente más tarde y disculpe las molestias.",
+      icon: "info",
       confirmButtonText: "Ok",
     });
   };
+
   return (
     <div className="body-link">
       <div className="container-1-link">
