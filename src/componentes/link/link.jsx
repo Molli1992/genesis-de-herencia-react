@@ -2,21 +2,45 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./link.css";
+import vinosStore from "../../zustand/vinosStore";
 
 function Links() {
   const history = useNavigate();
+  const { vinos } = vinosStore();
+
+  console.log(vinos);
 
   const onClickRouteHome = () => {
     history("/");
     window.scroll(0, 0);
   };
 
-  const onClickNuestosVinos = () => {
-    Swal.fire({
-      title: "Info!",
-      text: "Momentáneamente en reparación. Por favor, intente más tarde y disculpe las molestias.",
-      icon: "info",
-      confirmButtonText: "Ok",
+  const onClickNuestosVinos = async () => {
+    const buttonsHtml = vinos
+      .map(
+        (vino, index) =>
+          `<button class="swal2-vino-button" data-index="${index}">${vino.nombre}</button>`
+      )
+      .join("");
+
+    const { value: selectedIndex } = await Swal.fire({
+      title: "Nuestros Vinos",
+      html: `<div style="display: flex; flex-direction: column; gap: 10px;">${buttonsHtml}</div>`,
+      showConfirmButton: false,
+      didOpen: () => {
+        const buttons =
+          Swal.getHtmlContainer().querySelectorAll(".swal2-vino-button");
+        buttons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const index = btn.getAttribute("data-index");
+            Swal.close();
+            if (vinos[index]) {
+              history(`/reserva/${vinos[index].nombre.toUpperCase()}`);
+              window.scroll(0, 0);
+            }
+          });
+        });
+      },
     });
   };
 
