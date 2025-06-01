@@ -8,8 +8,6 @@ function Links() {
   const history = useNavigate();
   const { vinos } = vinosStore();
 
-  console.log(vinos);
-
   const onClickRouteHome = () => {
     history("/");
     window.scroll(0, 0);
@@ -23,7 +21,7 @@ function Links() {
       )
       .join("");
 
-    const { value: selectedIndex } = await Swal.fire({
+    await Swal.fire({
       title: "Nuestros Vinos",
       html: `<div style="display: flex; flex-direction: column; gap: 10px;">${buttonsHtml}</div>`,
       showConfirmButton: false,
