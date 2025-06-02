@@ -1,252 +1,252 @@
 .body-contacto {
-    width: 100%;
-    display: block;
+  width: 100%;
+  display: block;
+  margin-top: 153px;
 }
 
 .container-contacto-1 {
-    width: 100%;
-    height: 400px;
-    background-image: url("http://surdelosandes.com/wp-content/uploads/2023/09/Copia-de-Dibujo-2-bodega.jpg");
-    background-size: cover;
-    background-position: bottom;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 400px;
+  background-image: url("http://surdelosandes.com/wp-content/uploads/2023/09/Copia-de-Dibujo-2-bodega.jpg");
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .container-contacto-1 h1 {
-    color: #FFFFFF;
-    font-size: 62px;
+  color: #ffffff;
+  font-size: 62px;
 }
 
 .container-contacto-2 {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #1A1A1A;
-    min-height: 700px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  min-height: 700px;
 }
 
 .container-left-contacto {
-    width: 40%;
-    display: block;
+  width: 40%;
+  display: block;
 }
 
 .container-left-contacto h1 {
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: 300;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .container-left-contacto div {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .container-left-contacto div svg {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .container-left-contacto div h3 {
-    color: #979CA3;
-    font-size: 16px;
-    font-weight: 300;
+  color: #979ca3;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .container-redes-contacto {
-    display: flex;
-    align-items: center;
-    margin-top: 40px;
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
 }
 
 .container-instagram-contacto {
-    position: relative;
-    width: 50px;
-    height: 50px;
-    background-color: #994C97;
-    border-radius: 50%;
-    margin: 0px 3px;
-    cursor: pointer;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: #994c97;
+  border-radius: 50%;
+  margin: 0px 3px;
+  cursor: pointer;
 }
 
 .container-instagram-contacto svg {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-
 .container-whatsapp-contacto {
-    position: relative;
-    width: 50px;
-    height: 50px;
-    background-color: #25D366;
-    border-radius: 50%;
-    margin: 0px 3px;
-    cursor: pointer;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: #25d366;
+  border-radius: 50%;
+  margin: 0px 3px;
+  cursor: pointer;
 }
 
 .container-whatsapp-contacto svg {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-
 .container-link-contacto {
-    position: relative;
-    width: 50px;
-    height: 50px;
-    background-color: #818A91;
-    border-radius: 50%;
-    margin: 0px 3px;
-    cursor: pointer;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: #818a91;
+  border-radius: 50%;
+  margin: 0px 3px;
+  cursor: pointer;
 }
 
 .container-link-contacto svg {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-
 .container-rigth-contacto {
-    width: 40%;
-    display: block;
+  width: 40%;
+  display: block;
 }
 
 .container-inputs-contacto {
-    display: flex;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .container-labels-inputs-contacto {
-    display: grid;
-    height: 100px;
-    margin-right: 30px;
+  display: grid;
+  height: 100px;
+  margin-right: 30px;
 }
 
 .container-labels-inputs-contacto label {
-    color: #FFFFFF;
-    font-size: 16px;
+  color: #ffffff;
+  font-size: 16px;
 }
 
 .container-labels-inputs-contacto input {
-    width: 180px;
-    height: 50px;
-    background-color: #F6F7FA;
-    border-radius: 5px;
-    border: 1px solid gray;
-    font-size: 14px;
-    padding: 0px 10px;
+  width: 180px;
+  height: 50px;
+  background-color: #f6f7fa;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size: 14px;
+  padding: 0px 10px;
 }
 
 .container-labels-inputs-contacto input:focus {
-    outline: none;
+  outline: none;
 }
 
-
 .container-text-area-contacto {
-    display: grid;
-    width: 100%;
+  display: grid;
+  width: 100%;
 }
 
 .container-text-area-contacto label {
-    color: #FFFFFF;
-    font-size: 16px;
-    margin-bottom: 13px;
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 13px;
 }
 
 .container-text-area-contacto textarea {
-    width: 100%;
-    height: 180px;
-    font-size: 14px;
-    padding: 10px 10px;
-    border-radius: 5px;
+  width: 100%;
+  height: 180px;
+  font-size: 14px;
+  padding: 10px 10px;
+  border-radius: 5px;
 }
 
 .container-text-area-contacto textarea:focus {
-    outline: none;
+  outline: none;
 }
 
 .container-rigth-contacto button {
-    width: 95px;
-    height: 44px;
-    color: #FFFFFF;
-    font-size: 14px;
-    background-color: #AE132E;
-    border: none;
-    cursor: pointer;
-    margin-top: 30px;
-    border-radius: 5px;
-    transition: all 0.3s;
+  width: 95px;
+  height: 44px;
+  color: #ffffff;
+  font-size: 14px;
+  background-color: #ae132e;
+  border: none;
+  cursor: pointer;
+  margin-top: 30px;
+  border-radius: 5px;
+  transition: all 0.3s;
 }
 
 .container-rigth-contacto button:hover {
-    color: #AE132E;
-    background-color: #FFFFFF;
+  color: #ae132e;
+  background-color: #ffffff;
 }
 
 @media screen and (max-width: 1070px) {
+  .container-text-area-contacto textarea {
+    width: 420px;
+  }
+}
 
-    .container-text-area-contacto textarea {
-        width: 420px;
-    }
+@media screen and (max-width: 940px) {
+  .body-contacto {
+    margin-top: 90px;
+  }
 }
 
 @media screen and (max-width: 930px) {
+  .container-contacto-2 {
+    display: block;
+  }
 
-    .container-contacto-2 {
-        display: block;
-    }
+  .container-left-contacto {
+    padding: 30px;
+    width: 100%;
+  }
 
-    .container-left-contacto {
-        padding: 30px;
-        width: 100%;
-    }
-
-    .container-rigth-contacto {
-        padding: 30px;
-        width: 100%;
-    }
+  .container-rigth-contacto {
+    padding: 30px;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 520px) {
+  .container-contacto-1 h1 {
+    font-size: 55px;
+  }
 
-    .container-contacto-1 h1 {
-        font-size: 55px;
-    }
+  .container-contacto-2 {
+    display: block;
+  }
 
-    .container-contacto-2 {
-        display: block;
-    }
+  .container-left-contacto {
+    padding: 10px;
+    margin-bottom: 10px;
+    padding-top: 30px;
+  }
 
-    .container-left-contacto {
-        padding: 10px;
-        margin-bottom: 10px;
-        padding-top: 30px;
-    }
+  .container-rigth-contacto {
+    padding: 10px;
+    padding-bottom: 50px;
+  }
 
-    .container-rigth-contacto {
-        padding: 10px;
-        padding-bottom: 50px;
-    }
+  .container-inputs-contacto {
+    display: grid;
+  }
 
-    .container-inputs-contacto {
-        display: grid;
-    }
+  .container-labels-inputs-contacto input {
+    width: 90%;
+  }
 
-    .container-labels-inputs-contacto input {
-        width: 90%;
-    }
+  .container-text-area-contacto textarea {
+    width: 85%;
+  }
 
-    .container-text-area-contacto textarea {
-        width: 85%;
-    }
-
-    .margin-top-contacto {
-        margin-top: 10px;
-    }
+  .margin-top-contacto {
+    margin-top: 10px;
+  }
 }

@@ -2,6 +2,7 @@
   width: 100%;
   display: block;
   background-color: #000000;
+  margin-top: 153px;
 }
 
 /*------------------------------------contaner-vinos-1-------------------------------------------*/
@@ -182,6 +183,12 @@
   .container-right-vinos-2 {
     width: 50%;
     margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .body-vinos {
+    margin-top: 90px;
   }
 }
 

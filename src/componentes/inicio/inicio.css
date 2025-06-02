@@ -3,6 +3,7 @@
   min-height: 90vh;
   width: 100%;
   background-color: #000000;
+  margin-top: 153px;
 }
 
 .container-flex-inicio {
@@ -414,6 +415,12 @@
 }
 
 /*------------------------------------- media screen ------------------------------------------- */
+
+@media screen and (max-width: 940px) {
+  .body-inicio {
+    margin-top: 90px;
+  }
+}
 
 @media screen and (max-width: 900px) {
   .img-slider-2 img {

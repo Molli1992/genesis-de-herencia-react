@@ -1,505 +1,532 @@
 .body-viñedos {
-    width: 100%;
-    display: block;
-    background-color: #f5f5dc;
+  width: 100%;
+  display: block;
+  background-color: #f5f5dc;
+  margin-top: 153px;
 }
 
 /*------------------------------------------ Container-viñedos-1 -----------------------------------------*/
 
 .container-viñedos-1 {
-    width: 100%;
-    height: 400px;
-    background-image: url("http://surdelosandes.com/wp-content/uploads/2023/09/Copia-de-Dibujo-2-bodega.jpg");
-    background-size: cover;
-    background-position: bottom;
-    position: relative;
-    display: grid;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 400px;
+  background-image: url("http://surdelosandes.com/wp-content/uploads/2023/09/Copia-de-Dibujo-2-bodega.jpg");
+  background-size: cover;
+  background-position: bottom;
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
 
 .container-viñedos-1 h3 {
-    position: absolute;
-    font-size: 16px;
-    color: #FFFFFF;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 30%;
+  position: absolute;
+  font-size: 16px;
+  color: #ffffff;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30%;
 }
 
 .container-viñedos-1 h1 {
-    font-size: 62px;
-    color: #FFFFFF;
+  font-size: 62px;
+  color: #ffffff;
 }
 
 .container-viñedos-1 h2 {
-    position: absolute;
-    font-size: 31px;
-    color: #FFFFFF;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 57%;
+  position: absolute;
+  font-size: 31px;
+  color: #ffffff;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 57%;
 }
 
 /*------------------------------------------ Container-viñedos-2 -----------------------------------------*/
 
 .container-viñedos-2 {
-    min-height: 900px;
-    width: 100%;
-    background-color: #1A1A1A;
-    clip-path: polygon(100% 0, 100% 24%, 100% 96%, 84% 98%, 68% 95%, 26% 100%, 0 95%, 0 0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 0px;
-    gap: 30px;
+  min-height: 900px;
+  width: 100%;
+  background-color: #1a1a1a;
+  clip-path: polygon(
+    100% 0,
+    100% 24%,
+    100% 96%,
+    84% 98%,
+    68% 95%,
+    26% 100%,
+    0 95%,
+    0 0
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0px;
+  gap: 30px;
 }
 
 .container-viñedos-2-left {
-    width: 45%;
-    color: #FFFFFF;
+  width: 45%;
+  color: #ffffff;
 }
 
 .container-viñedos-2-left h3 {
-    font-size: 16px;
-    margin-bottom: 20px;
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
 .tittle-animation-viñedos-2 {
-    font-size: 32px;
-    margin-bottom: 40px;
-    opacity: 0;
+  font-size: 32px;
+  margin-bottom: 40px;
+  opacity: 0;
 }
 
 .p-tittle-container-viñedos-2-left {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .container-viñedos-2-left p {
-    font-size: 14px;
-    margin-bottom: 15px;
+  font-size: 14px;
+  margin-bottom: 15px;
 }
 
 .container-viñedos-2-rigth {
-    width: 45%;
-    height: 100%;
-    opacity: 0;
+  width: 45%;
+  height: 100%;
+  opacity: 0;
 }
 
 .container-viñedos-2-rigth img {
-    height: 700px;
-    width: 100%;
+  height: 700px;
+  width: 100%;
 }
 
 /*------------------------------------------ Container-viñedos-3 -----------------------------------------*/
 
 .container-viñedos-3 {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0px;
 }
 
 .container-viñedos-3-left {
-    width: 40%;
-    display: flex;
-    align-items: center;
-    opacity: 0;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  opacity: 0;
 }
 
 .container-viñedos-3-left img {
-    height: 500px;
+  height: 500px;
 }
 
 .container-viñedos-3-rigth {
-    width: 40%;
-    color: #000000;
+  width: 40%;
+  color: #000000;
 }
 
 .tittle-animation-viñedos-3 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    opacity: 0;
+  font-size: 32px;
+  margin-bottom: 20px;
+  opacity: 0;
 }
 
 .container-viñedos-3-rigth p {
-    font-size: 15px;
-    margin-bottom: 15px;
+  font-size: 15px;
+  margin-bottom: 15px;
 }
 
 /*------------------------------------------ Container-viñedos-4 -----------------------------------------*/
 
 .container-viñedos-4 {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 80px 0px;
-    background-color: #FFFFFF;
-    clip-path: polygon(40% 1%, 62% 3%, 81% 0, 100% 3%, 100% 100%, 0 100%, 0 0, 20% 4%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 80px 0px;
+  background-color: #ffffff;
+  clip-path: polygon(
+    40% 1%,
+    62% 3%,
+    81% 0,
+    100% 3%,
+    100% 100%,
+    0 100%,
+    0 0,
+    20% 4%
+  );
 }
 
 .container-viñedos-4-left {
-    width: 30%;
-    opacity: 0;
+  width: 30%;
+  opacity: 0;
 }
 
 .container-viñedos-4-left img {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 .container-viñedos-4-right {
-    width: 50%;
-    margin-left: 30px;
-    color: #000000;
+  width: 50%;
+  margin-left: 30px;
+  color: #000000;
 }
 
 .animation-h1-viñedos-4 {
-    font-size: 32px;
-    margin-bottom: 25px;
-    opacity: 0;
+  font-size: 32px;
+  margin-bottom: 25px;
+  opacity: 0;
 }
 
 .container-viñedos-4-right p {
-    font-size: 15px;
-    margin-bottom: 15px;
+  font-size: 15px;
+  margin-bottom: 15px;
 }
 
 /*------------------------------------------ Container-viñedos-5 -----------------------------------------*/
 
 .container-viñedos-5 {
-    width: 100%;
-    display: block;
-    background-color: #FFFFFF;
-    clip-path: polygon(40% 1%, 62% 3%, 81% 0, 100% 3%, 100% 100%, 0 100%, 0 0, 20% 4%);
-    padding: 50px 0px;
-    color: #000000;
+  width: 100%;
+  display: block;
+  background-color: #ffffff;
+  clip-path: polygon(
+    40% 1%,
+    62% 3%,
+    81% 0,
+    100% 3%,
+    100% 100%,
+    0 100%,
+    0 0,
+    20% 4%
+  );
+  padding: 50px 0px;
+  color: #000000;
 }
 
 .container-viñedos-5-h1 {
-    font-size: 32px;
-    opacity: 0;
+  font-size: 32px;
+  opacity: 0;
 }
 
 .flex-viñedos-container-5 {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
 }
 
 .container-viñedos-5-left {
-    width: 40%;
-    display: flex;
-    align-items: center;
-    opacity: 0;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  opacity: 0;
 }
 
 .container-viñedos-5-left img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .container-viñedos-5-right {
-    width: 40%;
-    display: block;
+  width: 40%;
+  display: block;
 }
 
 .container-viñedos-5-right h3 {
-    font-size: 16px;
-    margin-bottom: 20px;
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
 .container-viñedos-5-right p {
-    font-size: 15px;
-    margin-bottom: 15px;
+  font-size: 15px;
+  margin-bottom: 15px;
 }
 
 /*------------------------------------------ Container-viñedos-6 -----------------------------------------*/
 
 .container-viñedos-6 {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    background-color: #FFFFFF;
-    padding: 30px 0px;
-    gap: 30px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 30px 0px;
+  gap: 30px;
 }
 
 .container-viñedos-6-left {
-    width: 40%;
-    color: #000000;
+  width: 40%;
+  color: #000000;
 }
 
 .container-viñedos-6-left h3 {
-    font-size: 16px;
-    margin-bottom: 20px;
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
 .container-viñedos-6-left p {
-    font-size: 15px;
-    margin-bottom: 15px;
+  font-size: 15px;
+  margin-bottom: 15px;
 }
 
 .container-viñedos-6-rigth {
-    width: 40%;
-    opacity: 0;
+  width: 40%;
+  opacity: 0;
 }
 
 .container-viñedos-6-rigth img {
-    width: 100%;
+  width: 100%;
 }
 
 .animacion-2-container-viñedos-6-rigth {
-    opacity: 0;
+  opacity: 0;
 }
 
 .animacion-3-container-viñedos-6-rigth {
-    opacity: 0;
+  opacity: 0;
 }
 
 /*------------------------------------------ Animacion ---------------------------------------------------*/
 
 .animation-rigth-viñedos {
-    animation: moveInRight 1.5s ease-out;
-    animation-iteration-count: 1;
+  animation: moveInRight 1.5s ease-out;
+  animation-iteration-count: 1;
 }
 
 @keyframes moveInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(500px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(500px);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
 
 .animation-left-viñedos {
-    animation: moveInLeft 1.5s ease-out;
-    animation-iteration-count: 1;
+  animation: moveInLeft 1.5s ease-out;
+  animation-iteration-count: 1;
 }
 
 @keyframes moveInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-500px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(-500px);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
 
 .animation-top-viñedos {
-    animation: moveInTop 1.5s ease-out;
-    animation-iteration-count: 1;
+  animation: moveInTop 1.5s ease-out;
+  animation-iteration-count: 1;
 }
 
 @keyframes moveInTop {
-    0% {
-        opacity: 0;
-        transform: translateY(-200px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
 
 .opacity-viñedos {
-    opacity: 1;
+  opacity: 1;
 }
 
 /*------------------------------------------ Responsive ---------------------------------------------------*/
 
 @media screen and (max-width: 1150px) {
-    .container-viñedos-3-left {
-        width: 50%;
-        margin: 0px 10px;
-    }
+  .container-viñedos-3-left {
+    width: 50%;
+    margin: 0px 10px;
+  }
 
-    .container-viñedos-3-rigth {
-        width: 50%;
-        margin: 0px 10px;
-    }
+  .container-viñedos-3-rigth {
+    width: 50%;
+    margin: 0px 10px;
+  }
 
-    .container-viñedos-4-left {
-        width: 40%;
-        margin-left: 30px;
-    }
+  .container-viñedos-4-left {
+    width: 40%;
+    margin-left: 30px;
+  }
 
-    .container-viñedos-4-right {
-        width: 60%;
-        margin-left: 30px;
-        margin-right: 5px;
-        color: #000000;
-    }
+  .container-viñedos-4-right {
+    width: 60%;
+    margin-left: 30px;
+    margin-right: 5px;
+    color: #000000;
+  }
 
-    .container-viñedos-5-left {
-        width: 50%;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
+  .container-viñedos-5-left {
+    width: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 
-    .container-viñedos-5-right {
-        width: 50%;
-        margin-right: 5px;
-        margin-left: 5px;
-    }
+  .container-viñedos-5-right {
+    width: 50%;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
 
-    .container-viñedos-6-left {
-        width: 48%;
-    }
+  .container-viñedos-6-left {
+    width: 48%;
+  }
 
-    .container-viñedos-6-rigth {
-        width: 48%;
-    }
+  .container-viñedos-6-rigth {
+    width: 48%;
+  }
+}
 
+@media screen and (max-width: 940px) {
+  .body-viñedos {
+    margin-top: 90px;
+  }
 }
 
 @media screen and (max-width: 900px) {
+  .container-viñedos-2-left {
+    width: 45%;
+    padding: 20px 0px;
+  }
 
-    .container-viñedos-2-left {
-        width: 45%;
-        padding: 20px 0px;
-    }
+  .container-viñedos-2-rigth {
+    width: 45%;
+    padding: 20px 0px;
+  }
 
-    .container-viñedos-2-rigth {
-        width: 45%;
-        padding: 20px 0px;
-    }
+  .container-viñedos-3 {
+    display: block;
+  }
 
-    .container-viñedos-3 {
-        display: block;
-    }
+  .container-viñedos-3-left {
+    width: 100%;
+    margin: 30px 0px;
+    justify-content: center;
+  }
 
-    .container-viñedos-3-left {
-        width: 100%;
-        margin: 30px 0px;
-        justify-content: center;
-    }
+  .container-viñedos-3-rigth {
+    width: 95%;
+  }
 
-    .container-viñedos-3-rigth {
-        width: 95%;
-    }
+  .container-viñedos-4 {
+    display: block;
+  }
 
-    .container-viñedos-4 {
-        display: block;
-    }
+  .container-viñedos-4-left {
+    width: 90%;
+    margin-bottom: 40px;
+  }
 
-    .container-viñedos-4-left {
-        width: 90%;
-        margin-bottom: 40px;
-    }
+  .container-viñedos-4-left img {
+    width: 90%;
+  }
 
-    .container-viñedos-4-left img {
-        width: 90%;
-    }
+  .container-viñedos-4-right {
+    width: 90%;
+  }
 
-    .container-viñedos-4-right {
-        width: 90%;
-    }
+  .container-viñedos-5-h1 {
+    top: 10%;
+  }
 
-    .container-viñedos-5-h1 {
-        top: 10%;
-    }
+  .flex-viñedos-container-5 {
+    display: block;
+  }
 
-    .flex-viñedos-container-5 {
-        display: block;
-    }
+  .container-viñedos-5-left {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
 
-    .container-viñedos-5-left {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 40px;
-    }
+  .container-viñedos-5-left img {
+    width: 95%;
+  }
 
-    .container-viñedos-5-left img {
-        width: 95%;
-    }
+  .container-viñedos-5-right {
+    width: 95%;
+    margin-left: 15px;
+  }
 
-    .container-viñedos-5-right {
-        width: 95%;
-        margin-left: 15px;
-    }
+  .container-viñedos-6 {
+    display: block;
+  }
 
-    .container-viñedos-6 {
-        display: block;
-    }
+  .container-viñedos-6-left {
+    width: 95%;
+    margin-left: 15px;
+  }
 
-    .container-viñedos-6-left {
-        width: 95%;
-        margin-left: 15px;
-    }
+  .container-viñedos-6-rigth {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
 
-    .container-viñedos-6-rigth {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 40px;
-    }
-
-    .container-viñedos-6-rigth img {
-        width: 95%;
-    }
+  .container-viñedos-6-rigth img {
+    width: 95%;
+  }
 }
 
 @media screen and (max-width: 750px) {
+  .container-viñedos-2 {
+    display: block;
+  }
 
-    .container-viñedos-2 {
-        display: block;
-    }
+  .container-viñedos-2-left {
+    width: 95%;
+    margin-left: 10px;
+    padding: 0px 0px;
+  }
 
-    .container-viñedos-2-left {
-        width: 95%;
-        margin-left: 10px;
-        padding: 0px 0px;
-    }
+  .container-viñedos-2-rigth {
+    width: 95%;
+    margin-left: 10px;
+    padding: 30px 0px 75px 0px;
+  }
 
-    .container-viñedos-2-rigth {
-        width: 95%;
-        margin-left: 10px;
-        padding: 30px 0px 75px 0px;
-    }
-
-    .container-viñedos-3 {
-        display: block;
-        min-height: 1000px;
-    }
+  .container-viñedos-3 {
+    display: block;
+    min-height: 1000px;
+  }
 }
 
-
 @media screen and (max-width: 615px) {
+  .container-viñedos-1 h1 {
+    font-size: 35px;
+    color: #ffffff;
+  }
 
-    .container-viñedos-1 h1 {
-        font-size: 35px;
-        color: #FFFFFF;
-    }
-
-    .container-viñedos-6 {
-        min-height: 90vh;
-    }
+  .container-viñedos-6 {
+    min-height: 90vh;
+  }
 }
 
 @media screen and (max-width: 500px) {
+  .container-viñedos-3-left img {
+    height: 300px;
+  }
 
-    .container-viñedos-3-left img {
-        height: 300px;
-    }
-
-    .container-viñedos-3 {
-        min-height: 950px;
-    }
-
+  .container-viñedos-3 {
+    min-height: 950px;
+  }
 }

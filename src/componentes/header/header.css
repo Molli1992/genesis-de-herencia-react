@@ -1,6 +1,10 @@
 .body-header {
   display: block;
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
 }
 
 /* text-menu */
@@ -8,7 +12,7 @@
 .container-header-1 {
   width: 100%;
   min-height: 45px;
-  background-color: #1A1A1A;
+  background-color: #1a1a1a;
   position: relative;
 }
 
@@ -39,7 +43,7 @@
 .header-icon-whatsapp {
   width: 24px;
   height: 24px;
-  background-color: #25D366;
+  background-color: #25d366;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -61,7 +65,7 @@
 .header-icon-link {
   width: 24px;
   height: 24px;
-  background-color: #818A91;
+  background-color: #818a91;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -78,7 +82,7 @@
 .container-header-2 {
   width: 100%;
   height: 108px;
-  background-color: #1A1A1A;
+  background-color: #1a1a1a;
   border-top: 3px solid black;
   position: relative;
   display: flex;
@@ -128,11 +132,11 @@
 }
 
 .link-header-2:hover {
-  color: #AE132E;
+  color: #ae132e;
 }
 
 .link-header-2-active {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .container-header-2 svg {
@@ -151,7 +155,7 @@
 
 .menu-header {
   width: 200px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   display: grid;
   position: relative;
 }
@@ -180,7 +184,7 @@
 }
 
 .text-menu:hover {
-  color: #AE132E;
+  color: #ae132e;
 }
 
 .line-menu {
@@ -197,7 +201,7 @@
 
 .menu-header-2 {
   width: 200px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   display: none;
   position: absolute;
   left: 100%;
@@ -211,7 +215,7 @@
 
 .menu-header-3 {
   width: 200px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   display: none;
   position: absolute;
   left: 100%;
@@ -223,19 +227,19 @@
   display: grid;
 }
 
-.container-links-header-2 text:hover~svg {
-  fill: #AE132E;
+.container-links-header-2 text:hover ~ svg {
+  fill: #ae132e;
 }
 
-.container-links-header-2 text:hover~div {
+.container-links-header-2 text:hover ~ div {
   display: flex;
 }
 
-.div-menu-header .menu-header .container-text-menu:hover~.menu-header-2 {
+.div-menu-header .menu-header .container-text-menu:hover ~ .menu-header-2 {
   display: grid;
 }
 
-.div-menu-header .menu-header .container-text-menu-2:hover~.menu-header-3 {
+.div-menu-header .menu-header .container-text-menu-2:hover ~ .menu-header-3 {
   display: grid;
 }
 
@@ -244,7 +248,7 @@
   position: relative;
   width: 100%;
   height: 90px;
-  background-color: #1A1A1A;
+  background-color: #1a1a1a;
 }
 
 .container-header-3 svg {
@@ -284,13 +288,13 @@
 }
 
 .links-responsive-header:hover {
-  color: #AE132E;
+  color: #ae132e;
 }
 
 .line-responsive-header {
   width: 100%;
   height: 1px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .container-text-responsive-header {
@@ -329,8 +333,8 @@
   background-color: rgba(0, 0, 0, 0.85);
 }
 
-.container-text-responsive-header .links-responsive-header:hover~svg {
-  fill: #AE132E;
+.container-text-responsive-header .links-responsive-header:hover ~ svg {
+  fill: #ae132e;
 }
 
 .container-links-nuevos-header {
@@ -373,5 +377,4 @@
   .tittle-logo-ruiz-2 h3 {
     font-size: 16px;
   }
-
 }

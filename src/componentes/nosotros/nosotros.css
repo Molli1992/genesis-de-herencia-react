@@ -1,257 +1,269 @@
 .body-nosotros {
-    width: 100%;
-    display: block;
-    background-color: #f5f5dc;
+  width: 100%;
+  display: block;
+  background-color: #f5f5dc;
+  margin-top: 153px;
 }
 
 .container-nosotros-1 {
-    width: 100%;
-    height: 400px;
-    background-image: url("http://surdelosandes.com/wp-content/uploads/2023/09/Copia-de-Dibujo-2-bodega.jpg");
-    background-size: cover;
-    background-position: bottom;
-    position: relative;
+  width: 100%;
+  height: 400px;
+  background-image: url("http://surdelosandes.com/wp-content/uploads/2023/09/Copia-de-Dibujo-2-bodega.jpg");
+  background-size: cover;
+  background-position: bottom;
+  position: relative;
 }
 
 .container-nosotros-1 h3 {
-    position: absolute;
-    font-size: 16px;
-    color: #FFFFFF;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 20%;
+  position: absolute;
+  font-size: 16px;
+  color: #ffffff;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20%;
 }
 
 .container-nosotros-1 h1 {
-    position: absolute;
-    font-size: 62px;
-    color: #FFFFFF;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 40%;
+  position: absolute;
+  font-size: 62px;
+  color: #ffffff;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40%;
 }
 
 .container-nosotros-2 {
-    min-height: 752px;
-    width: 100%;
-    background-color: #1A1A1A;
-    clip-path: polygon(100% 0, 100% 24%, 100% 96%, 84% 98%, 68% 95%, 26% 100%, 0 95%, 0 0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 75px 0px;
+  min-height: 752px;
+  width: 100%;
+  background-color: #1a1a1a;
+  clip-path: polygon(
+    100% 0,
+    100% 24%,
+    100% 96%,
+    84% 98%,
+    68% 95%,
+    26% 100%,
+    0 95%,
+    0 0
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 75px 0px;
 }
 
 .container-nosotros-2-container-text {
-    width: 40%;
-    display: block;
+  width: 40%;
+  display: block;
 }
 
 .container-nosotros-2-container-text h1 {
-    color: #FFFFFF;
-    font-size: 16px;
-    margin-bottom: 50px;
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 50px;
 }
 
 .container-nosotros-2-container-text p {
-    color: #FFFFFF;
-    font-size: 15px;
-    margin-bottom: 25px;
+  color: #ffffff;
+  font-size: 15px;
+  margin-bottom: 25px;
 }
 
 .container-nosotros-2-container-img {
-    display: flex;
-    width: 40%;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
+  display: flex;
+  width: 40%;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
 }
 
 .container-nosotros-2-container-img img {
-    height: 500px;
+  height: 500px;
 }
 
 .animacion-activa {
-    animation: moveInRight 1.5s ease-out;
-    animation-iteration-count: 2s;
+  animation: moveInRight 1.5s ease-out;
+  animation-iteration-count: 2s;
 }
 
 @keyframes moveInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(500px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(500px);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
 
 .container-nosotros-3 {
-    display: block;
-    width: 100%;
-    padding: 50px 0px;
+  display: block;
+  width: 100%;
+  padding: 50px 0px;
 }
 
 .flex-nostros {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
 }
 
 .flex-nostros-animation {
-    animation: moveInTop 1.5s ease-out;
-    animation-iteration-count: 1;
+  animation: moveInTop 1.5s ease-out;
+  animation-iteration-count: 1;
 }
 
 @keyframes moveInTop {
-    0% {
-        opacity: 0;
-        transform: translateY(-300px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(-300px);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
 
 .container-nosotros-3 h1 {
-    font-size: 32px;
-    color: #000000;
-    margin-top: 40px;
-    margin-bottom: 70px;
+  font-size: 32px;
+  color: #000000;
+  margin-top: 40px;
+  margin-bottom: 70px;
 }
 
 .container-nosotros-3-container-text {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 }
 
 .container-nosotros-3-container-text div {
-    width: 25%;
+  width: 25%;
 }
 
 .container-nosotros-3-container-text div h3 {
-    font-size: 16px;
-    color: #000000;
-    margin-bottom: 40px;
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 40px;
 }
 
 .container-nosotros-3-container-text div p {
-    font-size: 15px;
-    color: #000000;
+  font-size: 15px;
+  color: #000000;
 }
 
 .img-nostros {
-    width: 800px;
-    height: 290;
-    opacity: 0;
+  width: 800px;
+  height: 290;
+  opacity: 0;
 }
 
 .img-nostros-animation {
-    animation: moveInDown 1.5s ease-out;
-    animation-iteration-count: 1;
+  animation: moveInDown 1.5s ease-out;
+  animation-iteration-count: 1;
 }
 
 @keyframes moveInDown {
-    0% {
-        opacity: 0;
-        transform: translateY(100px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
 
 .opacity-nosotros {
-    opacity: 1;
+  opacity: 1;
 }
 
 @media screen and (max-width: 1100px) {
-    .container-nosotros-2-container-text {
-        width: 50%;
-        padding-left: 10px;
-    }
+  .container-nosotros-2-container-text {
+    width: 50%;
+    padding-left: 10px;
+  }
 
-    .container-nosotros-2-container-img {
-        width: 50%;
-    }
+  .container-nosotros-2-container-img {
+    width: 50%;
+  }
 
-    .img-nostros-animation {
-        left: 15%;
-    }
+  .img-nostros-animation {
+    left: 15%;
+  }
 
-    .img-nostros {
-        width: 75%;
-    }
+  .img-nostros {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .body-nosotros {
+    margin-top: 90px;
+  }
 }
 
 @media screen and (max-width: 750px) {
-    .container-nosotros-2 {
-        display: grid;
-    }
+  .container-nosotros-2 {
+    display: grid;
+  }
 
-    .container-nosotros-2-container-text {
-        width: 95%;
-        margin-top: 50px;
-    }
+  .container-nosotros-2-container-text {
+    width: 95%;
+    margin-top: 50px;
+  }
 
-    .container-nosotros-2-container-img {
-        width: 100%;
-        margin-bottom: 50px;
-    }
+  .container-nosotros-2-container-img {
+    width: 100%;
+    margin-bottom: 50px;
+  }
 
-    .container-nosotros-3-container-text {
-        display: block;
-        margin-bottom: 50px;
-    }
+  .container-nosotros-3-container-text {
+    display: block;
+    margin-bottom: 50px;
+  }
 
-    .container-nosotros-3-container-text div {
-        width: 90%;
-        margin-left: 15px;
-        margin-bottom: 25px;
-    }
+  .container-nosotros-3-container-text div {
+    width: 90%;
+    margin-left: 15px;
+    margin-bottom: 25px;
+  }
 
-    .container-nosotros-3-container-text div h3 {
-        margin-bottom: 15px;
-    }
+  .container-nosotros-3-container-text div h3 {
+    margin-bottom: 15px;
+  }
 
-    .img-nostros {
-        width: 75%;
-        height: 200px;
-    }
+  .img-nostros {
+    width: 75%;
+    height: 200px;
+  }
 }
 
 @media screen and (max-width: 550px) {
-
-
-    .container-nosotros-3 {
-        min-height: 100vh;
-    }
+  .container-nosotros-3 {
+    min-height: 100vh;
+  }
 }
 
 @media screen and (max-width: 450px) {
+  .container-nosotros-1 h1 {
+    font-size: 50px;
+  }
 
-    .container-nosotros-1 h1 {
-        font-size: 50px;
-    }
+  .container-nosotros-2-container-img img {
+    width: 90%;
+    height: 90%;
+  }
 
-    .container-nosotros-2-container-img img {
-        width: 90%;
-        height: 90%;
-    }
-
-    .img-nostros {
-        width: 80%;
-        height: 180px;
-    }
-
+  .img-nostros {
+    width: 80%;
+    height: 180px;
+  }
 }
