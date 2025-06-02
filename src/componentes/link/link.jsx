@@ -1,10 +1,14 @@
-import React from "react";
+import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./link.css";
 import vinosStore from "../../zustand/vinosStore";
 
 function Links() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const history = useNavigate();
   const { vinos } = vinosStore();
 

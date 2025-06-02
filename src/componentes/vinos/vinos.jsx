@@ -9,6 +9,10 @@ import PdfFiscal from "../../pdf/ficha_técnica_FISCAL.pdf";
 import PdfTribunal from "../../pdf/ficha_técnica _TRIBUNAL_compressed.pdf";
 
 function Vinos() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const { vinos } = vinosStore();
   const arrayVinos = vinos;
   const [vino, setVino] = useState(false);

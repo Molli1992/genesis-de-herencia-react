@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import imagen from "../../imagenes/imagen-10.jpg";
 import imgCadenaPerpetua from "../../imagenes/img-cadena-perpetua.png";
@@ -7,6 +7,10 @@ import "./inicio.css";
 import vinosStore from "../../zustand/vinosStore";
 
 function Inicio() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const { vinos } = vinosStore();
 
   const arrayVinos = vinos;
@@ -47,10 +51,7 @@ function Inicio() {
       <div className="body-inicio">
         {stateSlider === false ? (
           <div className="container-inicio-1 imagen-de-fond-1">
-            <img
-              src={imgCadenaPerpetua}
-              alt="vino"
-            />
+            <img src={imgCadenaPerpetua} alt="vino" />
 
             <p className="animation-bottom-inicio">
               NUESTROS VINOS REPRESENTAN EXCELENCIA Y SOSTENIBILIDAD

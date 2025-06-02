@@ -1,7 +1,11 @@
-import React from "react";
+import { useEffect } from "react";
 import "./viñedos.css";
 
 function Viñedos() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   window.addEventListener("scroll", function () {
     let elemento = document.querySelector(".tittle-animation-viñedos-2");
 

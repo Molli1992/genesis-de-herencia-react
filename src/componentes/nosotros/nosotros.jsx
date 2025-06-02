@@ -1,8 +1,12 @@
-import React from "react";
+import { useEffect } from "react";
 import img from "../../imagenes/imagen-4.jpg";
 import "./nosotros.css";
 
 function Nosotros() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   window.addEventListener("scroll", function () {
     let elemento = document.querySelector(
       ".container-nosotros-2-container-img"

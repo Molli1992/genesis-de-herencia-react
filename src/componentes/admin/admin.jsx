@@ -13,6 +13,10 @@ import usersStore from "../../zustand/usersStore";
 import loginStore from "../../zustand/loginStore";
 
 function Admin() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const { vinos } = vinosStore();
   const { users, setUsers } = usersStore();
   const { isLogin, setIsLogin, userLogin, setUserLogin } = loginStore();
