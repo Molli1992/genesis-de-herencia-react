@@ -50,7 +50,6 @@ function Inicio() {
             <img
               src={imgCadenaPerpetua}
               alt="vino"
-              className="img-cadena-perpetua"
             />
 
             <p className="animation-bottom-inicio">
