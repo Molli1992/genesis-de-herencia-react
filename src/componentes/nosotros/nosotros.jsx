@@ -48,13 +48,12 @@ function Nosotros() {
   return (
     <div className="body-nosotros">
       <div className="container-nosotros-1">
-        <h3>NOSOTROS</h3>
         <h1>CONÓCENOS</h1>
       </div>
 
       <div className="container-nosotros-2">
         <div className="container-nosotros-2-container-text">
-          <h1>CONÓCENOS</h1>
+          <h1>Nuestra Historia</h1>
           <p>
             Marcelo J. Ruiz es un abogado que tiene varias pasiones: la familia,
             sus hijos, su mujer, los amigos, el rugby y el derecho.

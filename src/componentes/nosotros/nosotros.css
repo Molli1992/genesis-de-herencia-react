@@ -14,15 +14,6 @@
   position: relative;
 }
 
-.container-nosotros-1 h3 {
-  position: absolute;
-  font-size: 16px;
-  color: #ffffff;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 20%;
-}
-
 .container-nosotros-1 h1 {
   position: absolute;
   font-size: 62px;
@@ -59,7 +50,7 @@
 
 .container-nosotros-2-container-text h1 {
   color: #ffffff;
-  font-size: 16px;
+  font-size: 32px;
   margin-bottom: 50px;
 }
 

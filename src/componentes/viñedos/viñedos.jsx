@@ -146,7 +146,6 @@ function Viñedos() {
   return (
     <div className="body-viñedos">
       <div className="container-viñedos-1">
-        <h3>NOSOTROS</h3>
         <h1>NUESTROS VIÑEDOS</h1>
         <h2>Y BODEGA</h2>
       </div>
