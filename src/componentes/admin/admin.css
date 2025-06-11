@@ -42,7 +42,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 153px;
 }
 
 .container-login {
@@ -52,7 +51,6 @@
 
 .altura-body {
   min-height: calc(100vh - 205px);
-  margin-top: 153px;
 }
 
 @media screen and (max-width: 940px) {
