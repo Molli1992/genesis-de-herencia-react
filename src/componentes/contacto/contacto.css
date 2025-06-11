@@ -191,12 +191,6 @@
   }
 }
 
-@media screen and (max-width: 940px) {
-  .body-contacto {
-    margin-top: 90px;
-  }
-}
-
 @media screen and (max-width: 930px) {
   .container-contacto-2 {
     display: block;

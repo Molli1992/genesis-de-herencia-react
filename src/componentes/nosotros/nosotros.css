@@ -194,12 +194,6 @@
   }
 }
 
-@media screen and (max-width: 940px) {
-  .body-nosotros {
-    margin-top: 90px;
-  }
-}
-
 @media screen and (max-width: 750px) {
   .container-nosotros-2 {
     display: grid;

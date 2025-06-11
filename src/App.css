@@ -17,7 +17,6 @@
 @media screen and (max-width: 940px) {
   .body-loader {
     min-height: calc(100vh - 140px);
-    margin-top: 90px;
   }
 }
 

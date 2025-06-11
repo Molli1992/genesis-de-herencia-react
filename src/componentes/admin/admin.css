@@ -54,13 +54,8 @@
 }
 
 @media screen and (max-width: 940px) {
-  .body-login {
-    margin-top: 90px;
-  }
-
   .altura-body {
     min-height: calc(100vh - 140px);
-    margin-top: 90px;
   }
 
   .body-login {

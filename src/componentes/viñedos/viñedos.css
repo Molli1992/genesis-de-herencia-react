@@ -382,12 +382,6 @@
   }
 }
 
-@media screen and (max-width: 940px) {
-  .body-viñedos {
-    margin-top: 90px;
-  }
-}
-
 @media screen and (max-width: 900px) {
   .container-viñedos-2-left {
     width: 45%;
